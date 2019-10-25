@@ -1,0 +1,2 @@
+TEConstruye/.vs
+TEConstruye/obj
