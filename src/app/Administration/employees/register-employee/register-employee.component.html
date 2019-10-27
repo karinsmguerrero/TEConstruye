@@ -1,1 +1,57 @@
-<p>register-employee works!</p>
+<div class="card">
+ 
+
+    <!-- Form de vendedores -->
+    <article class="card-body">
+      <form #Form="ngForm" autocomplete="off" (submit)="onSubmit(Form)">
+        <div class="form-group">
+          
+          <div class="form-row">
+            <div class="col form-group">
+              <label>Nombre</label>
+              <input name="FirstName" #FirstName="ngModel" [(ngModel)]="employee.FirstName" class="form-control" required>
+              <div class="validation-error" *ngIf="FirstName.invalid && FirstName.touched">
+                      Este campo es obligatorio
+              </div>
+            </div>
+            <div class="col form-group">
+              <label>Apellidos</label>
+              <input name="LastName" #LastName="ngModel" [(ngModel)]="employee.LastNames" class="form-control" required>
+              <div class="validation-error" *ngIf="LastName.invalid && LastName.touched">
+                      Este campo es obligatorio
+              </div>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col form-group">
+              <label>Telefono</label>
+              <input name="Phone" #Phone="ngModel" [(ngModel)]="employee.Phone" class="form-control" required>
+              <div class="validation-error" *ngIf="Phone.invalid && Phone.touched">
+                      Este campo es obligatorio
+              </div>
+            </div>
+            <div class="col form-group">
+              <label>Cédula</label>
+              <input name="Id" #Id="ngModel" [(ngModel)]="employee.Id" class="form-control" required>
+              <div class="validation-error" *ngIf="Id.invalid && Id.touched">
+                      Este campo es obligatorio
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Salario por hora</label>
+            <input name="Salary" #Salary="ngModel" [(ngModel)]="employee.Salary" class="form-control" required>
+            <div class="validation-error" *ngIf="Salary.invalid && Salary.touched">
+                    Este campo es obligatorio
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <button type="submit" [disabled]="Form.invalid" class="btn btn-b-n btn-block">Registrar</button>
+        </div>
+  
+      </form>
+    </article>
+  
+  </div> <!-- card.// -->
+  

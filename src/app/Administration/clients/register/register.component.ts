@@ -11,9 +11,6 @@ import { Client } from 'src/app/Models/client';
 export class RegisterComponent implements OnInit {
 
   client: Client;
-  emailPattern = "^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$";
-
-  showSeller: Boolean = false;
 
   constructor(private service: UserService) { }
 

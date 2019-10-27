@@ -1,1 +1,39 @@
-<p>list-engineer works!</p>
+<div class="card">
+ 
+
+        <article class="card-body">
+          <!--/ Agents Grid Star /-->
+          <div class="container">
+            <div class="row">
+      
+              <table class="table">
+                <th>Cédula</th>
+                <th>Nombre</th>
+                <th>Apellidos</th>
+                <th>Telefono</th>
+                <th>Usuario</th>
+                <th>Código</th>
+                <th>Especialidad</th>
+                <th></th>
+                <th></th>
+                <tr *ngFor="let engineer of engineerList">
+                  <td>{{engineer.Id}}</td>
+                  <td>{{engineer.Name}}</td>
+                  <td>{{engineer.LastNames}}</td>
+                  <td>{{engineer.Phone}}</td>
+                  <td>{{engineer.UserName}}</td>
+                  <td>{{engineer.Code}}</td>
+                  <td>{{engineer.Major}}</td>
+                  <td><input type="image" src="./assets/img/refresh.png" (click)="update(agent)" width="48" height="48">
+                  </td>
+                  <td><input type="image" src="./assets/img/cancel(1).png" (click)="delete(agent)" width="48" height="48">
+                  </td>
+                </tr>
+              </table>
+      
+            </div>
+          </div>
+          <!--/ Agents Grid End /-->
+        </article>
+      </div>
+      
