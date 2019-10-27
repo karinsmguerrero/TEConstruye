@@ -1,0 +1,34 @@
+<div class="card">
+ 
+
+  <article class="card-body">
+    <!--/ Agents Grid Star /-->
+    <div class="container">
+      <div class="row">
+
+        <table class="table">
+          <th>Cédula</th>
+          <th>Nombre</th>
+          <th>Apellidos</th>
+          <th>Telefono</th>
+          <th>Usuario</th>
+          <th></th>
+          <th></th>
+          <tr *ngFor="let client of clientList">
+            <td>{{client.Id}}</td>
+            <td>{{client.Name}}</td>
+            <td>{{client.LastNames}}</td>
+            <td>{{client.Phone}}</td>
+            <td>{{client.UserName}}</td>
+            <td><input type="image" src="./assets/img/refresh.png" (click)="update(agent)" width="48" height="48">
+            </td>
+            <td><input type="image" src="./assets/img/cancel(1).png" (click)="delete(agent)" width="48" height="48">
+            </td>
+          </tr>
+        </table>
+
+      </div>
+    </div>
+    <!--/ Agents Grid End /-->
+  </article>
+</div>

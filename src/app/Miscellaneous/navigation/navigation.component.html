@@ -1,0 +1,13 @@
+<!--/ Nav Star /-->
+<div *ngIf="!logged">
+
+    <div *ngIf="!showadmin">
+      <app-navigation-admin></app-navigation-admin>
+    </div>
+   
+  </div>
+  
+  <div *ngIf="logged">
+    <app-navigation-general></app-navigation-general>
+  </div>
+  <!--/ Nav End /-->

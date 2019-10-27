@@ -1,0 +1,42 @@
+<app-navigation></app-navigation>
+<!-- <div class="container-fluid" style="padding-top: 5%;">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <app-register></app-register>
+    </div>
+    <div class="col-md-6">
+      <app-list></app-list>
+    </div>
+  </div>
+</div> -->
+<div class="container" style="padding-top: 5%;">
+  <div class="accordion" id="accordionExample">
+    <div class="card">
+      <div class="card-header" id="headingOne">
+        <h2 class="mb-0">
+          <button class="btn " type="button" data-toggle="collapse" data-target="#collapseOne"
+            aria-expanded="true" aria-controls="collapseOne">
+            Registrar clientes
+          </button>
+        </h2>
+      </div>
+
+      <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+        <app-register></app-register>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header" id="headingTwo">
+        <h2 class="mb-0">
+          <button class="btn collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo"
+            aria-expanded="false" aria-controls="collapseTwo">
+            Todos los clientes
+          </button>
+        </h2>
+      </div>
+      <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+        <app-list></app-list>
+      </div>
+    </div>
+  </div>
+</div>

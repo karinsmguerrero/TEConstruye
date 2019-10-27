@@ -1,0 +1,59 @@
+<!--/ Nav Star /-->
+<nav class="navbar navbar-default navbar-trans navbar-expand-lg ">
+  <div class="container">
+    <!--<img src="./assets/img/logo.png">-->
+    <a class="navbar-brand text-brand" routerLink="/welcome">TEC<span class="color-b">onstruye</span></a>
+    <div class="navbar-collapse collapse justify-content-center" id="navbarDefault">
+      <ul class="navbar-nav">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Usuarios
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" routerLink="/users/clients">Clientes</a>
+            <a class="dropdown-item" routerLink="/propertytype">Ingenieros</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Empleados
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" routerLink="/users/agents">Registro</a>
+            <a class="dropdown-item" routerLink="/propertytype">Horas</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Proyectos
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" routerLink="/users/agents">Materiales</a>
+            <a class="dropdown-item" routerLink="/propertytype">Proyectos</a>
+            <a class="dropdown-item" routerLink="/location">Etapas</a>
+            <a class="dropdown-item" routerLink="/users/agents">Gastos</a>
+            <a class="dropdown-item" routerLink="/careers">Publicación</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Reportes
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" routerLink="/users/agents">Generar presupuesto</a>
+            <a class="dropdown-item" routerLink="/propertytype">Generar planilla</a>
+            <a class="dropdown-item" routerLink="/location">Estado</a>
+            <a class="dropdown-item" routerLink="/users/agents">Gastos</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <button type="button" class="btn btn-b-n navbar-toggle-box-collapse d-none d-md-block"
+      (click)="this.loginservice.logout()">Cerrar sesión</button>
+  </div>
+</nav>
+<!--/ Nav End /-->
