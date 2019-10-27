@@ -1,0 +1,67 @@
+<div class="card">
+ 
+
+    <!-- Form de vendedores -->
+    <article class="card-body">
+      <form #ClientForm="ngForm" autocomplete="off" (submit)="onSubmit(ClientForm)">
+        <div class="form-group">
+          <div class="form-row">
+            <div class="col form-group">
+              <label>Nombre de usuario</label>
+              <input name="UserName" #UserName="ngModel" [(ngModel)]="client.UserName" class="form-control" required>
+              <div class="validation-error" *ngIf="UserName.invalid && UserName.touched">
+                Este campo es obligatorio
+              </div>
+            </div>
+            <div class="col form-group">
+              <label>Contraseña</label>
+              <input name="Password" type="password" #Password="ngModel" [(ngModel)]="client.Password"
+                class="form-control" required minlength="6">
+              <!-- <label [attr.data-error]="Password.errors!=null?(Password.errors.required?'Required field':'Minimum 6 characters required'):''"></label> -->
+              <div class="validation-error" *ngIf="Password.invalid && Password.touched">
+                      Este campo es obligatorio
+              </div>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col form-group">
+              <label>Nombre</label>
+              <input name="FirstName" #FirstName="ngModel" [(ngModel)]="client.FirstName" class="form-control" required>
+              <div class="validation-error" *ngIf="FirstName.invalid && FirstName.touched">
+                      Este campo es obligatorio
+              </div>
+            </div>
+            <div class="col form-group">
+              <label>Apellidos</label>
+              <input name="LastName" #LastName="ngModel" [(ngModel)]="client.LastNames" class="form-control" required>
+              <div class="validation-error" *ngIf="LastName.invalid && LastName.touched">
+                      Este campo es obligatorio
+              </div>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col form-group">
+              <label>Telefono</label>
+              <input name="Phone" #Phone="ngModel" [(ngModel)]="client.Phone" class="form-control" required>
+              <div class="validation-error" *ngIf="Phone.invalid && Phone.touched">
+                      Este campo es obligatorio
+              </div>
+            </div>
+            <div class="col form-group">
+              <label>Cédula</label>
+              <input name="Id" #Id="ngModel" [(ngModel)]="client.Id" class="form-control" required>
+              <div class="validation-error" *ngIf="Id.invalid && Id.touched">
+                      Este campo es obligatorio
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <button type="submit" [disabled]="ClientForm.invalid" class="btn btn-b-n btn-block">Registrar</button>
+        </div>
+  
+      </form>
+    </article>
+  
+  </div> <!-- card.// -->
+  
