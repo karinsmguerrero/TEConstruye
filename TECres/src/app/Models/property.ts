@@ -1,17 +1,17 @@
 export class Property {
+    Id: number
     Name : string;
+    Bathroom: number;
+    Type: string;
     LotArea: number;
     BuiltArea : number;
-    Bathroom: number;
-    Rooms : number; 
-    Gym : number;
-    Description : string;
-    Type: string;
-    Location : string;
-    Floors: number;
-    Parkings:number;
-    Price:number;
     Pools: number;
-    Photos: string[];
-
+    Parkings:number;
+    Floors: number;
+    Rooms : number; 
+    Price:number;
+    Gym : number;       
+    Location : string;
+    Description : string;
+    //Photos: string[];
 }

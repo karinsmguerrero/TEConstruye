@@ -1,6 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Property } from 'src/app/Models/property';
 
+import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
+import { PropertyService } from 'src/app/Services/property.service';
+
+
 @Component({
   selector: 'app-property',
   templateUrl: './property.component.html',
@@ -8,26 +13,15 @@ import { Property } from 'src/app/Models/property';
 })
 export class PropertyComponent implements OnInit {
 
-  property1 : Property = {
-    Name :'Villa flores',
-    LotArea: 200,
-    BuiltArea : 150,
-    Bathroom: 3,
-    Rooms : 5,
-    Gym : 0,
-    Description : 'Hermosa casa nueva con acabados de lujo, en una excelente ubicación, con seguridad',
-    Type: 'Casa',
-    Location : 'Heredia, San Rafael',
-    Floors: 2,
-    Parkings:1,
-    Price: 60000000,
-    Pools: 0,
-    Photos: ['./assets/img/property-3.jpg']
-  }
+  property1: Property;
 
-  constructor() { }
+  constructor(private route: ActivatedRoute, private propertyService: PropertyService) { }
 
   ngOnInit() {
+    const id = +this.route.snapshot.paramMap.get('id');
+    this.propertyService.getProperty(id);
+    this.propertyService.loadPhotos(id);
+    //alert(this.property1.Photos[0].toString());
   }
 
 }

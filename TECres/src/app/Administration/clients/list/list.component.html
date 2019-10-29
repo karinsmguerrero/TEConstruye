@@ -14,7 +14,7 @@
             <th>Usuario</th>
             <th></th>
             <th></th>
-            <tr *ngFor="let client of clientList">
+            <tr *ngFor="let client of clientService.clients">
               <td>{{client.Id}}</td>
               <td>{{client.Name}}</td>
               <td>{{client.LastNames}}</td>

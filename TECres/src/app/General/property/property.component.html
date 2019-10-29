@@ -7,13 +7,13 @@
   <div class="row">
     <div class="col-sm-12">
       <div class="title-box-d">
-        <h3 class="title-d">{{property1.Name}}</h3>
+        <h3 class="title-d">{{propertyService.selectedProperty.Name}}</h3>
       </div>
     </div>
   </div>
   <div class="property-description">
     <p class="description color-text-a">
-      {{property1.Description}}
+      {{propertyService.selectedProperty.Descripcion}}
     </p>
   </div>
 
@@ -32,17 +32,18 @@
           </ol>
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <img src="./assets/img/property-3.jpg" class="d-block img-responsive"
+              <img src="{{propertyService.photos[0]}}" class="d-block img-responsive"
                 style="height: 550px; width: 1050px">
             </div>
-            <div class="carousel-item">
-              <img src="./assets/img/project(2).png" class="d-block img-responsive" style="height: 550px; width: 1050px"
+            
+            <div class="carousel-item" *ngFor="let photo of propertyService.photos.slice(1)">
+              <img src="{{photo}}" class="d-block img-responsive" style="height: 550px; width: 1050px"
                 alt="...">
-            </div>
+            </div><!-- 
             <div class="carousel-item">
-              <img src="./assets/img/project(1).jpg" class="d-block img-responsive" style="height: 550px; width: 1050px"
+              <img src="./assets/img/bathroom-1.jpg" class="d-block img-responsive" style="height: 550px; width: 1050px"
                 alt="...">
-            </div>
+            </div> -->
           </div>
           <a class="carousel-control-prev" href="#propertyCarousel" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -72,7 +73,7 @@
                 <span class="ion-money"> ₡</span>
               </div>
               <div class="card-title-c align-self-center">
-                <h5 class="title-c">{{property1.Price}}</h5>
+                <h5 class="title-c">{{propertyService.selectedProperty.Price}}</h5>
               </div>
             </div>
           </div>
@@ -91,41 +92,41 @@
               <ul class="list">
                 <li class="d-flex justify-content-between">
                   <strong>Ubicación:</strong>
-                  <span>{{property1.Location}}</span>
+                  <span>{{propertyService.selectedProperty.Location}}</span>
                 </li>
                 <li class="d-flex justify-content-between">
                   <strong>Tipo de propiedad:</strong>
-                  <span>{{property1.Type}}</span>
+                  <span>{{propertyService.selectedProperty.Type}}</span>
                 </li>
                 <li class="d-flex justify-content-between">
                   <strong>Status:</strong>
-                  <span>Sale</span>
+                  <span>For sale</span>
                 </li>
                 <li class="d-flex justify-content-between">
                   <strong>Area:</strong>
-                  <span>{{property1.BuiltArea}} m
+                  <span>{{propertyService.selectedProperty.BuiltArea}} m
                     <sup>2</sup>
                   </span>
                 </li>
                 <li class="d-flex justify-content-between">
                   <strong>Habitaciones:</strong>
-                  <span>{{property1.Rooms}}</span>
+                  <span>{{propertyService.selectedProperty.Rooms}}</span>
                 </li>
                 <li class="d-flex justify-content-between">
                   <strong>Baños:</strong>
-                  <span>{{property1.Bathroom}}</span>
+                  <span>{{propertyService.selectedProperty.Bathroom}}</span>
                 </li>
                 <li class="d-flex justify-content-between">
-                  <strong>Espacios de parqueo:</strong>
-                  <span>{{property1.Parkings}}</span>
+                  <strong>Parqueo:</strong>
+                  <span>{{propertyService.selectedProperty.Parkings}}</span>
                 </li>
                 <li class="d-flex justify-content-between">
                   <strong>Gimnasio:</strong>
-                  <span>{{property1.Gym}}</span>
+                  <span>{{propertyService.selectedProperty.Gym}}</span>
                 </li>
                 <li class="d-flex justify-content-between">
                   <strong>Piscina:</strong>
-                  <span>{{property1.Pools}}</span>
+                  <span>{{propertyService.selectedProperty.Pools}}</span>
                 </li>
               </ul>
             </div>
