@@ -13,5 +13,5 @@ export class Property {
     Gym : number;       
     Location : string;
     Description : string;
-    //Photos: string[];
+    Cover: string;
 }
