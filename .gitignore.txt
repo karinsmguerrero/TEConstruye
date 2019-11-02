@@ -1,2 +1,0 @@
-TEConstruye/.vs/*
-TEConstruye/obj/*
