@@ -1,2 +1,2 @@
-TEConstruye/.vs
-TEConstruye/obj
+TEConstruye/.vs/*
+TEConstruye/obj/*
