@@ -1,0 +1,52 @@
+SELECT id,name,description,def FROM stage_type;
+INSERT INTO stage_type (name,description,def)
+VALUES ('Trabajo preliminar','description',TRUE),
+('Concreto','description',TRUE)
+Select * FROM supplies
+SELECT id,name,price FROM supplies
+INSERT INTO supplies (name,price)
+VALUES ('Concreto',3000),
+('Madera',1000)
+
+
+
+-----------------------------------------------------------------
+CREATE FUNCTION get_fullname(uname VARCHAR(60))
+RETURNS VARCHAR(190) AS $$
+DECLARE fullname VARCHAR(190);
+BEGIN
+        SELECT  CONCAT(firstname, ' ', lastnamea,' ',lastnameb)  
+		INTO fullname
+        FROM    users
+        WHERE   username = $1;
+
+        RETURN fullname;
+END;
+$$  LANGUAGE plpgsql
+
+-----------------------------------------------
+  
+  
+  CREATE VIEW vProject AS
+    SELECT project.id,lotarea,rooms,restrooms,
+		floors,builtarea, client AS client_username,
+		get_fullname(client) AS client_name,
+		province,canton,district
+    FROM project INNER JOIN location 
+	ON project.idlocation= location.id
+	
+--------------------------------------------------
+CREATE FUNCTION get_location(id int)
+RETURNS VARCHAR(190) AS $$
+DECLARE loc VARCHAR(190);
+BEGIN
+        SELECT  CONCAT(province, ',', canton,',',district)  
+		INTO loc
+        FROM    location
+        WHERE   location.id = $1;
+
+        RETURN loc;
+END;
+$$  LANGUAGE plpgsql
+    
+------------------------------------------------------------
