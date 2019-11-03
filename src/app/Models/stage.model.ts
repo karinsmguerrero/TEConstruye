@@ -1,6 +1,6 @@
 export class Stage {
-    Id : number;
-    Name : string;
-    Description : string;
-    Default : boolean;
+    id : number;
+    name : string;
+    description : string;
+    def : boolean;
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Supply } from 'src/app/Models/supply.model';
+import { SupplyManagementService } from 'src/app/Services/supply-management.service';
 
 @Component({
   selector: 'app-list-supplies',
@@ -8,24 +9,10 @@ import { Supply } from 'src/app/Models/supply.model';
 })
 export class ListSuppliesComponent implements OnInit {
 
-  supplyList : Supply[];
-  a : Supply =
-  {
-    Id : 1,
-    Name : 'Zinc',
-    Price : 1000 
-  }
-  b : Supply =
-  {
-    Id : 2,
-    Name : 'Madera',
-    Price : 5000
-  }
-
-  constructor() { }
+  constructor(private serviceSupply: SupplyManagementService) { }
 
   ngOnInit() {
-    this.supplyList = [this.a, this.b,this.a, this.b,this.a, this.b]
+    this.serviceSupply.getSupplies();
   }
 
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Stage } from '../../../Models/stage.model';
+import { StageTypeManagementService } from 'src/app/Services/stage-type-management.service';
 
 @Component({
   selector: 'app-list-stage',
@@ -8,26 +9,10 @@ import { Stage } from '../../../Models/stage.model';
 })
 export class ListStageComponent implements OnInit {
 
-  stageList : Stage[];
-  a : Stage =
-  {
-    Id : 1,
-    Name : 'Trabajo preliminar',
-    Description : 'Planificacion y presupuesto',
-    Default : true
-  }
-  b : Stage =
-  {
-    Id : 2,
-    Name : 'Trabajo Final',
-    Description : 'Planificacion y presupuesto',
-    Default : false
-  }
-
-  constructor() { }
+  constructor(private serviceStageType:StageTypeManagementService) { }
 
   ngOnInit() {
-    this.stageList = [this.a, this.b,this.a, this.b,this.a, this.b]
+    this.serviceStageType.getStagesType();
   }
 
 }

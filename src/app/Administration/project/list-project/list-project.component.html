@@ -7,12 +7,16 @@
   
           <table class="table">
             <th>Nombre</th>
-            <th>Precio</th>
+            <th>Área propiedad</th>
+            <th>Área construcción</th>
+            <th>Ubicación</th>
             <th></th>
             <th></th>
-            <tr *ngFor="let Supply of serviceSupply.list">
-              <td>{{Supply.name}}</td>
-              <td>{{Supply.price}}</td>
+            <tr *ngFor="let Project of serviceProject.list">
+              <td>{{Project.name}}</td>
+              <td>{{Project.lotArea}}</td>
+              <td>{{Project.builtArea}}</td>
+              <td>{{Project.province}},{{Project.canton}},{{Project.district}}</td>
               <td ><input type="image" src="./assets/img/refresh.png" (click)="update(supply)" width="48" height="48">
               </td>
               <td><input type="image" src="./assets/img/cancel(1).png" (click)="delete(supply)" width="48" height="48">
@@ -22,7 +26,7 @@
   
         </div>
       </div>
-      <!--/ Agents Grid End /-->
+      <!--/ Stage Grid End /-->
     </article>
   </div>
   
