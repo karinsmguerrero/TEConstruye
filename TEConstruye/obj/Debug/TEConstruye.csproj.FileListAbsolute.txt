@@ -112,4 +112,3 @@ D:\TEC\2019\II semestre\Bases de datos\Proyectos\TEConstruye\API\TEConstruye\bin
 D:\TEC\2019\II semestre\Bases de datos\Proyectos\TEConstruye\API\TEConstruye\obj\Debug\TEConstruye.csproj.CopyComplete
 D:\TEC\2019\II semestre\Bases de datos\Proyectos\TEConstruye\API\TEConstruye\obj\Debug\TEConstruye.dll
 D:\TEC\2019\II semestre\Bases de datos\Proyectos\TEConstruye\API\TEConstruye\obj\Debug\TEConstruye.pdb
-D:\TEC\2019\II semestre\Bases de datos\Proyectos\TEConstruye\API\TEConstruye\obj\Debug\TEConstruye.csprojAssemblyReference.cache

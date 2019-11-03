@@ -37,6 +37,7 @@ namespace TEConstruye.Controllers
         [Route("api/PostClient")]
         public HttpResponseMessage InsertClient([FromBody] Client newClient)
         {
+            System.Diagnostics.Debug.WriteLine("Got a post request");
             conn.Open();
             NpgsqlCommand cmd = new NpgsqlCommand("INSERT INTO public.users (username, password,  firstname, lastnamea, lastnameb, role,telephone, id) " +
                 "VALUES (:username,:password,:firstname,:lastnamea,:lastnameb,'Constructor',:telephone,:id)", conn);
