@@ -22,7 +22,7 @@
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" routerLink="/employees/register">Registro</a>
-            <a class="dropdown-item" routerLink="/propertytype">Horas</a>
+            <a class="dropdown-item" routerLink="/employees/hours">Horas</a>
           </div>
         </li>
         <li class="nav-item dropdown">
@@ -53,7 +53,7 @@
       </ul>
     </div>
     <button type="button" class="btn btn-b-n navbar-toggle-box-collapse d-none d-md-block"
-      (click)="this.loginservice.logout()">Cerrar sesión</button>
+      (click)="loginService.logout()">Cerrar sesión</button>
   </div>
 </nav>
 <!--/ Nav End /-->

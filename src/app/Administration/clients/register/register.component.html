@@ -8,17 +8,17 @@
         <div class="form-row">
           <div class="col form-group">
             <label>Nombre de usuario</label>
-            <input name="UserName" #UserName="ngModel" [(ngModel)]="client.UserName" class="form-control" required>
-            <div class="validation-error" *ngIf="UserName.invalid && UserName.touched">
+            <input name="username" #username="ngModel" [(ngModel)]="client.username" class="form-control" required>
+            <div class="validation-error" *ngIf="username.invalid && username.touched">
               Este campo es obligatorio
             </div>
           </div>
           <div class="col form-group">
             <label>Contraseña</label>
-            <input name="Password" type="password" #Password="ngModel" [(ngModel)]="client.Password"
+            <input name="password" type="password" #password="ngModel" [(ngModel)]="client.password"
               class="form-control" required minlength="6">
             <!-- <label [attr.data-error]="Password.errors!=null?(Password.errors.required?'Required field':'Minimum 6 characters required'):''"></label> -->
-            <div class="validation-error" *ngIf="Password.invalid && Password.touched">
+            <div class="validation-error" *ngIf="password.invalid && password.touched">
                     Este campo es obligatorio
             </div>
           </div>
@@ -26,15 +26,22 @@
         <div class="form-row">
           <div class="col form-group">
             <label>Nombre</label>
-            <input name="FirstName" #FirstName="ngModel" [(ngModel)]="client.FirstName" class="form-control" required>
-            <div class="validation-error" *ngIf="FirstName.invalid && FirstName.touched">
+            <input name="firstname" #firstname="ngModel" [(ngModel)]="client.firstname" class="form-control" required>
+            <div class="validation-error" *ngIf="firstname.invalid && firstname.touched">
                     Este campo es obligatorio
             </div>
           </div>
           <div class="col form-group">
-            <label>Apellidos</label>
-            <input name="LastName" #LastName="ngModel" [(ngModel)]="client.LastNames" class="form-control" required>
-            <div class="validation-error" *ngIf="LastName.invalid && LastName.touched">
+            <label>Apellido</label>
+            <input name="lastnamea" #lastnamea="ngModel" [(ngModel)]="client.lastnamea" class="form-control" required>
+            <div class="validation-error" *ngIf="lastnamea.invalid && lastnamea.touched">
+                    Este campo es obligatorio
+            </div>
+          </div>
+          <div class="col form-group">
+            <label>Apellido</label>
+            <input name="lastnameb" #lastnameb="ngModel" [(ngModel)]="client.lastnameb" class="form-control" required>
+            <div class="validation-error" *ngIf="lastnameb.invalid && lastnameb.touched">
                     Este campo es obligatorio
             </div>
           </div>
@@ -42,15 +49,15 @@
         <div class="form-row">
           <div class="col form-group">
             <label>Telefono</label>
-            <input name="Phone" #Phone="ngModel" [(ngModel)]="client.Phone" class="form-control" required>
-            <div class="validation-error" *ngIf="Phone.invalid && Phone.touched">
+            <input name="telephone" #telephone="ngModel" [(ngModel)]="client.telephone" class="form-control" required>
+            <div class="validation-error" *ngIf="telephone.invalid && telephone.touched">
                     Este campo es obligatorio
             </div>
           </div>
           <div class="col form-group">
             <label>Cédula</label>
-            <input name="Id" #Id="ngModel" [(ngModel)]="client.Id" class="form-control" required>
-            <div class="validation-error" *ngIf="Id.invalid && Id.touched">
+            <input name="id" #id="ngModel" [(ngModel)]="client.id" class="form-control" required>
+            <div class="validation-error" *ngIf="id.invalid && id.touched">
                     Este campo es obligatorio
             </div>
           </div>

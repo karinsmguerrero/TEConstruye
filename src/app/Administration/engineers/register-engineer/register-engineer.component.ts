@@ -24,26 +24,22 @@ export class RegisterEngineerComponent implements OnInit {
     if (form != null)
       form.reset();
     this.engineer = {
-      Code : '',
-      Major : '',
-      Name: '',
-      Id: null,
-      LastNames: '',
-      Phone: '',
-      UserName: '',
-      Password: ''
+      code : '',
+      major : '',
+      name: '',
+      id: null,
+      lastnamea: '',
+      lastnameb:'',
+      telephone: '',
+      username: null,
+      password: ''
     }
   }
 
   onSubmit(form: NgForm) {
     this.service.registerEngineer(form.value);
     this.resetForm(form);
-    /*
-      .subscribe((data: any) => {
-        if (data.Succeeded == true) {
-          this.resetForm();
-        }
-      });*/
+
   }
 
 }

@@ -22,11 +22,12 @@ export class RegisterEmployeeComponent implements OnInit {
     if (form != null)
       form.reset();
     this.employee = {
-      Name: '',
-      Id: null,
-      LastName: '',
-      Phone: '',
-      Salary : null
+      firstname: '',
+      id: null,
+      lastnamea: '',
+      lastnameb: '',
+      telephone: null,
+      salary : null
     }
   }
 

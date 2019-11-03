@@ -1,8 +1,9 @@
 export class Client {
-    Id : number;
-    Name : string;
-    LastNames : string;
-    Phone : string;
-    UserName : string;
-    Password : string;
+    id : number;
+    firstname : string;
+    lastnamea : string;
+    lastnameb : string;
+    telephone : number;
+    username : string;
+    password : string;
 }

@@ -9,21 +9,23 @@
               <table class="table">
                 <th>Cédula</th>
                 <th>Nombre</th>
-                <th>Apellidos</th>
+                <th>Apellido</th>
+                <th>Apellido</th>
                 <th>Telefono</th>
                 <th>Usuario</th>
                 <th>Código</th>
                 <th>Especialidad</th>
                 <th></th>
                 <th></th>
-                <tr *ngFor="let engineer of engineerList">
-                  <td>{{engineer.Id}}</td>
-                  <td>{{engineer.Name}}</td>
-                  <td>{{engineer.LastNames}}</td>
-                  <td>{{engineer.Phone}}</td>
-                  <td>{{engineer.UserName}}</td>
-                  <td>{{engineer.Code}}</td>
-                  <td>{{engineer.Major}}</td>
+                <tr *ngFor="let engineer of userService.engineers">
+                  <td>{{engineer.id}}</td>
+                  <td>{{engineer.firstname}}</td>
+                  <td>{{engineer.lastnamea}}</td>
+                  <td>{{engineer.lastnameb}}</td>
+                  <td>{{engineer.telephone}}</td>
+                  <td>{{engineer.username}}</td>
+                  <td>{{engineer.code}}</td>
+                  <td>{{engineer.major}}</td>
                   <td><input type="image" src="./assets/img/refresh.png" (click)="update(agent)" width="48" height="48">
                   </td>
                   <td><input type="image" src="./assets/img/cancel(1).png" (click)="delete(agent)" width="48" height="48">

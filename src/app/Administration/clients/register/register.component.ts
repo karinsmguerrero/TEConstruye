@@ -22,24 +22,19 @@ export class RegisterComponent implements OnInit {
     if (form != null)
       form.reset();
     this.client = {
-      Name: '',
-      Id: null,
-      LastNames: '',
-      Phone: '',
-      UserName: '',
-      Password: ''
+      firstname: '',
+      id: null,
+      lastnamea: '',
+      lastnameb: '',
+      telephone: null,
+      username: '',
+      password: ''
     }
   }
 
   onSubmit(form: NgForm) {
     this.service.registerClient(form.value);
     this.resetClientForm(form);
-    /*
-      .subscribe((data: any) => {
-        if (data.Succeeded == true) {
-          this.resetForm();
-        }
-      });*/
   }
 
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Engineer } from 'src/app/Models/engineer';
+import { UserService } from 'src/app/Services/user.service';
 
 @Component({
   selector: 'app-list-engineer',
@@ -9,32 +10,10 @@ import { Engineer } from 'src/app/Models/engineer';
 export class ListEngineerComponent implements OnInit {
 
   engineerList : Engineer[];
-  amy : Engineer =
-  {
-    Name: 'Amy',
-    Id: 1,
-    LastNames: 'Moore',
-    Phone: '88999090',
-    UserName : 'Amoore',
-    Password: '1234',
-    Code : '1323',
-    Major : 'Eléctrico'
-  }
-  blessy : Engineer =
-  {
-    Name: 'Blessy',
-    Phone: '78787879',
-    Id: 2,
-    LastNames: 'Moore',
-    UserName : 'Bmoore',
-    Password: '1234',
-    Code : '1232323',
-    Major : 'Civil'
-  }
 
-  constructor() { }
+  constructor(private userService : UserService) { }
 
   ngOnInit() {
-    this.engineerList = [this.amy, this.blessy, this.amy, this.blessy]
+    this.userService.getAllEngineers();
   }
 }

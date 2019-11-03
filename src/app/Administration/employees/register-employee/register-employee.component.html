@@ -9,15 +9,22 @@
           <div class="form-row">
             <div class="col form-group">
               <label>Nombre</label>
-              <input name="FirstName" #FirstName="ngModel" [(ngModel)]="employee.FirstName" class="form-control" required>
-              <div class="validation-error" *ngIf="FirstName.invalid && FirstName.touched">
+              <input name="firstname" #firstname="ngModel" [(ngModel)]="employee.firstname" class="form-control" required>
+              <div class="validation-error" *ngIf="firstname.invalid && firstname.touched">
                       Este campo es obligatorio
               </div>
             </div>
             <div class="col form-group">
-              <label>Apellidos</label>
-              <input name="LastName" #LastName="ngModel" [(ngModel)]="employee.LastNames" class="form-control" required>
-              <div class="validation-error" *ngIf="LastName.invalid && LastName.touched">
+              <label>Apellido</label>
+              <input name="lastnamea" #lastnamea="ngModel" [(ngModel)]="employee.lastnamea" class="form-control" required>
+              <div class="validation-error" *ngIf="lastnamea.invalid && lastnamea.touched">
+                      Este campo es obligatorio
+              </div>
+            </div>
+            <div class="col form-group">
+              <label>Apellido</label>
+              <input name="lastnameb" #lastnameb="ngModel" [(ngModel)]="employee.lastnameb" class="form-control" required>
+              <div class="validation-error" *ngIf="lastnameb.invalid && lastnameb.touched">
                       Este campo es obligatorio
               </div>
             </div>
@@ -25,23 +32,23 @@
           <div class="form-row">
             <div class="col form-group">
               <label>Telefono</label>
-              <input name="Phone" #Phone="ngModel" [(ngModel)]="employee.Phone" class="form-control" required>
-              <div class="validation-error" *ngIf="Phone.invalid && Phone.touched">
+              <input name="telephone" #telephone="ngModel" [(ngModel)]="employee.telephone" class="form-control" required>
+              <div class="validation-error" *ngIf="telephone.invalid && telephone.touched">
                       Este campo es obligatorio
               </div>
             </div>
             <div class="col form-group">
               <label>Cédula</label>
-              <input name="Id" #Id="ngModel" [(ngModel)]="employee.Id" class="form-control" required>
-              <div class="validation-error" *ngIf="Id.invalid && Id.touched">
+              <input name="id" #id="ngModel" [(ngModel)]="employee.id" class="form-control" required>
+              <div class="validation-error" *ngIf="id.invalid && id.touched">
                       Este campo es obligatorio
               </div>
             </div>
           </div>
           <div class="form-group">
             <label>Salario por hora</label>
-            <input name="Salary" #Salary="ngModel" [(ngModel)]="employee.Salary" class="form-control" required>
-            <div class="validation-error" *ngIf="Salary.invalid && Salary.touched">
+            <input name="salary" #salary="ngModel" [(ngModel)]="employee.salary" class="form-control" required>
+            <div class="validation-error" *ngIf="salary.invalid && salary.touched">
                     Este campo es obligatorio
             </div>
           </div>

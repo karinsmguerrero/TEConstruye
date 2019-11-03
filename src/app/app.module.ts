@@ -27,6 +27,7 @@ import { ListEngineerComponent } from './Administration/engineers/list-engineer/
 import { EmployeesComponent } from './Administration/employees/employees.component';
 import { RegisterEmployeeComponent } from './Administration/employees/register-employee/register-employee.component';
 import { ListEmployeeComponent } from './Administration/employees/list-employee/list-employee.component';
+import { RegisterHoursComponent } from './Administration/employees/register-hours/register-hours.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { ListEmployeeComponent } from './Administration/employees/list-employee/
     ListEngineerComponent,
     EmployeesComponent,
     RegisterEmployeeComponent,
-    ListEmployeeComponent
+    ListEmployeeComponent,
+    RegisterHoursComponent
   ],
   imports: [
     BrowserModule,
