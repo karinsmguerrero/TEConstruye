@@ -12,7 +12,7 @@ namespace TEConstruye.Controllers
 {
     public class EmployeeController : ApiController
     {
-        NpgsqlConnection conn = new NpgsqlConnection("Server=localhost;Port=5432; User Id = postgres;Password = karina;Database = TEConstruye");
+        NpgsqlConnection conn = new NpgsqlConnection(BDconnection.conn);
 
         //Código tomado de: https://csharp.hotexamples.com/examples/Npgsql/NpgsqlDataAdapter/Fill/php-npgsqldataadapter-fill-method-examples.html
         [HttpGet]
