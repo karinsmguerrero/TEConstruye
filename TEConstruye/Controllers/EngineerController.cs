@@ -45,7 +45,7 @@ namespace TEConstruye.Controllers
                  "RETURNING username)" +
                 "insert into worker(username, code, idspecialty)" +
                  "values ((select username from first_insert), :code,GetSpecialtyId(:major))", conn);
-            System.Diagnostics.Debug.WriteLine("Setted big query");
+            System.Diagnostics.Debug.WriteLine("Set up query");
             cmd.Parameters.AddWithValue("username", newClient.username);
             cmd.Parameters.AddWithValue("firstname", newClient.firstname);
             cmd.Parameters.AddWithValue("lastnamea", newClient.lastnamea);
