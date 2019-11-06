@@ -14,7 +14,7 @@ export class EmployeesComponent implements OnInit {
   }
 
   refresh(){
-    this.userService.getAllConstructors();
+    this.userService.getAllEmployees();
   }
 
 }

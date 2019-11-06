@@ -27,9 +27,7 @@ import { ListEngineerComponent } from './Administration/engineers/list-engineer/
 import { EmployeesComponent } from './Administration/employees/employees.component';
 import { RegisterEmployeeComponent } from './Administration/employees/register-employee/register-employee.component';
 import { ListEmployeeComponent } from './Administration/employees/list-employee/list-employee.component';
-<<<<<<< HEAD
 import { RegisterHoursComponent } from './Administration/employees/register-hours/register-hours.component';
-=======
 import { ListStageComponent } from './Administration/stages/list-stage/list-stage.component';
 import { RegisterStageComponent } from './Administration/stages/register-stage/register-stage.component';
 import { SuppliesComponent } from './Administration/supplies/supplies.component';
@@ -38,7 +36,6 @@ import { RegisterSuppliesComponent } from './Administration/supplies/register-su
 import { ProjectComponent } from './Administration/project/project.component';
 import { RegisterProjectComponent } from './Administration/project/register-project/register-project.component';
 import { ListProjectComponent } from './Administration/project/list-project/list-project.component';
->>>>>>> b839cbe25d80d0e306bc25ff9e246fb0245cb993
 
 @NgModule({
   declarations: [
@@ -61,9 +58,7 @@ import { ListProjectComponent } from './Administration/project/list-project/list
     EmployeesComponent,
     RegisterEmployeeComponent,
     ListEmployeeComponent,
-<<<<<<< HEAD
-    RegisterHoursComponent
-=======
+    RegisterHoursComponent,
     ListStageComponent,
     RegisterStageComponent,
     SuppliesComponent,
@@ -72,7 +67,6 @@ import { ListProjectComponent } from './Administration/project/list-project/list
     ProjectComponent,
     RegisterProjectComponent,
     ListProjectComponent
->>>>>>> b839cbe25d80d0e306bc25ff9e246fb0245cb993
   ],
   imports: [
     BrowserModule,

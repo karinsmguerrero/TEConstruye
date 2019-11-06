@@ -12,6 +12,7 @@ export class RegisterEngineerComponent implements OnInit {
 
   engineer: Engineer;
    majors = ['Eléctrico', 'Civil', 'Construcción']
+   selectedMajor : string;
 
   constructor(private service: UserService) { }
 

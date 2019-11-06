@@ -16,7 +16,7 @@ export class RegisterProjectComponent implements OnInit {
     private serviceProject: ProjectManagementService) { }
 
   ngOnInit() {
-    this.serviceLocation.getProvince();
+    //this.serviceLocation.getProvince();
     this.province="";
    this.canton="";
   }
