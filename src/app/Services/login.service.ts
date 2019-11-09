@@ -39,5 +39,4 @@ export class LoginService {
     localStorage.removeItem('userRole');
     this.router.navigate(['/signin']);
   }
-
 }

@@ -9,6 +9,7 @@ import { StagesComponent } from './Administration/stages/stages.component';
 import { SuppliesComponent } from './Administration/supplies/supplies.component';
 import { ProjectComponent } from './Administration/project/project.component';
 import { RegisterHoursComponent } from './Administration/employees/register-hours/register-hours.component';
+import { BudgetComponent } from './Reports/budget/budget.component';
 
 
 
@@ -24,7 +25,8 @@ const routes: Routes = [
   { path: 'stages', component: StagesComponent},
   { path: 'supplies', component: SuppliesComponent},
   { path: 'project', component: ProjectComponent},
-  { path: 'hours', component: RegisterHoursComponent}
+  { path: 'hours', component: RegisterHoursComponent},
+  { path: 'reports/budget', component: BudgetComponent}
 ];
 
 @NgModule({

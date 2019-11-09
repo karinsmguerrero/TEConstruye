@@ -23,7 +23,6 @@ export class UserService {
   Parámetros: user : User => objeto de tipo User que contiene los datos del usuario
   */
   registerClient(user: Client) {
-    
     this.http.post(this.constants.routeURL + '/PostClient', user).subscribe(res => {
       this.toastr.success('Éxito!', 'Usuario registrado exitosamente');
     }, error => {
