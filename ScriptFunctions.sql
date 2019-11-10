@@ -159,7 +159,20 @@ CREATE VIEW vExpenses AS
 *Párametros Entrada: idstage:INT
 *Parámetros Salida: total:INT
 ***************************************************************************************/
-CREATE OR REPLACE FUNCTION public.get_payroll_budget(
+CREATE FUNCTION get_payroll_budget(idstage INT)
+RETURNS INT AS $$
+DECLARE total INT;
+BEGIN
+        SELECT  SUM(vPayrollEmployees.total)
+		INTO total
+        FROM    vPayrollEmployees
+        WHERE   (vPayrollEmployees.idstage = $1);
+        RETURN total;
+END;
+$$  LANGUAGE plpgsql
+
+
+CREATE OR REPLACE FUNCTION public.get_payroll_budget_2(
     idstage integer)
     RETURNS integer
     LANGUAGE 'plpgsql'
@@ -268,4 +281,47 @@ CREATE VIEW vSuppliesByStage AS
 	ON supplies.id=supplies_on_project.idsupply
 	INNER JOIN stage_type
 	ON stage_type.id=stage.stagetype;
+	
+	
+	
+
+/***************************************************************************************
+*Tipo: Vista
+*Descripción: Prsupuesto
+*Párametros Entrada: N/A
+*Parámetros Salida: N/A
+***************************************************************************************/
+create view budget_view as 
+SELECT project.name AS project,
+    stage_type.name AS stage,
+    sum(supplies.price + get_payroll_budget_2(stage.id)) AS budget
+   FROM stage
+     JOIN stage_type ON stage.stagetype = stage_type.id
+     JOIN project ON stage.idproject = project.id
+     JOIN supplies_on_project ON supplies_on_project.idstage = stage.id
+     JOIN supplies ON supplies_on_project.idsupply = supplies.id
+  GROUP BY project.name, stage_type.name
+  ORDER BY project.name;
+  
+  
+/***************************************************************************************
+*Tipo: Proceso
+*Descripción: Verificación de credenciales
+*Párametros Entrada: username:VARCHAR, password:VARCHAR
+*Parámetros Salida: role:VARCHAR
+***************************************************************************************/
+ CREATE FUNCTION CheckCredentials (character varying, character varying)
+RETURNS character varying AS $result$
+declare
+    result character varying;
+BEGIN
+     IF EXISTS (SELECT 1 FROM users u WHERE u.username = $1 and u.password = $2) THEN
+  -- do something
+    return (select role from users where username = $1);
+  else 
+    return 'Incorrect credentials';
+  end if;
+END;
+$result$ LANGUAGE plpgsql;
+  
 			
