@@ -7,27 +7,27 @@
       <h4 class="card-title text-center mb-4 mt-1">Presupuesto de proyectos</h4>
       <!--/ Agents Grid Star /-->
       <div class="container">
-        <div class="row">
-          <table class="table">
-            <th>Cédula</th>
-            <th>Nombre</th>
-            <th>Apellido</th>
-            <th>Apellido</th>
-            <th>Telefono</th>
-            <th>Salario por hora</th>
+        <div class="row" *ngFor="let project of service.report">
+          <div class="col-sm-4 align-self-center justify-content-center ">
+            <h5 style="font-weight:bold;">{{project.project}}</h5>
+          </div>
+          
+            <div class="col-sm-8">
+              <table class="table">
+                <th class="col-sm-4">Etapa</th>
+                <th class="col-sm-4">Presupuesto</th>
 
-            <tr *ngFor="let employee of userService.employees">
-              <td>{{employee.id}}</td>
-              <td>{{employee.firstname}}</td>
-              <td>{{employee.lastnamea}}</td>
-              <td>{{employee.lastnameb}}</td>
-              <td>{{employee.telephone}}</td>
-              <td>{{employee.salary}}</td>
-              
-            </tr>
-          </table>
+                <tr *ngFor="let line of project.lines">
+                  <!-- <td>{{line.project}}</td> -->
+                  <td>{{line.stage}}</td>
+                  <td>{{line.budget}}</td>
 
+                </tr>
+              </table>
+            </div> 
+            <hr>
         </div>
+       
       </div>
       <!--/ Agents Grid End /-->
     </article>

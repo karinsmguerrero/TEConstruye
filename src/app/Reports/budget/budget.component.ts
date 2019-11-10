@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from 'src/app/Services/user.service';
+import { ReportsService } from 'src/app/Services/reports.service';
+import { StageBudgetReportLine } from 'src/app/Models/stage-budget-report-line.model';
 
 @Component({
   selector: 'app-budget',
@@ -8,10 +10,10 @@ import { UserService } from 'src/app/Services/user.service';
 })
 export class BudgetComponent implements OnInit {
 
-  constructor(private userService : UserService) { }
+  constructor(private service : ReportsService) { }
 
   ngOnInit() {
-    this.userService.getAllEmployees();
+    this.service.getReport();
   }
 
 }

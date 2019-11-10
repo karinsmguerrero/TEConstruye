@@ -33,8 +33,7 @@ export class RegisterHoursComponent implements OnInit {
     if (form != null)
       form.reset();
       this.stageSelected = {
-        name : '',
-        hours : null
+        name : ''
       }
       this.employeeSelected = {
         firstname : '',
