@@ -807,17 +807,17 @@ VALUES
 --Agregar Proyecto
 -----------------------------------------------------------------------------------------------------------------------------------
 CALL addProject('Condominios Madrid',120,110,3,4,1,'tsandy2','San Jose','Escazu','San Rafael');
-CALL addProject('Condominios Madrid',220,110,3,4,1,'tsandy2','San Jose','Escazu','San Rafael');
+CALL addProject('Condominios Mora',220,110,3,4,1,'tsandy2','San Jose','Escazu','San Rafael');
 CALL addProject('Residencial Luna de Oro',300,150,4,4,2,'tsandy2','San Jose','Escazu','San Rafael');
-CALL addProject('Residencial Luna de Oro',120,110,3,4,1,'tsandy2','San Jose','Escazu','San Rafael');
+CALL addProject('Residencial La Rueda',120,110,3,4,1,'tsandy2','San Jose','Escazu','San Rafael');
 CALL addProject('Complejo Alzar',120,110,3,4,1,'tsandy2','San Jose','Desamparados','San Antonio');
 CALL addProject('Departamentos Guti',120,110,3,4,1,'tsandy2','San Jose','Desamparados','San Antonio');
 CALL addProject('Condominios Realeza',120,110,3,4,1,'bgoble7','San Jose','Puriscal','Santiago');
-CALL addProject('Residencial Cartaggo',120,110,3,4,1,'bgoble7','Cartago','Cartago','Guadalupe');
+CALL addProject('Residencial Cartago',120,110,3,4,1,'bgoble7','Cartago','Cartago','Guadalupe');
 CALL addProject('Apartamentos Barba',120,110,3,4,1,'bgoble7','San Jose','Puriscal','Barbacoas');
 CALL addProject('Residencial Alfaro',120,110,3,4,1,'jcowpef','San Jose','Santa Ana','Piedades');
 CALL addProject('Condominios los Mangos',120,110,3,4,1,'jcowpef','Alajuela','Atenas','San Isidro');
-CALL addProject('Condominios los Mangos',120,110,3,4,1,'jcowpef','Alajuela','Atenas','San Isidro');
+CALL addProject('Condominios Santi',120,110,3,4,1,'jcowpef','Alajuela','Atenas','San Isidro');
 
 ------------------------------------------------------------------------------------------------------------------------------------
 --Agregar Etapa
