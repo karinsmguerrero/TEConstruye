@@ -20,9 +20,6 @@ export class RegisterHoursComponent implements OnInit {
 
   ngOnInit() {
     this.resetForm();
-    this.stageService.getTypes();
-    this.stageService.getEmployees();
-    this.stageService.getProjects();
   }
 
   onSubmit() {
