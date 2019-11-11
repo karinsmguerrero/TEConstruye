@@ -17,6 +17,7 @@ import { BudgetStageComponent } from './Administration/on-project/stage-project/
 import { RegisterHoursComponent } from './Administration/employees/register-hours/register-hours.component';
 import { BudgetComponent } from './Reports/budget/budget.component';
 import { InfoProjectComponent } from './Administration/on-project/info-project/info-project.component';
+import { StateComponent } from './Reports/state/state.component';
 
 
 
@@ -41,7 +42,8 @@ const routes: Routes = [
   { path: 'bb', component: ListStageProjectComponent},
   { path: 'cc', component: BudgetStageComponent},
   { path: 'hours', component: RegisterHoursComponent},
-  { path: 'reports/budget', component: BudgetComponent}
+  { path: 'reports/budget', component: BudgetComponent},
+  { path: 'reports/state', component: StateComponent}
 ];
 
 @NgModule({

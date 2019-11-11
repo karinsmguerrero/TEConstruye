@@ -51,6 +51,7 @@ import { RegisterSupplyStageComponent } from './Administration/on-project/regist
 import { ListSupplyStageComponent } from './Administration/on-project/list-supply-stage/list-supply-stage.component';
 import { ListWorkerStageComponent } from './Administration/on-project/worker/list-worker-stage/list-worker-stage.component';
 import { RegisterWorkerHoursComponent } from './Administration/on-project/worker/register-worker-hours/register-worker-hours.component';
+import { StateComponent } from './Reports/state/state.component';
 
 @NgModule({
   declarations: [
@@ -96,7 +97,8 @@ import { RegisterWorkerHoursComponent } from './Administration/on-project/worker
     RegisterSupplyStageComponent,
     ListSupplyStageComponent,
     ListWorkerStageComponent,
-    RegisterWorkerHoursComponent
+    RegisterWorkerHoursComponent,
+    StateComponent
   ],
   imports: [
     BrowserModule,
