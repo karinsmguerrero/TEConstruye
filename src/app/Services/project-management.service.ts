@@ -17,7 +17,9 @@ export class ProjectManagementService {
     this.http.get(this.constant.routeURL + '/GetProjects').toPromise().then(res => this.list = res as Project[]);
   }
   getProject(id:number){
-    this.http.get(this.constant.routeURL + '/GetProject?id='+id).toPromise().then(res => this.onProject = res as Project);
+    this.http.get(this.constant.routeURL + '/GetProject?id='+id).toPromise().then((res: Response) => {
+      this.onProject = res['project'] as Project
+    });
   }
 
   insertProject(formData:NgForm){

@@ -16,6 +16,7 @@ import { BudgetStageComponent } from './Administration/on-project/stage-project/
 
 import { RegisterHoursComponent } from './Administration/employees/register-hours/register-hours.component';
 import { BudgetComponent } from './Reports/budget/budget.component';
+import { InfoProjectComponent } from './Administration/on-project/info-project/info-project.component';
 
 
 
@@ -34,6 +35,8 @@ const routes: Routes = [
   { path: 'project', component: ProjectComponent},
 
   { path: 'onProject', component: OnProjectComponent},
+  { path: 'info', component: InfoProjectComponent},
+
   { path: 'aa', component: RegisterStageProjectComponent},
   { path: 'bb', component: ListStageProjectComponent},
   { path: 'cc', component: BudgetStageComponent},
