@@ -22,6 +22,7 @@
     "angular2-datetimepicker": "^1.1.1",
     "ng2-pdf-viewer": "^6.0.1",
     "ngx-toastr": "^11.1.2",
+    "pdfmake": "^0.1.62",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",
     "zone.js": "~0.9.1"

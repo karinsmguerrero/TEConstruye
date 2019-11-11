@@ -4,7 +4,14 @@
 
     <article class="card-body">
 
-      <h4 class="card-title text-center mb-4 mt-1">Estado financiero de proyectos</h4>
+      <div class="row">
+        <div class="col-sm-10">
+          <h4 class="card-title text-center mb-4 mt-1">Estado financiero de proyectos</h4>
+        </div>
+        <div class="col-sm-2 ">
+          <app-state-pdf></app-state-pdf>
+        </div>
+      </div>
       <!--/ Agents Grid Star /-->
       <div class="container">
         <div class="row" *ngFor="let project of service.statereport">

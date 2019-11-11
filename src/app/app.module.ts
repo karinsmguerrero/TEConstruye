@@ -52,9 +52,12 @@ import { ListSupplyStageComponent } from './Administration/on-project/list-suppl
 import { ListWorkerStageComponent } from './Administration/on-project/worker/list-worker-stage/list-worker-stage.component';
 import { RegisterWorkerHoursComponent } from './Administration/on-project/worker/register-worker-hours/register-worker-hours.component';
 import { StateComponent } from './Reports/state/state.component';
+import { BudgetPdfComponent } from "./Reports/budget-pdf/budget-pdf.component";
 
+//Código tomado de: https://stackoverflow.com/questions/34904683/how-to-set-locale-in-datepipe-in-angular-2
 import { registerLocaleData } from '@angular/common';
 import localeDeAt from '@angular/common/locales/es-cr';
+import { StatePdfComponent } from './Reports/state-pdf/state-pdf.component';
 
 registerLocaleData(localeDeAt);
 
@@ -102,7 +105,8 @@ registerLocaleData(localeDeAt);
     ListSupplyStageComponent,
     ListWorkerStageComponent,
     RegisterWorkerHoursComponent,
-    StateComponent
+    StateComponent, 
+    BudgetPdfComponent, StatePdfComponent
   ],
   imports: [
     BrowserModule,
