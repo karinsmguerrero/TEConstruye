@@ -36,7 +36,7 @@ import { RegisterSuppliesComponent } from './Administration/supplies/register-su
 import { ProjectComponent } from './Administration/project/project.component';
 import { RegisterProjectComponent } from './Administration/project/register-project/register-project.component';
 import { ListProjectComponent } from './Administration/project/list-project/list-project.component';
-import { ProjectAllComponent } from './Administration/project/project-all/project-all.component';
+
 import { OnProjectComponent } from './Administration/on-project/on-project.component';
 import { InfoProjectComponent } from './Administration/on-project/info-project/info-project.component';
 import { StageProjectComponent } from './Administration/on-project/stage-project/stage-project.component';
@@ -83,7 +83,6 @@ import { StateComponent } from './Reports/state/state.component';
     ProjectComponent,
     RegisterProjectComponent,
     ListProjectComponent,
-    ProjectAllComponent,
     OnProjectComponent,
     InfoProjectComponent,
     StageProjectComponent,

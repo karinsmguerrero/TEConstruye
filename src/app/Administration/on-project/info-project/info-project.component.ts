@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProjectManagementService } from 'src/app/Services/project-management.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-info-project',
@@ -8,11 +9,11 @@ import { ProjectManagementService } from 'src/app/Services/project-management.se
 })
 export class InfoProjectComponent implements OnInit {
 
-  constructor(private serviceProject:ProjectManagementService) { }
+  constructor(private route: ActivatedRoute,private serviceProject:ProjectManagementService) { }
 
   ngOnInit() {
-    this.serviceProject.getProject(4);
-    console.log(this.serviceProject.onProject.name)
+    const id = +this.route.snapshot.paramMap.get('id');
+    this.serviceProject.getProject(id);
   }
 
 }

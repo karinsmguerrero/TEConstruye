@@ -35,7 +35,7 @@ const routes: Routes = [
   { path: 'supplies', component: SuppliesComponent},
   { path: 'project', component: ProjectComponent},
 
-  { path: 'onProject', component: OnProjectComponent},
+  { path: 'project-detail/:id', component: OnProjectComponent},
   { path: 'info', component: InfoProjectComponent},
 
   { path: 'aa', component: RegisterStageProjectComponent},
