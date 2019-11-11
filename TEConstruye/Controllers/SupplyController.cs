@@ -37,8 +37,8 @@ namespace TEConstruye.Controllers
 
             conn.Open();
             NpgsqlCommand cmd = new NpgsqlCommand(
-                "INSERT INTO stage_type(name,description,def)" +
-                 "VALUES(:name, :description, false)", conn);
+                "INSERT INTO supplies(name,price)" +
+                 "VALUES(:name, :price)", conn);
             System.Diagnostics.Debug.WriteLine("Setted big query");
             cmd.Parameters.AddWithValue("name", supply.name);
             cmd.Parameters.AddWithValue("price", supply.price);
