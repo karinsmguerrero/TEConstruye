@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
 import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { AngularDateTimePickerModule } from 'angular2-datetimepicker';
 import { ToastrModule } from 'ngx-toastr';
@@ -52,6 +52,11 @@ import { ListSupplyStageComponent } from './Administration/on-project/list-suppl
 import { ListWorkerStageComponent } from './Administration/on-project/worker/list-worker-stage/list-worker-stage.component';
 import { RegisterWorkerHoursComponent } from './Administration/on-project/worker/register-worker-hours/register-worker-hours.component';
 import { StateComponent } from './Reports/state/state.component';
+
+import { registerLocaleData } from '@angular/common';
+import localeDeAt from '@angular/common/locales/es-cr';
+
+registerLocaleData(localeDeAt);
 
 @NgModule({
   declarations: [
@@ -108,7 +113,7 @@ import { StateComponent } from './Reports/state/state.component';
     PdfViewerModule,
     BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [ { provide: LOCALE_ID, useValue: "es-CR" }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

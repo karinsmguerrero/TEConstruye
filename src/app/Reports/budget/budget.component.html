@@ -20,7 +20,7 @@
                 <tr *ngFor="let line of project.lines">
                   <!-- <td>{{line.project}}</td> -->
                   <td>{{line.stage}}</td>
-                  <td><span>&#8353;</span> {{line.budget}}</td>
+                  <td> {{line.budget | currency:"₡"}}</td>
 
                 </tr>
               </table>
