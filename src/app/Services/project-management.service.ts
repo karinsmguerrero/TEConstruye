@@ -18,7 +18,7 @@ export class ProjectManagementService {
   }
   getProject(id:number){
     this.http.get(this.constant.routeURL + '/GetProject?id='+id).toPromise().then((res: Response) => {
-      this.onProject = res['project'] as Project
+      this.onProject = res['project'][0] as Project
     });
   }
 
