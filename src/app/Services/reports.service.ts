@@ -6,6 +6,7 @@ import { StageData } from '../Models/stage-data';
 import { StageBudgetReportLine } from '../Models/stage-budget-report-line.model';
 import { StateReportLine } from '../Models/state-report-line.model';
 import { StateLine } from '../Models/state-line.model';
+import { StateTotalLine } from '../Models/state-total-line.model';
 
 @Injectable({
   providedIn: 'root'
@@ -18,8 +19,9 @@ export class ReportsService {
   budgetLines: BudgetLine[];
   report: StageBudgetReportLine[] = [];
   //Reporte de presupustos vs gastos
-  statereport : StateReportLine[] = [];
+  statereport: StateReportLine[] = [];
   stateLines: StateLine[] = [];
+  totals: StateTotalLine;
 
   constructor(private http: HttpClient, private constant: ConstantsService) { }
 
@@ -45,7 +47,7 @@ export class ReportsService {
     });
   }
 
-  getStateReport(){
+  getStateReport() {
     this.stateprojects = [];
     this.statereport = [];
     this.stateLines = [];
@@ -55,15 +57,27 @@ export class ReportsService {
     });
   }
 
-  loadState(projects: StageData[]){
+  loadState(projects: StageData[]) {
     projects.forEach(project => {
       this.http.get(this.constant.routeURL + '/GetStageExpensesBudget/' + project.name).toPromise().then((res: Response) => {
         var line = new StateReportLine();
         line.project = project.name;
         line.lines = res['result'] as StateLine[];
+        line.totals = res['totals'][0] as StateTotalLine;
+        //alert(line.project + ": " + line.totals.total_budget);
         this.statereport.push(line);
       });
     });
+  }
+
+  loadTotals(project: string) : StateTotalLine {
+    var totals = new StateTotalLine;
+    this.http.get(this.constant.routeURL + '/GetReportTotals/' + project).toPromise().then((res: Response) => {
+      //alert(res['result'][0].total_budget);
+      totals = res['result'][0] as StateTotalLine;
+      //alert(this.totals.total_budget);
+    });
+    return totals;
   }
 
 }

@@ -11,24 +11,31 @@
           <div class="col-sm-4 align-self-center justify-content-center ">
             <h5 style="font-weight:bold;">{{project.project}}</h5>
           </div>
-          
-            <div class="col-sm-8">
-              <table class="table">
-                <th class="col-sm-4" style="background-color: #f5f5f5;">Etapa</th>
-                <th class="col-sm-4" style="background-color: #f5f5f5;">Presupuesto</th>
-                <th class="col-sm-4" style="background-color: #f5f5f5;">Gastos</th>
-                <tr *ngFor="let line of project.lines">
-                  <!-- <td>{{line.project}}</td> -->
-                  <td>{{line.stage}}</td>
-                  <td><span>&#8353;</span> {{line.budget}}</td>
-                  <td *ngIf="line.expenses != null"><span>&#8353;</span> {{line.expenses}}</td>
-                  <td *ngIf="line.expenses == null">Sin gastos reportados</td>
-                </tr>
-              </table>
-            </div> 
-            <hr>
+
+          <div class="col-sm-8">
+            <table class="table">
+              <th class="col-sm-4" style="background-color: #f5f5f5;">Etapa</th>
+              <th class="col-sm-4" style="background-color: #f5f5f5;">Presupuesto</th>
+              <th class="col-sm-4" style="background-color: #f5f5f5;">Gastos</th>
+              <tr *ngFor="let line of project.lines">
+                <!-- <td>{{line.project}}</td> -->
+                <td>{{line.stage}}</td>
+                <td><span>&#8353;</span> {{line.budget}}</td>
+                <td *ngIf="line.expenses != null"><span>&#8353;</span> {{line.expenses}}</td>
+                <td *ngIf="line.expenses == null">Sin gastos reportados</td>
+              </tr>
+              <tr style="background-color: #2eca6a; font-weight:bold;">
+                <td></td>
+                <td><span>&#8353;</span>{{project.totals.total_budget}}</td>
+                <td *ngIf="project.totals.total_expenses != null"><span>&#8353;</span> {{project.totals.total_expenses}}</td>
+                <td *ngIf="project.totals.total_expenses == null"><span>&#8353;</span> 0</td>
+              </tr>
+
+            </table>
+          </div>
+          <hr>
         </div>
-       
+
       </div>
       <!--/ Agents Grid End /-->
     </article>
