@@ -35,6 +35,16 @@ import { RegisterSuppliesComponent } from './Administration/supplies/register-su
 import { ProjectComponent } from './Administration/project/project.component';
 import { RegisterProjectComponent } from './Administration/project/register-project/register-project.component';
 import { ListProjectComponent } from './Administration/project/list-project/list-project.component';
+import { OnProjectComponent } from './Administration/on-project/on-project.component';
+import { InfoProjectComponent } from './Administration/on-project/info-project/info-project.component';
+import { StageProjectComponent } from './Administration/on-project/stage-project/stage-project.component';
+import { SupplyStageComponent } from './Administration/on-project/stage-project/supply-stage/supply-stage.component';
+import { WorkerHoursComponent } from './Administration/on-project/stage-project/worker-hours/worker-hours.component';
+import { BillProjectComponent } from './Administration/on-project/bill-project/bill-project.component';
+import { RegisterStageProjectComponent } from './Administration/on-project/stage-project/register-stage-project/register-stage-project.component';
+import { ListStageProjectComponent } from './Administration/on-project/stage-project/list-stage-project/list-stage-project.component';
+import { ViewMoreComponent } from './Administration/on-project/stage-project/view-more/view-more.component';
+import { BudgetStageComponent } from './Administration/on-project/stage-project/budget-stage/budget-stage.component';
 
 @NgModule({
   declarations: [
@@ -64,17 +74,25 @@ import { ListProjectComponent } from './Administration/project/list-project/list
     RegisterSuppliesComponent,
     ProjectComponent,
     RegisterProjectComponent,
-    ListProjectComponent
+    ListProjectComponent,
+    OnProjectComponent,
+    InfoProjectComponent,
+    StageProjectComponent,
+    SupplyStageComponent,
+    WorkerHoursComponent,
+    BillProjectComponent,
+    RegisterStageProjectComponent,
+    ListStageProjectComponent,
+    ViewMoreComponent,
+    BudgetStageComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    BrowserAnimationsModule, // required animations module
-    ToastrModule.forRoot(), // ToastrModule added
-    PdfViewerModule,
-    AngularDateTimePickerModule
+    ToastrModule.forRoot(),
+    PdfViewerModule 
   ],
   providers: [],
   bootstrap: [AppComponent]
