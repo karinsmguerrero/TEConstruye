@@ -17,6 +17,9 @@ export class ReportsService {
   constructor(private http: HttpClient, private constant: ConstantsService) { }
 
   getReport() {
+    this.projects = [];
+    this.report = [];
+    this.budgetLines = [];
     this.http.get(this.constant.routeURL + '/GetProjectWithBudget').toPromise().then((res: Response) => {
       this.projects = res['result'] as StageData[];
       this.loadBudget(this.projects);
