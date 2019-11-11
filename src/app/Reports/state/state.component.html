@@ -1,0 +1,37 @@
+<app-navigation></app-navigation>
+<div class="container" style="padding-top: 5%;">
+  <div class="card">
+
+    <article class="card-body">
+
+      <h4 class="card-title text-center mb-4 mt-1">Presupuesto y gastos de proyectos</h4>
+      <!--/ Agents Grid Star /-->
+      <div class="container">
+        <div class="row" *ngFor="let project of service.statereport">
+          <div class="col-sm-4 align-self-center justify-content-center ">
+            <h5 style="font-weight:bold;">{{project.project}}</h5>
+          </div>
+          
+            <div class="col-sm-8">
+              <table class="table">
+                <th class="col-sm-4" style="background-color: #f5f5f5;">Etapa</th>
+                <th class="col-sm-4" style="background-color: #f5f5f5;">Presupuesto</th>
+                <th class="col-sm-4" style="background-color: #f5f5f5;">Gastos</th>
+                <tr *ngFor="let line of project.lines">
+                  <!-- <td>{{line.project}}</td> -->
+                  <td>{{line.stage}}</td>
+                  <td><span>&#8353;</span> {{line.budget}}</td>
+                  <td *ngIf="line.expenses != null"><span>&#8353;</span> {{line.expenses}}</td>
+                  <td *ngIf="line.expenses == null">Sin gastos reportados</td>
+                </tr>
+              </table>
+            </div> 
+            <hr>
+        </div>
+       
+      </div>
+      <!--/ Agents Grid End /-->
+    </article>
+  </div>
+
+</div>
