@@ -19,7 +19,7 @@ export class SupplyManagementService {
 
   insertSupply(formData:NgForm){
     console.log("Name "+formData.value.Name);
-    console.log("Price "+formData.value.Description);
+    console.log("Price "+formData.value.Price);
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type':  'application/json'

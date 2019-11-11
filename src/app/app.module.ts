@@ -104,7 +104,8 @@ import { RegisterWorkerHoursComponent } from './Administration/on-project/worker
     HttpClientModule,
     FormsModule,
     ToastrModule.forRoot(),
-    PdfViewerModule 
+    PdfViewerModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
