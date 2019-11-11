@@ -12,6 +12,7 @@ export class InfoProjectComponent implements OnInit {
 
   ngOnInit() {
     this.serviceProject.getProject(4);
+    console.log(this.serviceProject.onProject.name)
   }
 
 }
