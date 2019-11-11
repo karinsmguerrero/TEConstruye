@@ -1,0 +1,43 @@
+<div class="card-body">
+  <div class="container">
+    <div class="row">
+      <form #ClientForm="ngForm" autocomplete="off" (submit)="onSubmit(ClientForm)">
+
+        <table class="table">
+          <th>Proyecto</th>
+          <th>Etapa</th>
+          <th>Empleado</th>
+          <th>Horas asignadas</th>
+          <th></th>
+          <tr>
+            <td>
+              <select name="project" #project="ngModel" [(ngModel)]="projectSelected.id"
+                [ngModelOptions]="{standalone: true}" class="form-control">
+                <option *ngFor="let project of stageService.projects">{{project.id}}</option>
+              </select>
+            </td>
+
+            <td>
+              <select name="name" #name="ngModel" [(ngModel)]="stageSelected.name" [ngModelOptions]="{standalone: true}"
+                class="form-control">
+                <option *ngFor="let type of stageService.types">{{type.name}}</option>
+              </select>
+            </td>
+            <td>
+              <select name="employee" #employee="ngModel" [(ngModel)]="employeeSelected.firstname"
+                [ngModelOptions]="{standalone: true}" class="form-control">
+                <option *ngFor="let employee of stageService.employees">
+                  {{employee.firstname + ' ' + employee.lastnamea + ' ' + employee.lastnameb}}</option>
+              </select>
+            </td>
+            <td><input name="hours" #hours="ngModel" [(ngModel)]="stageSelected.hours" class="form-control" required>
+            </td>
+            <td><input type="image" src="./assets/img/checked.png" (click)="update(agent)" width="48" height="48">
+            </td>
+          </tr>
+        </table>
+      </form>
+    </div>
+  </div>
+
+</div>

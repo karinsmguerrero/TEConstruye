@@ -1,3 +1,57 @@
+<div class="card">
+    <!-- Form de Gastos -->
+    <article class="card-body">
+        <form #BudgetForm="ngForm" autocomplete="off" (submit)="onSubmit(BudgetForm)">
+            <div class="form-group">
+                <div class="form-row">
+                    <div class="col form-group">
+                        <label>No. Factura</label>
+                        <input type="text" name="billnumber" #billnumber="ngModel" [(ngModel)]="bill.billnumber" class="form-control" required> 
+                    </div>
+                    <div class="col form-group">
+                        <label>Proveedor</label>
+                        <input type="text" name="provider" #provider="ngModel" [(ngModel)]="bill.provider" class="form-control" required>
+                        
+                    </div>
+                </div>
+                <div class="form-row">
+                        <div class="col form-group">
+                            <label>Foto de factura</label>
+                            <input type="file" name="billphoto" #billphoto="ngModel" [(ngModel)]="bill.billphoto" class="form-control" required>
+                            
+                        </div>
+                        <div class="col form-group">
+                            <label>Item</label>
+                            <input class="btn btn-dark" name="add" #add="ngModel" type="button" value="Agregar">
+                            
+                        </div>
+                        
+                    </div>
+            
+            
+            </div>
+            <div class="form-group">
+                <button type="submit" [disabled]="BudgetForm.invalid" class="btn btn-b-n btn-block">Registrar</button>
+            </div>
+        </form>
+    </article>
+</div> <!-- card.// -->
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="container">
     <h1>HOLA</h1>
     <div class="row">

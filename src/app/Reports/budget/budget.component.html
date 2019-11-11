@@ -1,1 +1,36 @@
-<p>budget works!</p>
+<app-navigation></app-navigation>
+<div class="container" style="padding-top: 5%;">
+  <div class="card">
+
+    <article class="card-body">
+
+      <h4 class="card-title text-center mb-4 mt-1">Presupuesto de proyectos</h4>
+      <!--/ Agents Grid Star /-->
+      <div class="container">
+        <div class="row" *ngFor="let project of service.report">
+          <div class="col-sm-4 align-self-center justify-content-center ">
+            <h5 style="font-weight:bold;">{{project.project}}</h5>
+          </div>
+          
+            <div class="col-sm-8">
+              <table class="table">
+                <th class="col-sm-4">Etapa</th>
+                <th class="col-sm-4">Presupuesto</th>
+
+                <tr *ngFor="let line of project.lines">
+                  <!-- <td>{{line.project}}</td> -->
+                  <td>{{line.stage}}</td>
+                  <td>{{line.budget}}</td>
+
+                </tr>
+              </table>
+            </div> 
+            <hr>
+        </div>
+       
+      </div>
+      <!--/ Agents Grid End /-->
+    </article>
+  </div>
+
+</div>

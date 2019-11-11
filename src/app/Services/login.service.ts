@@ -18,13 +18,16 @@ export class LoginService {
     private constant: ConstantsService, private router: Router) { }
 
   login(username: string, password: string) {
-    this.http.get(this.constant.routeURL + '/GetCredenciales?username=' + username).toPromise().then(res => {
-      this.credentials = res as Credentials;
-      if (this.credentials.Username == username && this.credentials.Contrasena == password) {
-        localStorage.setItem('userName', this.credentials.Username);
-        localStorage.setItem('userRole', this.credentials.TipoCuenta);
-        this.router.navigate(['/home']);
-      }
+    const body = {
+      username : username,
+      password: password
+    }
+    this.http.post(this.constant.routeURL + '/CheckCredentials', body).toPromise().then((res: Response) =>{ 
+      if(res['result'][0].checkcredentials != 0){
+        localStorage.setItem('userName', username);
+        localStorage.setItem('userRole', res['result'][0].checkcredentials);
+        this.router.navigate(['/welcome']);
+      } 
       else {
         this.toastr.error('Error!', 'No se ha podido iniciar sesión');
       }

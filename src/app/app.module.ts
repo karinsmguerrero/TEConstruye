@@ -27,6 +27,7 @@ import { ListEngineerComponent } from './Administration/engineers/list-engineer/
 import { EmployeesComponent } from './Administration/employees/employees.component';
 import { RegisterEmployeeComponent } from './Administration/employees/register-employee/register-employee.component';
 import { ListEmployeeComponent } from './Administration/employees/list-employee/list-employee.component';
+import { RegisterHoursComponent } from './Administration/employees/register-hours/register-hours.component';
 import { ListStageComponent } from './Administration/stages/list-stage/list-stage.component';
 import { RegisterStageComponent } from './Administration/stages/register-stage/register-stage.component';
 import { SuppliesComponent } from './Administration/supplies/supplies.component';
@@ -45,6 +46,10 @@ import { RegisterStageProjectComponent } from './Administration/on-project/stage
 import { ListStageProjectComponent } from './Administration/on-project/stage-project/list-stage-project/list-stage-project.component';
 import { ViewMoreComponent } from './Administration/on-project/stage-project/view-more/view-more.component';
 import { BudgetStageComponent } from './Administration/on-project/stage-project/budget-stage/budget-stage.component';
+import { RegisterSupplyStageComponent } from './Administration/on-project/register-supply-stage/register-supply-stage.component';
+import { ListSupplyStageComponent } from './Administration/on-project/list-supply-stage/list-supply-stage.component';
+import { ListWorkerStageComponent } from './Administration/on-project/worker/list-worker-stage/list-worker-stage.component';
+import { RegisterWorkerHoursComponent } from './Administration/on-project/worker/register-worker-hours/register-worker-hours.component';
 
 @NgModule({
   declarations: [
@@ -67,6 +72,7 @@ import { BudgetStageComponent } from './Administration/on-project/stage-project/
     EmployeesComponent,
     RegisterEmployeeComponent,
     ListEmployeeComponent,
+    RegisterHoursComponent,
     ListStageComponent,
     RegisterStageComponent,
     SuppliesComponent,
@@ -84,7 +90,11 @@ import { BudgetStageComponent } from './Administration/on-project/stage-project/
     RegisterStageProjectComponent,
     ListStageProjectComponent,
     ViewMoreComponent,
-    BudgetStageComponent
+    BudgetStageComponent,
+    RegisterSupplyStageComponent,
+    ListSupplyStageComponent,
+    ListWorkerStageComponent,
+    RegisterWorkerHoursComponent
   ],
   imports: [
     BrowserModule,

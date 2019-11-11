@@ -22,7 +22,7 @@
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" routerLink="/employees/register">Registro</a>
-            <a class="dropdown-item" routerLink="/propertytype">Horas</a>
+            <a class="dropdown-item" routerLink="/employees/hours">Horas</a>
           </div>
         </li>
         <li class="nav-item dropdown">
@@ -31,9 +31,9 @@
             Proyectos
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" routerLink="/users/agents">Materiales</a>
-            <a class="dropdown-item" routerLink="/propertytype">Proyectos</a>
-            <a class="dropdown-item" routerLink="/location">Etapas</a>
+            <a class="dropdown-item" routerLink="/supplies">Materiales</a>
+            <a class="dropdown-item" routerLink="/project">Proyectos</a>
+            <a class="dropdown-item" routerLink="/stages">Etapas</a>
             <a class="dropdown-item" routerLink="/users/agents">Gastos</a>
             <a class="dropdown-item" routerLink="/careers">Publicación</a>
           </div>
@@ -44,7 +44,7 @@
             Reportes
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" routerLink="/users/agents">Generar presupuesto</a>
+            <a class="dropdown-item" routerLink="/reports/budget">Generar presupuesto</a>
             <a class="dropdown-item" routerLink="/propertytype">Generar planilla</a>
             <a class="dropdown-item" routerLink="/location">Estado</a>
             <a class="dropdown-item" routerLink="/users/agents">Gastos</a>
@@ -53,7 +53,7 @@
       </ul>
     </div>
     <button type="button" class="btn btn-b-n navbar-toggle-box-collapse d-none d-md-block"
-      (click)="this.loginservice.logout()">Cerrar sesión</button>
+      (click)="loginService.logout()">Cerrar sesión</button>
   </div>
 </nav>
 <!--/ Nav End /-->

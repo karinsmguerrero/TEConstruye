@@ -11,7 +11,11 @@ import { Engineer } from '../Models/engineer';
 })
 export class UserService {
 
-  constructor(private http: HttpClient, private constants : ConstantsService, private toastr: ToastrService) { }
+  engineers: Engineer[];
+  constructors: Client[];
+  employees: Employee[];
+
+  constructor(private http: HttpClient, private constants: ConstantsService, private toastr: ToastrService) { }
 
   /*
   Código tomado de: https://www.youtube.com/watch?v=e8BlURn6SFk&t=135s
@@ -19,16 +23,11 @@ export class UserService {
   Parámetros: user : User => objeto de tipo User que contiene los datos del usuario
   */
   registerClient(user: Client) {
-    const body = {
-      UserName: user.UserName,
-      Password: user.Password,
-      Phone: user.Phone,
-      Name: user.Name,
-      LastNames: user.LastNames,
-      Id : user.Id
-    }
-    this.toastr.success('Éxito!', 'Usuario registrado exitosamente');
-   // return this.http.post(this.constants.routeURL + '/api/User/Register', body);
+    this.http.post(this.constants.routeURL + '/PostClient', user).subscribe(res => {
+      this.toastr.success('Éxito!', 'Usuario registrado exitosamente');
+    }, error => {
+      this.toastr.error('Error!', 'Usuario no registrado');
+    });
   }
 
   /*
@@ -36,35 +35,45 @@ export class UserService {
   Objetivo: registrar empleados nuevos
   Parámetros: user : User => objeto de tipo User que contiene los datos del usuario
   */
- registerEmployee(user: Employee) {
-  const body = {
-    Phone: user.Phone,
-    Name: user.Name,
-    LastName: user.LastName,
-    Id : user.Id,
-    Salary : user.Salary
+  registerEmployee(user: Employee) {
+    this.http.post(this.constants.routeURL + '/PostEmployee', user).subscribe(res => {
+      this.toastr.success('Éxito!', 'Usuario registrado exitosamente');
+    }, error => {
+      this.toastr.error('Error!', 'Usuario no registrado');
+    });
   }
-  this.toastr.success('Éxito!', 'Usuario registrado exitosamente');
- // return this.http.post(this.constants.routeURL + '/api/User/Register', body);
-}
 
-/*
-  Código tomado de: https://www.youtube.com/watch?v=e8BlURn6SFk&t=135s
-  Objetivo: registrar empleados nuevos
-  Parámetros: user : User => objeto de tipo User que contiene los datos del usuario
-  */
- registerEngineer(user: Engineer) {
-  const body = {
-    Phone: user.Phone,
-    Name: user.Name,
-    LastName: user.LastNames,
-    Id : user.Id,
-    Code : user.Code,
-    Major : user.Major,
-    UserName : user.UserName,
-    Password : user.Password
+  /*
+    Código tomado de: https://www.youtube.com/watch?v=e8BlURn6SFk&t=135s
+    Objetivo: registrar empleados nuevos
+    Parámetros: user : User => objeto de tipo User que contiene los datos del usuario
+    */
+  registerEngineer(user: Engineer) {
+    //alert("Got: " + user as string);
+    this.http.post(this.constants.routeURL + '/PostEngineer', user).subscribe(res => {
+      this.toastr.success('Éxito!', 'Ingeniero registrado exitosamente');
+    }, error => {
+      this.toastr.error('Error!', 'Usuario no registrado');
+    });
+    
+    // return this.http.post(this.constants.routeURL + '/api/User/Register', body);
   }
-  this.toastr.success('Éxito!', 'Usuario registrado exitosamente');
- // return this.http.post(this.constants.routeURL + '/api/User/Register', body);
-}
+
+  getAllEngineers() {
+    this.http.get(this.constants.routeURL + '/GetEngineers').toPromise().then((res: Response) => {
+      this.engineers = res['users'] as Engineer[]
+    });
+  }
+
+  getAllConstructors() {
+    this.http.get(this.constants.routeURL + '/GetClients').toPromise().then((res: Response) => {
+      this.constructors = res['users'] as Client[];
+    });
+  }
+
+  getAllEmployees() {
+    this.http.get(this.constants.routeURL + '/GetEmployees').toPromise().then((res: Response) => {
+      this.employees = res['users'] as Employee[]
+    });
+  }
 }

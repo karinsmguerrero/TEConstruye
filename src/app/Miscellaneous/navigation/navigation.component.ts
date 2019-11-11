@@ -31,21 +31,21 @@ export class NavigationComponent implements OnInit {
   }
 
   isClient() {
-    if (localStorage.getItem('userRole') != 'Interesado' && localStorage.getItem('userRole') != 'ADMINISTRAD0R605' && this.loggedIn())
+    if (localStorage.getItem('userRole') != 'Constructor' && localStorage.getItem('userRole') != 'Admin' && this.loggedIn())
       return true;
     else
       return false;
   }
 
   isCustomer() {
-    if (localStorage.getItem('userRole') == 'Interesado')
+    if (localStorage.getItem('userRole') == 'Costructor')
       return true;
     else
       return false;
   }
 
   isAdmin() {
-    if (localStorage.getItem('userRole') == 'ADMINISTRAD0R605')
+    if (localStorage.getItem('userRole') == 'Admin')
       return true;
     else
       return false;

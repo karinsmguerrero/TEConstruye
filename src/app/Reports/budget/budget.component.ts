@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from 'src/app/Services/user.service';
+import { ReportsService } from 'src/app/Services/reports.service';
+import { StageBudgetReportLine } from 'src/app/Models/stage-budget-report-line.model';
 
 @Component({
   selector: 'app-budget',
@@ -7,9 +10,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BudgetComponent implements OnInit {
 
-  constructor() { }
+  constructor(private service : ReportsService) { }
 
   ngOnInit() {
+    this.service.getReport();
   }
 
 }

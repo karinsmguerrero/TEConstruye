@@ -1,0 +1,25 @@
+<div class="card">
+        <!-- Form de Registrar material en proyecto -->
+        <article class="card-body">
+            <form #WorkerStageForm="ngForm" autocomplete="off" (submit)="onSubmit(WorkerStageForm)">
+            <div class="form-group">
+                <div class="form-row"> 
+                    <div class="form-group col">
+                        <label>Material</label>
+                        <select name="EmployeeList"  #Employee="ngModel" [(ngModel)]="Employee.username" [ngModelOptions]="{standalone: true}" class="form-control">
+                        <option *ngFor="let Employee of serviceEmployee.list" >{{Employee.username}}-{{Employee.name}}</option>
+                        </select>
+                    </div>
+                    <div class="col form-group">
+                        <label>Horas</label>
+                        <input type='number' class="form-control" name="Hours" #Name="ngModel" [(ngModel)]="WorkerStage.hours" required/>    
+                    </div>
+                </div>            
+            </div>
+                <div class="form-group">
+                    <button type="submit" [disabled]="WorkerStageForm.invalid" class="btn btn-b-n btn-block">Registrar</button>
+                </div>
+            </form>
+        </article>
+    </div> <!-- card.// -->
+    
