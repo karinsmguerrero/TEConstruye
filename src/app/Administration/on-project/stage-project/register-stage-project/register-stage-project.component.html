@@ -1,0 +1,53 @@
+<div class="card">
+ 
+
+    <!-- Form de Registrar etapa en proyecto -->
+    <article class="card-body">
+        <label>Registrar etapa</label>
+        <form #StageForm="ngForm" autocomplete="off" (submit)="onSubmit(StageForm)">
+        <div class="form-group">
+            
+          <div class="form-row">
+                <!-- Dropdown Tipo de etapa-->
+                <!-- DatePicker Inicio de etapa-->
+                <!-- DatePicker Fin de etapa-->
+              
+            <div class="form-group col">
+                <label>Etapa</label>
+                <select name="StageType"  #StageType="ngModel" [(ngModel)]="stage.stagetype" [ngModelOptions]="{standalone: true}" class="form-control">
+                  <option *ngFor="let StageType of serviceStageType.list" >{{StageType.name}}</option>
+                </select>
+              </div>
+            
+          </div>
+          <div class="form-row">
+              <div class="col form-group">
+                  <label>Fecha de inicio</label>
+                  <div class='input-group date' id='StartDate'>
+                      <input type='date' class="form-control" name="StartDate" #Name="ngModel" [(ngModel)]="StageProject.startdate" required/>
+                      <span class="input-group-addon">
+                          <span class="glyphicon glyphicon-calendar"></span>
+                      </span>
+                  </div>
+              </div>
+              <div class="col form-group">
+                  <label>Fecha de finalización</label>
+                  <div class='input-group date' id='EndDate'>
+                      <input type='date' class="form-control" name="EndDate" #Name="ngModel" [(ngModel)]="StageProject.enddate" required/>
+                      <span class="input-group-addon">
+                          <span class="glyphicon glyphicon-calendar"></span>
+                      </span>
+                  </div>
+              </div>
+
+          </div>
+         
+        </div>
+        <div class="form-group">
+          <button type="submit" [disabled]="StageForm.invalid" class="btn btn-b-n btn-block">Registrar</button>
+        </div>
+  
+      </form>
+    </article>
+  </div> <!-- card.// -->
+  

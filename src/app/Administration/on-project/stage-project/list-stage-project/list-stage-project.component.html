@@ -1,0 +1,34 @@
+<div class="card">
+
+    <article class="card-body">
+      <!--/ Agents Grid Star /-->
+      <div class="container">
+        <div class="row">
+  
+          <table class="table">
+            <th>Tipo de etapa</th>
+            <th>Fecha inicio</th>
+            <th>Fecha finalización</th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <tr *ngFor="let Stage of serviceStage.list">
+              <td>{{Stage.stagetype}}</td>
+              <td>{{Stage.startdate}}</td>
+              <td>{{Stage.enddate}}</td>
+              <td ><input type="image" src="./assets/img/refresh.png" (click)="update(supply)" width="48" height="48">
+              </td>
+              <td><input type="image" src="./assets/img/cancel(1).png" (click)="delete(supply)" width="48" height="48">
+              </td>
+              <td><a href="#" routerLink="/onProject/stage/viewMore" class="text-right"></a>
+                <input type="image" src="./assets/img/viewmore.png" (click)="viewMore(Stage)" width="48" height="48">
+              </td>
+            </tr>
+          </table>
+  
+        </div>
+      </div>
+      <!--/ Stage Grid End /-->
+    </article>
+  </div>
+  

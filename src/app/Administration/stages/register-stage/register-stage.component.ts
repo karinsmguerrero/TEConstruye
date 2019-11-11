@@ -15,6 +15,8 @@ export class RegisterStageComponent implements OnInit {
 
   ngOnInit() {
     this.resetStageForm();
+    this.serviceStageType.getStagesType();
+    
   }
 
   resetStageForm(form?: NgForm) {
