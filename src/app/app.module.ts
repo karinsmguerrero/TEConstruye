@@ -36,6 +36,7 @@ import { RegisterSuppliesComponent } from './Administration/supplies/register-su
 import { ProjectComponent } from './Administration/project/project.component';
 import { RegisterProjectComponent } from './Administration/project/register-project/register-project.component';
 import { ListProjectComponent } from './Administration/project/list-project/list-project.component';
+import { ProjectAllComponent } from './Administration/project/project-all/project-all.component';
 
 @NgModule({
   declarations: [
@@ -66,7 +67,8 @@ import { ListProjectComponent } from './Administration/project/list-project/list
     RegisterSuppliesComponent,
     ProjectComponent,
     RegisterProjectComponent,
-    ListProjectComponent
+    ListProjectComponent,
+    ProjectAllComponent
   ],
   imports: [
     BrowserModule,
