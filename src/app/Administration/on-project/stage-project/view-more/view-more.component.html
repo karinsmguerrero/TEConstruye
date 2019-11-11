@@ -24,7 +24,7 @@
         </h2>
       </div>
       <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-        <app-register-supply-stage></app-register-supply-stage>
+        <app-payroll></app-payroll>
       </div>
     </div>
     <div class="card">
@@ -32,12 +32,12 @@
           <h2 class="mb-0">
             <button class="btn collapsed" type="button" data-toggle="collapse" data-target="#collapseThree"
               aria-expanded="false" aria-controls="collapseThree">
-              Trabajadores
+              Planillas
             </button>
           </h2>
         </div>
         <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-          <app-worker-hours></app-worker-hours>
+          <app-payroll></app-payroll>
         </div>
       </div>
       <div class="card">
@@ -45,27 +45,40 @@
           <h2 class="mb-0">
             <button class="btn collapsed" type="button" data-toggle="collapse" data-target="#collapseFour"
               aria-expanded="false" aria-controls="collapseFour">
-              Agregar gastos
+              Agregar horas de trabajo
             </button>
           </h2>
         </div>
         <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
-          <app-budget-stage></app-budget-stage>
+          <app-worker-hours></app-worker-hours>
         </div>
       </div>
       <div class="card">
-            <div class="card-header" id="headingFive">
-              <h2 class="mb-0">
-                <button class="btn collapsed" type="button" data-toggle="collapse" data-target="#collapseFive"
-                  aria-expanded="false" aria-controls="collapseFive">
-                  Presupuesto
-                </button>
-              </h2>
-            </div>
-            <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
-              <app-info-project></app-info-project>
-            </div>
+        <div class="card-header" id="headingFive">
+          <h2 class="mb-0">
+            <button class="btn collapsed" type="button" data-toggle="collapse" data-target="#collapseFive"
+              aria-expanded="false" aria-controls="collapseFive">
+              Agregar gastos
+            </button>
+          </h2>
+        </div>
+        <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
+            <app-budget-stage></app-budget-stage>
+        </div>
+      </div>
+      <div class="card">
+          <div class="card-header" id="headingSix">
+            <h2 class="mb-0">
+              <button class="btn collapsed" type="button" data-toggle="collapse" data-target="#collapseSix"
+                aria-expanded="false" aria-controls="collapseSix">
+                Presupuesto
+              </button>
+            </h2>
           </div>
+          <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordionExample">
+            <app-info-project></app-info-project>
+          </div>
+        </div>
   </div>
 </div>
 

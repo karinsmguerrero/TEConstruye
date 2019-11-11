@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { StageProjectManagementService } from 'src/app/Services/stage-project-management.service';
 import { StageProject } from 'src/app/Models/stage-project.model';
+import { ActivatedRoute } from '@angular/router';
+import { StageTypeManagementService } from 'src/app/Services/stage-type-management.service';
 
 @Component({
   selector: 'app-list-stage-project',
@@ -8,16 +10,14 @@ import { StageProject } from 'src/app/Models/stage-project.model';
   styleUrls: ['./list-stage-project.component.css']
 })
 export class ListStageProjectComponent implements OnInit {
-
-  constructor(private serviceStageType:StageProjectManagementService) { }
+  id:number
+  constructor(private route: ActivatedRoute,
+              private serviceStageType:StageTypeManagementService, 
+              private serviceStage:StageProjectManagementService) { }
 
   ngOnInit() {
-    this.serviceStageType.getStages(4);
-  }
-
-  //Ver más detalles de la etapa seleccionada
-  viewMore(stage:StageProject){
-
+    this.id = +this.route.snapshot.paramMap.get('id');
+    this.serviceStage.getStages(this.id);
   }
 
 }
