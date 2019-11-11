@@ -37,6 +37,20 @@ import { ProjectComponent } from './Administration/project/project.component';
 import { RegisterProjectComponent } from './Administration/project/register-project/register-project.component';
 import { ListProjectComponent } from './Administration/project/list-project/list-project.component';
 import { ProjectAllComponent } from './Administration/project/project-all/project-all.component';
+import { OnProjectComponent } from './Administration/on-project/on-project.component';
+import { InfoProjectComponent } from './Administration/on-project/info-project/info-project.component';
+import { StageProjectComponent } from './Administration/on-project/stage-project/stage-project.component';
+import { SupplyStageComponent } from './Administration/on-project/stage-project/supply-stage/supply-stage.component';
+import { WorkerHoursComponent } from './Administration/on-project/stage-project/worker-hours/worker-hours.component';
+import { BillProjectComponent } from './Administration/on-project/bill-project/bill-project.component';
+import { RegisterStageProjectComponent } from './Administration/on-project/stage-project/register-stage-project/register-stage-project.component';
+import { ListStageProjectComponent } from './Administration/on-project/stage-project/list-stage-project/list-stage-project.component';
+import { ViewMoreComponent } from './Administration/on-project/stage-project/view-more/view-more.component';
+import { BudgetStageComponent } from './Administration/on-project/stage-project/budget-stage/budget-stage.component';
+import { RegisterSupplyStageComponent } from './Administration/on-project/register-supply-stage/register-supply-stage.component';
+import { ListSupplyStageComponent } from './Administration/on-project/list-supply-stage/list-supply-stage.component';
+import { ListWorkerStageComponent } from './Administration/on-project/worker/list-worker-stage/list-worker-stage.component';
+import { RegisterWorkerHoursComponent } from './Administration/on-project/worker/register-worker-hours/register-worker-hours.component';
 
 @NgModule({
   declarations: [
@@ -68,17 +82,29 @@ import { ProjectAllComponent } from './Administration/project/project-all/projec
     ProjectComponent,
     RegisterProjectComponent,
     ListProjectComponent,
-    ProjectAllComponent
+    ProjectAllComponent,
+    OnProjectComponent,
+    InfoProjectComponent,
+    StageProjectComponent,
+    SupplyStageComponent,
+    WorkerHoursComponent,
+    BillProjectComponent,
+    RegisterStageProjectComponent,
+    ListStageProjectComponent,
+    ViewMoreComponent,
+    BudgetStageComponent,
+    RegisterSupplyStageComponent,
+    ListSupplyStageComponent,
+    ListWorkerStageComponent,
+    RegisterWorkerHoursComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    BrowserAnimationsModule, // required animations module
-    ToastrModule.forRoot(), // ToastrModule added
-    PdfViewerModule,
-    AngularDateTimePickerModule
+    ToastrModule.forRoot(),
+    PdfViewerModule 
   ],
   providers: [],
   bootstrap: [AppComponent]

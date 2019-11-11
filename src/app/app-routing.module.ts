@@ -8,8 +8,15 @@ import { EngineersComponent } from './Administration/engineers/engineers.compone
 import { StagesComponent } from './Administration/stages/stages.component';
 import { SuppliesComponent } from './Administration/supplies/supplies.component';
 import { ProjectComponent } from './Administration/project/project.component';
+import { RegisterStageComponent } from './Administration/stages/register-stage/register-stage.component';
+import { OnProjectComponent } from './Administration/on-project/on-project.component';
+import { RegisterStageProjectComponent } from './Administration/on-project/stage-project/register-stage-project/register-stage-project.component';
+import { ListStageProjectComponent } from './Administration/on-project/stage-project/list-stage-project/list-stage-project.component';
+import { BudgetStageComponent } from './Administration/on-project/stage-project/budget-stage/budget-stage.component';
+
 import { RegisterHoursComponent } from './Administration/employees/register-hours/register-hours.component';
 import { BudgetComponent } from './Reports/budget/budget.component';
+
 
 
 
@@ -25,6 +32,11 @@ const routes: Routes = [
   { path: 'stages', component: StagesComponent},
   { path: 'supplies', component: SuppliesComponent},
   { path: 'project', component: ProjectComponent},
+
+  { path: 'onProject', component: OnProjectComponent},
+  { path: 'aa', component: RegisterStageProjectComponent},
+  { path: 'bb', component: ListStageProjectComponent},
+  { path: 'cc', component: BudgetStageComponent},
   { path: 'hours', component: RegisterHoursComponent},
   { path: 'reports/budget', component: BudgetComponent}
 ];

@@ -1,0 +1,24 @@
+<div class="card">
+    <!-- Form de Registrar material en proyecto -->
+    <article class="card-body">
+        <form #SupplyForm="ngForm" autocomplete="off" (submit)="onSubmit(SupplyForm)">
+        <div class="form-group">
+            <div class="form-row"> 
+                <div class="form-group col">
+                    <label>Material</label>
+                    <select name="Supply"  #StageType="ngModel" [(ngModel)]="Supply.name" [ngModelOptions]="{standalone: true}" class="form-control">
+                    <option *ngFor="let Supply of serviceStageType.list" >{{Supply.name}}</option>
+                    </select>
+                </div>
+                <div class="col form-group">
+                    <label>Cantidad</label>
+                    <input type='number' class="form-control" name="Quantity" #Name="ngModel" [(ngModel)]="StageProject.startdate" required/>    
+                </div>
+            </div>            
+        </div>
+            <div class="form-group">
+                <button type="submit" [disabled]="SupplyForm.invalid" class="btn btn-b-n btn-block">Registrar</button>
+            </div>
+        </form>
+    </article>
+</div> <!-- card.// -->
