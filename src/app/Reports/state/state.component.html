@@ -1,18 +1,20 @@
 <app-navigation></app-navigation>
 <div class="container" style="padding-top: 5%;">
   <div class="card">
+
     <article class="card-body">
+
       <div class="row">
         <div class="col-sm-10">
-          <h4 class="card-title text-center mb-4 mt-1">Presupuesto de proyectos</h4>
+          <h4 class="card-title text-center mb-4 mt-1">Estado financiero de proyectos</h4>
         </div>
         <div class="col-sm-2 ">
-          <app-budget-pdf></app-budget-pdf>
+          <app-state-pdf></app-state-pdf>
         </div>
       </div>
       <!--/ Agents Grid Star /-->
       <div class="container">
-        <div class="row" *ngFor="let project of service.report">
+        <div class="row" *ngFor="let project of service.statereport">
           <div class="col-sm-4 align-self-center justify-content-center ">
             <h5 style="font-weight:bold;">{{project.project}}</h5>
           </div>
@@ -21,13 +23,21 @@
             <table class="table">
               <th class="col-sm-4" style="background-color: #f5f5f5;">Etapa</th>
               <th class="col-sm-4" style="background-color: #f5f5f5;">Presupuesto</th>
-
+              <th class="col-sm-4" style="background-color: #f5f5f5;">Gastos</th>
               <tr *ngFor="let line of project.lines">
                 <!-- <td>{{line.project}}</td> -->
                 <td>{{line.stage}}</td>
-                <td> {{line.budget | currency:"₡"}}</td>
-
+                <td> {{line.budget  | currency:"₡"}}</td>
+                <td *ngIf="line.expenses != null">{{line.expenses  | currency:"₡"}}</td>
+                <td *ngIf="line.expenses == null">Sin gastos reportados</td>
               </tr>
+              <tr style="background-color: #2eca6a; font-weight:bold;">
+                <td></td>
+                <td>{{project.totals.total_budget  | currency:"₡"}}</td>
+                <td *ngIf="project.totals.total_expenses != null">{{project.totals.total_expenses  | currency:"₡"}}</td>
+                <td *ngIf="project.totals.total_expenses == null">{{0  | currency:"₡" }}</td>
+              </tr>
+
             </table>
           </div>
           <hr>

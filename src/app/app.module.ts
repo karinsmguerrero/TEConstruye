@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
 import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { AngularDateTimePickerModule } from 'angular2-datetimepicker';
 import { ToastrModule } from 'ngx-toastr';
@@ -50,8 +50,20 @@ import { RegisterSupplyStageComponent } from './Administration/on-project/regist
 import { ListSupplyStageComponent } from './Administration/on-project/list-supply-stage/list-supply-stage.component';
 import { ListWorkerStageComponent } from './Administration/on-project/worker/list-worker-stage/list-worker-stage.component';
 import { RegisterWorkerHoursComponent } from './Administration/on-project/worker/register-worker-hours/register-worker-hours.component';
+<<<<<<< HEAD
 import { PayrollComponent } from './Administration/on-project/stage-project/payroll/payroll.component';
 import { TestingComponent } from './testing/testing.component';
+=======
+import { StateComponent } from './Reports/state/state.component';
+import { BudgetPdfComponent } from "./Reports/budget-pdf/budget-pdf.component";
+
+//Código tomado de: https://stackoverflow.com/questions/34904683/how-to-set-locale-in-datepipe-in-angular-2
+import { registerLocaleData } from '@angular/common';
+import localeDeAt from '@angular/common/locales/es-cr';
+import { StatePdfComponent } from './Reports/state-pdf/state-pdf.component';
+
+registerLocaleData(localeDeAt);
+>>>>>>> 9754e385e91cf22a8d7fe0b0d57ba3121513c093
 
 @NgModule({
   declarations: [
@@ -96,8 +108,13 @@ import { TestingComponent } from './testing/testing.component';
     ListSupplyStageComponent,
     ListWorkerStageComponent,
     RegisterWorkerHoursComponent,
+<<<<<<< HEAD
     PayrollComponent,
     TestingComponent
+=======
+    StateComponent, 
+    BudgetPdfComponent, StatePdfComponent
+>>>>>>> 9754e385e91cf22a8d7fe0b0d57ba3121513c093
   ],
   imports: [
     BrowserModule,
@@ -105,9 +122,10 @@ import { TestingComponent } from './testing/testing.component';
     HttpClientModule,
     FormsModule,
     ToastrModule.forRoot(),
-    PdfViewerModule 
+    PdfViewerModule,
+    BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [ { provide: LOCALE_ID, useValue: "es-CR" }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

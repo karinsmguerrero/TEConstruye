@@ -13,7 +13,7 @@ export class BudgetComponent implements OnInit {
   constructor(private service : ReportsService) { }
 
   ngOnInit() {
-    this.service.getReport();
+    this.service.getBudgetReport();
   }
 
 }
