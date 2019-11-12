@@ -18,6 +18,9 @@ import { RegisterHoursComponent } from './Administration/employees/register-hour
 import { BudgetComponent } from './Reports/budget/budget.component';
 import { InfoProjectComponent } from './Administration/on-project/info-project/info-project.component';
 import { ViewMoreComponent } from './Administration/on-project/stage-project/view-more/view-more.component';
+import { RegisterProjectComponent } from './Administration/project/register-project/register-project.component';
+import { TestingComponent } from './testing/testing.component';
+import { RegisterSupplyStageComponent } from './Administration/on-project/register-supply-stage/register-supply-stage.component';
 
 
 
@@ -38,9 +41,8 @@ const routes: Routes = [
   { path: 'project-detail/:id', component: OnProjectComponent},
   { path: 'project-detail/:id/view-more/:stage', component: ViewMoreComponent},
 
-  { path: 'aa', component: RegisterStageProjectComponent},
-  { path: 'bb', component: ListStageProjectComponent},
-  { path: 'cc', component: BudgetStageComponent},
+  { path: 'aa', component: RegisterSupplyStageComponent},
+  { path: 'bb', component: TestingComponent},
   { path: 'hours', component: RegisterHoursComponent},
   { path: 'reports/budget', component: BudgetComponent}
 ];

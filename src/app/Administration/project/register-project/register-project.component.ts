@@ -17,7 +17,7 @@ export class RegisterProjectComponent implements OnInit {
     private serviceProject: ProjectManagementService) { }
 
   ngOnInit() {
-    //this.serviceLocation.getProvince();
+    this.serviceLocation.getProvince();
     this.province="";
    this.canton="";
   }
@@ -42,6 +42,9 @@ export class RegisterProjectComponent implements OnInit {
       builtarea:0,
       rooms:0,
       restrooms:0,
+      province:'',
+      canton:'',
+      district:'',
       floors:1
     }
   }

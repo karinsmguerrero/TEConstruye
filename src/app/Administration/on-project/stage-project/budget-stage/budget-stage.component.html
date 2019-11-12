@@ -12,15 +12,15 @@
                     <ul class="list">
                         <li class="d-flex justify-content-between">
                             <strong>Materiales:</strong>
-                            <span>₡ {{this.serviceBudget.budget.supply}}</span>
+                            <span>{{this.serviceBudget.budget.supply | currency:"₡"}}</span>
                         </li>
                         <li class="d-flex justify-content-between">
                             <strong>Planilla:</strong>
-                            <span>₡ {{this.serviceBudget.budget.payroll}}</span>
+                            <span> {{this.serviceBudget.budget.payroll | currency:"₡"}}</span>
                         </li>
                         <li class="d-flex justify-content-between">
                             <strong>Total</strong>
-                            <span>₡ {{this.serviceBudget.budget.total}}
+                            <span> {{this.serviceBudget.budget.total | currency:"₡"}}
                             </span>
                         </li>
                         

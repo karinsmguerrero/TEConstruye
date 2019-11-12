@@ -4,3 +4,5 @@ export class Location {
     canton : string;
     district : string;
 }
+
+

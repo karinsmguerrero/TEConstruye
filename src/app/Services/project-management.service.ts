@@ -31,15 +31,15 @@ export class ProjectManagementService {
     };
     var body ={
       name: formData.value.name,
-      lotarea:  formData.value.LotArea,
-      builtarea: formData.value.BuiltArea,
+      lotarea:  formData.value.lotarea,
+      builtarea: formData.value.builtarea,
       rooms:formData.value.Rooms,
-      restrooms:formData.value.Restrooms,
-      floors:formData.value.Floors,
+      restrooms:formData.value.restrooms,
+      floors:formData.value.floors,
       client:localStorage.getItem('userName'),
-      province:formData.value,
-      canton:formData.value,
-      district:formData.value
+      province:formData.value.province,
+      canton:formData.value.canton,
+      district:formData.value.district
     };
     this.http.post(this.constant.routeURL + '/PostProject',body,httpOptions).subscribe(res =>{
       this.toastr.success('Successfull','Proyecto agregado')}, error=> {

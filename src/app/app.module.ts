@@ -51,6 +51,7 @@ import { ListSupplyStageComponent } from './Administration/on-project/list-suppl
 import { ListWorkerStageComponent } from './Administration/on-project/worker/list-worker-stage/list-worker-stage.component';
 import { RegisterWorkerHoursComponent } from './Administration/on-project/worker/register-worker-hours/register-worker-hours.component';
 import { PayrollComponent } from './Administration/on-project/stage-project/payroll/payroll.component';
+import { TestingComponent } from './testing/testing.component';
 
 @NgModule({
   declarations: [
@@ -95,7 +96,8 @@ import { PayrollComponent } from './Administration/on-project/stage-project/payr
     ListSupplyStageComponent,
     ListWorkerStageComponent,
     RegisterWorkerHoursComponent,
-    PayrollComponent
+    PayrollComponent,
+    TestingComponent
   ],
   imports: [
     BrowserModule,

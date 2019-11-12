@@ -36,4 +36,25 @@ export class StageProjectManagementService {
       }
     );
   }
+
+
+  
+  insertSupply(formData:NgForm,stage:number){
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type':  'application/json'
+      })
+    };
+    var body ={
+      idsupply:  formData.value.supplytype.id,
+      idstage: stage,
+      quantity:formData.value.quantity
+    };
+    this.http.post(this.constant.routeURL + '/PostSupplyProject',body,httpOptions).subscribe(res =>{
+      this.toastr.success('Successfull','material agregado a la etapa')}, error=> {
+        this.toastr.error('Error','Error al registrar material');
+      }
+    );
+    
+  }
 }
