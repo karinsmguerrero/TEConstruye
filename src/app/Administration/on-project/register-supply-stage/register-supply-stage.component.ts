@@ -11,7 +11,7 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./register-supply-stage.component.css']
 })
 export class RegisterSupplyStageComponent implements OnInit {
-  supply:SupplyAux;
+  //supply:SupplyAux;
   idstage:number;
  constructor(private route: ActivatedRoute,
              private serviceSupply:SupplyManagementService,
@@ -22,6 +22,7 @@ export class RegisterSupplyStageComponent implements OnInit {
     this.idstage = +this.route.snapshot.paramMap.get('stage');
   }
 
+  /*
   resetProjectForm(form?: NgForm) {
     if (form != null)
       form.reset();
@@ -34,6 +35,6 @@ export class RegisterSupplyStageComponent implements OnInit {
   onSubmit(form: NgForm) {
     this.serviceStage.insertSupply(form,this.idstage);
     this.resetProjectForm(form);
-  }
+  }*/
 
 }

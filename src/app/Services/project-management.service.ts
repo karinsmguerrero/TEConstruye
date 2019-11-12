@@ -22,7 +22,8 @@ export class ProjectManagementService {
     });
   }
 
-  insertProject(formData:NgForm){
+  insertProject(formData:NgForm, 
+                province:string, canton:string, district:string){
     
     const httpOptions = {
       headers: new HttpHeaders({
@@ -37,9 +38,9 @@ export class ProjectManagementService {
       restrooms:formData.value.restrooms,
       floors:formData.value.floors,
       client:localStorage.getItem('userName'),
-      province:formData.value.province,
-      canton:formData.value.canton,
-      district:formData.value.district
+      province:province,
+      canton:canton,
+      district:district
     };
     this.http.post(this.constant.routeURL + '/PostProject',body,httpOptions).subscribe(res =>{
       this.toastr.success('Successfull','Proyecto agregado')}, error=> {

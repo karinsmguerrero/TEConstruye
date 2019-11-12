@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { SupplyAux } from 'src/app/Models/supply-aux.model';
 import { SupplyManagementService } from 'src/app/Services/supply-management.service';
 import { NgForm } from '@angular/forms';
+import { Supply } from 'src/app/Models/supply.model';
 
 @Component({
   selector: 'app-register-supplies',
@@ -10,7 +11,7 @@ import { NgForm } from '@angular/forms';
 })
 export class RegisterSuppliesComponent implements OnInit {
 
-  supply:SupplyAux;
+  supply:Supply;
 
   constructor(private serviceSupply: SupplyManagementService) { }
 
@@ -22,8 +23,9 @@ export class RegisterSuppliesComponent implements OnInit {
     if (form != null)
       form.reset();
     this.supply = {
+      id: 0,
       name: '',
-      precio: 0
+      price: 0
     }
   }
 

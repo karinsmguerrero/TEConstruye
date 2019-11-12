@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, LOCALE_ID } from '@angular/core';
-import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { AngularDateTimePickerModule } from 'angular2-datetimepicker';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -40,7 +39,6 @@ import { ListProjectComponent } from './Administration/project/list-project/list
 import { OnProjectComponent } from './Administration/on-project/on-project.component';
 import { InfoProjectComponent } from './Administration/on-project/info-project/info-project.component';
 import { StageProjectComponent } from './Administration/on-project/stage-project/stage-project.component';
-import { WorkerHoursComponent } from './Administration/on-project/stage-project/worker-hours/worker-hours.component';
 import { BillProjectComponent } from './Administration/on-project/bill-project/bill-project.component';
 import { RegisterStageProjectComponent } from './Administration/on-project/stage-project/register-stage-project/register-stage-project.component';
 import { ListStageProjectComponent } from './Administration/on-project/stage-project/list-stage-project/list-stage-project.component';
@@ -97,7 +95,6 @@ import { StatePdfComponent } from './Reports/state-pdf/state-pdf.component';
     OnProjectComponent,
     InfoProjectComponent,
     StageProjectComponent,
-    WorkerHoursComponent,
     BillProjectComponent,
     RegisterStageProjectComponent,
     ListStageProjectComponent,
@@ -119,7 +116,6 @@ import { StatePdfComponent } from './Reports/state-pdf/state-pdf.component';
     HttpClientModule,
     FormsModule,
     ToastrModule.forRoot(),
-    PdfViewerModule,
     BrowserAnimationsModule
   ],
   providers: [ { provide: LOCALE_ID, useValue: "es-CR" }],

@@ -33,6 +33,10 @@ export class RegisterProjectComponent implements OnInit {
     
   }
 
+  selectDistrict(district : string){
+    this.district= district;
+  }
+
   resetProjectForm(form?: NgForm) {
     if (form != null)
       form.reset();
@@ -50,7 +54,7 @@ export class RegisterProjectComponent implements OnInit {
   }
 
   onSubmit(form: NgForm) {
-    this.serviceProject.insertProject(form);
+    this.serviceProject.insertProject(form,this.province,this.canton,this.district);
     this.resetProjectForm(form);
   }
 

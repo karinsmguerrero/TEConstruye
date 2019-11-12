@@ -44,7 +44,7 @@ const routes: Routes = [
   { path: 'project-detail/:id/view-more/:stage', component: ViewMoreComponent},
 
   { path: 'aa', component: RegisterSupplyStageComponent},
-  { path: 'bb', component: TestingComponent},
+  { path: 'bb', component: ProjectComponent},
   { path: 'hours', component: RegisterHoursComponent},
   { path: 'reports/budget', component: BudgetComponent},
   { path: 'reports/state', component: StateComponent},

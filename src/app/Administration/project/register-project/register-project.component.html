@@ -63,7 +63,7 @@
           <div class="form-group col">
             <label>Distrito</label>
             <select name="district"  #district="ngModel" [(ngModel)]="project.district" [ngModelOptions]="{standalone: true}" class="form-control">
-              <option *ngFor="let District of serviceLocation.districtList">{{District.district}}</option>
+              <option *ngFor="let District of serviceLocation.districtList" (click)="selectDistrict(District.district)">{{District.district}}</option>
             </select>
           </div>
         </div>
