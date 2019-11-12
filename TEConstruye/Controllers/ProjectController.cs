@@ -50,7 +50,7 @@ namespace TEConstruye.Controllers
         {
             conn.Open();
             NpgsqlCommand cmd = new NpgsqlCommand(
-                "CALL addProject(:lotarea,:builtarea,:rooms,:restrooms," +
+                "CALL addProject(:name,:lotarea,:builtarea,:rooms,:restrooms," +
                 ":floors,:client,:province,:canton,:district)", conn);
             cmd.Parameters.AddWithValue("name", project.name);
             cmd.Parameters.AddWithValue("lotarea", project.lotarea);

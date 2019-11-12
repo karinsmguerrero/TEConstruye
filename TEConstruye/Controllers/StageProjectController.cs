@@ -22,7 +22,7 @@ namespace TEConstruye.Controllers
 
             conn.Open();
             NpgsqlDataAdapter adapter = new NpgsqlDataAdapter("SELECT id, stagetype, startdate, enddate " +
-                " FROM vStage WHERE idproject="+project, conn);
+                " FROM vStage WHERE idproject="+project+" ORDER BY id", conn);
             DataSet list = new DataSet();
             adapter.Fill(list);
             conn.Close();

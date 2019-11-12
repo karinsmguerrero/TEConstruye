@@ -14,13 +14,14 @@ namespace TEConstruye.Controllers
     {
         NpgsqlConnection conn = new NpgsqlConnection(BDconnection.conn);
         [HttpGet]
-        [Route("api/GetWorkerProject")]
-        public HttpResponseMessage GetHours(int idstage)
+        [Route("api/GetPayrollStage")]
+        public HttpResponseMessage GetPayrollStage(int stage)
         {
 
             conn.Open();
-            NpgsqlDataAdapter adapter = new NpgsqlDataAdapter("SELECT username, get_fullname(username) AS Nombre, hours " +
-                " FROM public.worker_on_project WHERE idstage="+idstage, conn);
+            NpgsqlDataAdapter adapter = new NpgsqlDataAdapter("SELECT employee_username AS username," +
+                "employee AS fullname,hours,salary,total FROM vpayrollemployees " +
+                "WHERE idstage = " +stage, conn);
             DataSet list = new DataSet();
             adapter.Fill(list);
 
