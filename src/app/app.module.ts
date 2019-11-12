@@ -50,10 +50,10 @@ import { RegisterSupplyStageComponent } from './Administration/on-project/regist
 import { ListSupplyStageComponent } from './Administration/on-project/list-supply-stage/list-supply-stage.component';
 import { ListWorkerStageComponent } from './Administration/on-project/worker/list-worker-stage/list-worker-stage.component';
 import { RegisterWorkerHoursComponent } from './Administration/on-project/worker/register-worker-hours/register-worker-hours.component';
-<<<<<<< HEAD
+
 import { PayrollComponent } from './Administration/on-project/stage-project/payroll/payroll.component';
 import { TestingComponent } from './testing/testing.component';
-=======
+
 import { StateComponent } from './Reports/state/state.component';
 import { BudgetPdfComponent } from "./Reports/budget-pdf/budget-pdf.component";
 
@@ -62,8 +62,7 @@ import { registerLocaleData } from '@angular/common';
 import localeDeAt from '@angular/common/locales/es-cr';
 import { StatePdfComponent } from './Reports/state-pdf/state-pdf.component';
 
-registerLocaleData(localeDeAt);
->>>>>>> 9754e385e91cf22a8d7fe0b0d57ba3121513c093
+
 
 @NgModule({
   declarations: [
@@ -108,13 +107,11 @@ registerLocaleData(localeDeAt);
     ListSupplyStageComponent,
     ListWorkerStageComponent,
     RegisterWorkerHoursComponent,
-<<<<<<< HEAD
     PayrollComponent,
-    TestingComponent
-=======
+    TestingComponent,
     StateComponent, 
-    BudgetPdfComponent, StatePdfComponent
->>>>>>> 9754e385e91cf22a8d7fe0b0d57ba3121513c093
+    BudgetPdfComponent, 
+    StatePdfComponent
   ],
   imports: [
     BrowserModule,
