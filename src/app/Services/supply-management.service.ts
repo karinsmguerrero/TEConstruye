@@ -29,8 +29,9 @@ export class SupplyManagementService {
       })
     };
     var body ={
-      name:  formData.value.Name,
-      price: formData.value.Price
+      id: formData.value.id,
+      name:  formData.value.name,
+      price: formData.value.price
     };
     this.http.post(this.constant.routeURL + '/PostSupply',body,httpOptions).subscribe(res =>{
       this.toastr.success('Successfull','Material agregado')}, error=> {

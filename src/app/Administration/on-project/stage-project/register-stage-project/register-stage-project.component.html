@@ -14,8 +14,8 @@
               
             <div class="form-group col">
                 <label>Etapa</label>
-                <select name="StageType"  #StageType="ngModel" [(ngModel)]="stage.stagetype" [ngModelOptions]="{standalone: true}" class="form-control">
-                  <option *ngFor="let StageType of serviceStageType.list" >{{StageType.name}}</option>
+                <select name="stagetype"  #stagetype="ngModel" [(ngModel)]="stage.stagetype" [ngModelOptions]="{standalone: true}" class="form-control">
+                  <option *ngFor="let StageType of serviceStageType.list" (click)="stageTypeSelected(StageType.id)" >{{StageType.name}}</option>
                 </select>
               </div>
             
@@ -24,7 +24,7 @@
               <div class="col form-group">
                   <label>Fecha de inicio</label>
                   <div class='input-group date' id='StartDate'>
-                      <input type='date' class="form-control" name="StartDate" #Name="ngModel" [(ngModel)]="StageProject.startdate" required/>
+                      <input type='date' class="form-control" name="startdate" #startdate="ngModel" [(ngModel)]="stage.startdate" required/>
                       <span class="input-group-addon">
                           <span class="glyphicon glyphicon-calendar"></span>
                       </span>
@@ -33,7 +33,7 @@
               <div class="col form-group">
                   <label>Fecha de finalización</label>
                   <div class='input-group date' id='EndDate'>
-                      <input type='date' class="form-control" name="EndDate" #Name="ngModel" [(ngModel)]="StageProject.enddate" required/>
+                      <input type='date' class="form-control" name="enddate" #enddate="ngModel" [(ngModel)]="stage.enddate" required/>
                       <span class="input-group-addon">
                           <span class="glyphicon glyphicon-calendar"></span>
                       </span>

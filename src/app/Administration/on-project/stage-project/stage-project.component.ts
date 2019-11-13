@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { StageProject } from 'src/app/Models/stage-project.model';
+import { ActivatedRoute } from '@angular/router';
+import { StageTypeManagementService } from 'src/app/Services/stage-type-management.service';
 
 @Component({
   selector: 'app-stage-project',
@@ -7,6 +10,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StageProjectComponent implements OnInit {
 
+  
   constructor() { }
 
   ngOnInit() {

@@ -11,8 +11,9 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./register-supply-stage.component.css']
 })
 export class RegisterSupplyStageComponent implements OnInit {
-  //supply:SupplyAux;
+  supply:SupplyAux;
   idstage:number;
+  idsupplytype:number;
  constructor(private route: ActivatedRoute,
              private serviceSupply:SupplyManagementService,
              private serviceStage:StageProjectManagementService) { }
@@ -20,21 +21,26 @@ export class RegisterSupplyStageComponent implements OnInit {
   ngOnInit() {
     this.serviceSupply.getSupplies(); 
     this.idstage = +this.route.snapshot.paramMap.get('stage');
+    this.idsupplytype=0;
+    this.resetProjectForm();
   }
 
-  /*
+  supplyTypeSelected(id :number){
+    this.idsupplytype=id;
+  }
+  
   resetProjectForm(form?: NgForm) {
     if (form != null)
       form.reset();
     this.supply = {
-      supplytype: null,
+      supplyid: 0,
       quantity: 0
     }
   }
 
   onSubmit(form: NgForm) {
-    this.serviceStage.insertSupply(form,this.idstage);
+    this.serviceStage.insertSupply(form,this.idstage,this.idsupplytype);
     this.resetProjectForm(form);
-  }*/
+  }
 
 }

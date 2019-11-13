@@ -20,6 +20,7 @@ export class RegisterProjectComponent implements OnInit {
     this.serviceLocation.getProvince();
     this.province="";
    this.canton="";
+    this.resetProjectForm()
   }
 
   loadCanton(province : string){

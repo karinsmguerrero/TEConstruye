@@ -6,8 +6,8 @@
             <div class="form-row"> 
                 <div class="form-group col">
                     <label>Material</label>
-                    <select name="supplytype"  #supplytype="ngModel" [(ngModel)]="supply.supplytype" [ngModelOptions]="{standalone: true}" class="form-control">
-                        <option *ngFor="let Supply of serviceSupply.list" >{{Supply.id}}-{{Supply.name}}</option>
+                    <select name="supply"  #supply="ngModel" [(ngModel)]="supply.supplyid" [ngModelOptions]="{standalone: true}" class="form-control">
+                        <option *ngFor="let Supply of serviceSupply.list" (click)="supplyTypeSelected(Supply.id)" >{{Supply.id}}-{{Supply.name}}</option>
                     </select>
                 </div>
                 <div class="col form-group">

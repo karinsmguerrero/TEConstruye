@@ -23,6 +23,8 @@ import { RegisterSupplyStageComponent } from './Administration/on-project/regist
 
 import { StateComponent } from './Reports/state/state.component';
 import { BudgetPdfComponent } from './Reports/budget-pdf/budget-pdf.component';
+import { RegisterStageComponent } from './Administration/stages/register-stage/register-stage.component';
+import { RegisterStageProjectComponent } from './Administration/on-project/stage-project/register-stage-project/register-stage-project.component';
 
 
 
@@ -43,8 +45,8 @@ const routes: Routes = [
   { path: 'project-detail/:id', component: OnProjectComponent},
   { path: 'project-detail/:id/view-more/:stage', component: ViewMoreComponent},
 
-  { path: 'aa', component: RegisterSupplyStageComponent},
-  { path: 'bb', component: ProjectComponent},
+  { path: 'aa', component: RegisterStageProjectComponent},
+  { path: 'bb', component: SuppliesComponent},
   { path: 'hours', component: RegisterHoursComponent},
   { path: 'reports/budget', component: BudgetComponent},
   { path: 'reports/state', component: StateComponent},

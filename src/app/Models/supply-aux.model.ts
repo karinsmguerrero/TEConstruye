@@ -1,6 +1,6 @@
 import { Supply } from './supply.model';
 
 export class SupplyAux {
-    supplytype : Supply;
+    supplyid : number;
     quantity: number;
 }

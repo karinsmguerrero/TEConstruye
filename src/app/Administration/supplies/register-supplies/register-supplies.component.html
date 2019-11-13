@@ -7,13 +7,22 @@
       <div class="form-group">
         <div class="form-row">
           <div class="col form-group">
-            <label>Etapa</label>
-            <input type="text" name="Name" #Name="ngModel" [(ngModel)]="supply.name" class="form-control" required>
+            <label>Material</label>
+            <input type="text" name="name" #name="ngModel" [(ngModel)]="supply.name" class="form-control" required>
+            
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="form-row">
+          <div class="col form-group">
+            <label>Código</label>
+            <input type="number" name="id" #id="ngModel" [(ngModel)]="supply.id" class="form-control" required>
             
           </div>
           <div class="col form-group">
             <label>Precio</label>
-            <input type="number" name="Price" #Name="ngModel" [(ngModel)]="supply.price" class="form-control" required>
+            <input type="number" name="price" #price="ngModel" [(ngModel)]="supply.price" class="form-control" required>
             
           </div>
         </div>
