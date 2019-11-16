@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, LOCALE_ID } from '@angular/core';
-import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { AngularDateTimePickerModule } from 'angular2-datetimepicker';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -40,8 +39,6 @@ import { ListProjectComponent } from './Administration/project/list-project/list
 import { OnProjectComponent } from './Administration/on-project/on-project.component';
 import { InfoProjectComponent } from './Administration/on-project/info-project/info-project.component';
 import { StageProjectComponent } from './Administration/on-project/stage-project/stage-project.component';
-import { SupplyStageComponent } from './Administration/on-project/stage-project/supply-stage/supply-stage.component';
-import { WorkerHoursComponent } from './Administration/on-project/stage-project/worker-hours/worker-hours.component';
 import { BillProjectComponent } from './Administration/on-project/bill-project/bill-project.component';
 import { RegisterStageProjectComponent } from './Administration/on-project/stage-project/register-stage-project/register-stage-project.component';
 import { ListStageProjectComponent } from './Administration/on-project/stage-project/list-stage-project/list-stage-project.component';
@@ -51,6 +48,10 @@ import { RegisterSupplyStageComponent } from './Administration/on-project/regist
 import { ListSupplyStageComponent } from './Administration/on-project/list-supply-stage/list-supply-stage.component';
 import { ListWorkerStageComponent } from './Administration/on-project/worker/list-worker-stage/list-worker-stage.component';
 import { RegisterWorkerHoursComponent } from './Administration/on-project/worker/register-worker-hours/register-worker-hours.component';
+
+import { PayrollComponent } from './Administration/on-project/stage-project/payroll/payroll.component';
+import { TestingComponent } from './testing/testing.component';
+
 import { StateComponent } from './Reports/state/state.component';
 import { BudgetPdfComponent } from "./Reports/budget-pdf/budget-pdf.component";
 
@@ -61,7 +62,7 @@ import { StatePdfComponent } from './Reports/state-pdf/state-pdf.component';
 import { ExpenesPdfComponent } from './Reports/expenes-pdf/expenes-pdf.component';
 import { SalariesPdfComponent } from './Reports/salaries-pdf/salaries-pdf.component';
 
-registerLocaleData(localeDeAt);
+
 
 @NgModule({
   declarations: [
@@ -96,8 +97,6 @@ registerLocaleData(localeDeAt);
     OnProjectComponent,
     InfoProjectComponent,
     StageProjectComponent,
-    SupplyStageComponent,
-    WorkerHoursComponent,
     BillProjectComponent,
     RegisterStageProjectComponent,
     ListStageProjectComponent,
@@ -107,6 +106,8 @@ registerLocaleData(localeDeAt);
     ListSupplyStageComponent,
     ListWorkerStageComponent,
     RegisterWorkerHoursComponent,
+    PayrollComponent,
+    TestingComponent,
     StateComponent, 
     BudgetPdfComponent, StatePdfComponent, ExpenesPdfComponent, SalariesPdfComponent
   ],
@@ -116,7 +117,6 @@ registerLocaleData(localeDeAt);
     HttpClientModule,
     FormsModule,
     ToastrModule.forRoot(),
-    PdfViewerModule,
     BrowserAnimationsModule
   ],
   providers: [ { provide: LOCALE_ID, useValue: "es-CR" }],

@@ -1,73 +1,30 @@
-<div class="card">
-    <!-- Form de Gastos -->
-    <article class="card-body">
-        <form #BudgetForm="ngForm" autocomplete="off" (submit)="onSubmit(BudgetForm)">
-            <div class="form-group">
-                <div class="form-row">
-                    <div class="col form-group">
-                        <label>No. Factura</label>
-                        <input type="text" name="billnumber" #billnumber="ngModel" [(ngModel)]="bill.billnumber" class="form-control" required> 
-                    </div>
-                    <div class="col form-group">
-                        <label>Proveedor</label>
-                        <input type="text" name="provider" #provider="ngModel" [(ngModel)]="bill.provider" class="form-control" required>
-                        
+<section class="property-single nav-arrow-b">
+        <div class="container">
+            <div class="property-summary">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="title-box-d section-t4">
+                            <h3 class="title-d">Presupuesto</h3>
+                        </div>
                     </div>
                 </div>
-                <div class="form-row">
-                        <div class="col form-group">
-                            <label>Foto de factura</label>
-                            <input type="file" name="billphoto" #billphoto="ngModel" [(ngModel)]="bill.billphoto" class="form-control" required>
-                            
-                        </div>
-                        <div class="col form-group">
-                            
-                            <label>Item</label>
-                            <input class="btn btn-dark" name="add" type="button" value="Agregar">
-                            
-                        </div>
+                <div class="summary-list">
+                    <ul class="list">
+                        <li class="d-flex justify-content-between">
+                            <strong>Materiales:</strong>
+                            <span>{{this.serviceBudget.budget.supply}}</span>
+                        </li>
+                        <li class="d-flex justify-content-between">
+                            <strong>Planilla:</strong>
+                            <span> {{this.serviceBudget.budget.payroll }}</span>
+                        </li>
+                        <li class="d-flex justify-content-between">
+                            <strong>Total</strong>
+                            <span> {{this.serviceBudget.budget.total  | currency:"₡"}}</span>
+                        </li>
                         
-                    </div>
-            
-            
-            </div>
-            <div class="form-group">
-                <button type="submit" [disabled]="BudgetForm.invalid" class="btn btn-b-n btn-block">Registrar</button>
-            </div>
-        </form>
-    </article>
-</div> <!-- card.// -->
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class="container">
-    <h1>HOLA</h1>
-    <div class="row">
-        <div class='col-sm-6'>
-            <div class="form-group">
-                <div class='input-group date' id='datetimepicker1'>
-                    <input type='date' class="form-control" />
-                    <span class="input-group-addon">
-                        <span class="glyphicon glyphicon-calendar"></span>
-                    </span>
+                    </ul>
                 </div>
             </div>
         </div>
-        <div class='col-sm-6'>
-            Select a file: <input type="file" name="myFile"><br><br>
-        </div>
-    </div>
-</div>
+    </section>

@@ -1,91 +1,78 @@
 <div class="card">
     <!-- Form de vendedores -->
-    <article class="card-body">
-      <form #ProjectForm="ngForm" autocomplete="off" (submit)="onSubmit(ProjectForm)">
-        <div class="form-group">
-          <div class="form-row">
-            <div class="col form-group">
-              <label>Nombre</label>
-              <input type="text" name="Name" #Name="ngModel" [(ngModel)]="project.name" class="form-control" required>
-              
-            </div>
-            <div class="col form-group">
-              <label>Área de construcción</label>
-              <input type="number" name="BuiltArea" #BuiltArea="ngModel" [(ngModel)]="project.builtarea" class="form-control" required>
-              
-            </div>
+  <article class="card-body">
+    <form #ProjectForm="ngForm" autocomplete="off" (submit)="onSubmit(ProjectForm)">
+      <div class="form-group">
+        <div class="form-row">
+          <div class="col form-group">
+            <label>Nombre</label>
+            <input type="text" name="name" #name="ngModel" [(ngModel)]="project.name" class="form-control" required>
+          </div> 
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="form-row">
+          <div class="col form-group">
+            <label>Área de la propiedad</label>
+            <input type="number" name="lotarea" #lotarea="ngModel" [(ngModel)]="project.lotarea" class="form-control" required>
+          </div>
+          <div class="col form-group">
+            <label>Área de construcción</label>
+            <input type="number" name="builtarea" #builtarea="ngModel" [(ngModel)]="project.builtarea" class="form-control" required>        
           </div>
         </div>
+      </div>
 
-        <div class="form-group">
-            <div class="form-row">
-              <div class="col form-group">
-                <label>Área de la propiedad</label>
-                <input type="number" name="LotArea" #LotArea="ngModel" [(ngModel)]="project.lotarea" class="form-control" required>
-                
-              </div>
-              <div class="col form-group">
-                <label>Habitaciones</label>
-                <input type="number" name="Rooms" #Rooms="ngModel" [(ngModel)]="project.rooms" class="form-control" required>
-                
-              </div>
-            </div>
+      <div class="form-group">
+        <div class="form-row">
+          <div class="col form-group">
+            <label>Pisos</label>
+            <input type="number" name="floors" #floors="ngModel" [(ngModel)]="project.floors" class="form-control" required>
+          </div>
+          <div class="col form-group">
+            <label>Habitaciones</label>
+            <input type="number" name="rooms" #rooms="ngModel" [(ngModel)]="project.rooms" class="form-control" required>
+          </div>
         </div>
+      </div>
 
-        <div class="form-group">
-            <div class="form-row">
-              <div class="col form-group">
-                <label>Pisos</label>
-                <input type="number" name="Floors" #Floors="ngModel" [(ngModel)]="project.floors" class="form-control" required>
-                
-              </div>
-              <div class="col form-group">
-                <label>Baños</label>
-                <input type="number" name="Restrooms" #Restrooms="ngModel" [(ngModel)]="project.restrooms" class="form-control" required>
-                
-              </div>
-            </div>
+      <div class="form-group">
+        <div class="form-row">
+          <div class="col form-group">
+            <label>Baños</label>
+            <input type="number" name="restrooms" #restrooms="ngModel" [(ngModel)]="project.restrooms" class="form-control" required>
+          </div>
+          <div class="form-group col">
+            <label>Provincia</label>
+            <select name="province"  #province="ngModel" [(ngModel)]="project.province" [ngModelOptions]="{standalone: true}" class="form-control">
+              <option *ngFor="let Province of serviceLocation.provinceList" (click)="loadCanton(Province.province)">{{Province.province}}</option>
+            </select>
+          </div>
         </div>
+      </div>
 
-        <div class="form-group">
-            <div class="form-row">
-              <div class="col form-group">
-                <label>Pisos</label>
-                <input type="number" name="Floors" #Floors="ngModel" [(ngModel)]="project.floors" class="form-control" required>
-                
-              </div>
-              <div class="form-group col">
-                <label>Provincia</label>
-                <select name="Province"  #Province="ngModel" [(ngModel)]="project.province" [ngModelOptions]="{standalone: true}" class="form-control">
-                  <option *ngFor="let Province of serviceLocation.provinceList" (click)="loadCanton(Province)">{{Province}}</option>
-                </select>
-              </div>
-            </div>
+      <div class="form-group">
+        <div class="form-row">
+          <div class="form-group col">
+            <label>Canton</label>
+            <select name="canton"  #canton="ngModel" [(ngModel)]="project.canton" [ngModelOptions]="{standalone: true}" class="form-control">
+              <option *ngFor="let Canton of serviceLocation.cantonList" (click)="loadDistrict(Canton.canton)">{{Canton.canton}}</option>
+            </select>
+          </div>
+          <div class="form-group col">
+            <label>Distrito</label>
+            <select name="district"  #district="ngModel" [(ngModel)]="project.district" [ngModelOptions]="{standalone: true}" class="form-control">
+              <option *ngFor="let District of serviceLocation.districtList" (click)="selectDistrict(District.district)">{{District.district}}</option>
+            </select>
+          </div>
         </div>
-
-        <div class="form-group">
-            <div class="form-row">
-                <div class="form-group col">
-                    <label>Canton</label>
-                    <select name="Canton"  #Canton="ngModel" [(ngModel)]="project.canton" [ngModelOptions]="{standalone: true}" class="form-control">
-                        <option *ngFor="let Canton of serviceLocation.cantonList" (click)="loadDistrict(Canton)">{{Canton}}</option>
-                    </select>
-                </div>
-                <div class="form-group col">
-                    <label>Distrito</label>
-                    <select name="District"  #District="ngModel" [(ngModel)]="project.district" [ngModelOptions]="{standalone: true}" class="form-control">
-                    <option *ngFor="let District of serviceLocation.districtList">{{District}}</option>
-                    </select>
-                </div>
-            </div>
-        </div>
-
-
-        <div class="form-group">
-          <button type="submit" [disabled]="ProjectForm.invalid" class="btn btn-b-n btn-block">Registrar</button>
-        </div>
+      </div>
+      <div class="form-group">
+        <button type="submit" [disabled]="ProjectForm.invalid" class="btn btn-b-n btn-block">Registrar</button>
+      </div>
   
-      </form>
-    </article>
-  </div> <!-- card.// -->
+    </form>
+  </article>
+</div> <!-- card.// -->
   

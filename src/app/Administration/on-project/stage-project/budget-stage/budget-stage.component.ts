@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { BudgetManagementService } from 'src/app/Services/budget-management.service';
 
 @Component({
   selector: 'app-budget-stage',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BudgetStageComponent implements OnInit {
 
-  constructor() { }
+  idStage:number
+  constructor(private route: ActivatedRoute,
+    private serviceBudget:BudgetManagementService) { }
 
   ngOnInit() {
+    this.idStage = +this.route.snapshot.paramMap.get('stage');
+    this.serviceBudget.getBudgetByStage(this.idStage);
   }
+
+
 
 }

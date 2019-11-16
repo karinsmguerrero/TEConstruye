@@ -1,0 +1,32 @@
+<div class="card">
+        <article class="card-body">
+          <!--/ Supply Grid Star /-->
+          <div class="container">
+            <div class="row">
+              <table class="table">
+                <th>Usuario</th>
+                <th>Empleado</th>
+                <th>Cant. horas</th>
+                <th>Sal/hora</th>
+                <th>Salario</th>
+                <th></th>
+                <th></th>
+                <tr *ngFor="let Employee of servicePayroll.listPayrollStage">
+                  <td>{{Employee.username}}</td>
+                  <td>{{Employee.fullname}}</td>
+                  <td>{{Employee.hours}}</td>
+                  <td>{{Employee.salary}}</td>
+                  <td>{{Employee.total}}</td>
+                  <td ><input type="image" src="./assets/img/refresh.png" (click)="update(supply)" width="48" height="48">
+                  </td>
+                  <td><input type="image" src="./assets/img/cancel(1).png" (click)="delete(supply)" width="48" height="48">
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+          <!--/ Stage Grid End /-->
+        </article>
+      </div>
+            
+      

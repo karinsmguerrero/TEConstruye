@@ -4,6 +4,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { ConstantsService } from './constants.service';
 import { NgForm } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
+import { SupplyStage } from '../Models/supply-stage.model';
 
 @Injectable({
   providedIn: 'root'
@@ -11,8 +12,10 @@ import { ToastrService } from 'ngx-toastr';
 export class SupplyManagementService {
 
   list : Supply[];
-  
-  constructor(private http : HttpClient, private constant: ConstantsService,private toastr :ToastrService) { }
+  listSupplyStage : SupplyStage[];
+  constructor(private http : HttpClient, 
+              private constant: ConstantsService,
+              private toastr :ToastrService) { }
   getSupplies(){
     this.http.get(this.constant.routeURL + '/GetSupplies').toPromise().then(res => this.list = res as Supply[]);
   }
@@ -26,13 +29,18 @@ export class SupplyManagementService {
       })
     };
     var body ={
-      name:  formData.value.Name,
-      price: formData.value.Price
+      id: formData.value.id,
+      name:  formData.value.name,
+      price: formData.value.price
     };
     this.http.post(this.constant.routeURL + '/PostSupply',body,httpOptions).subscribe(res =>{
       this.toastr.success('Successfull','Material agregado')}, error=> {
         this.toastr.error('Error','Error al registrar material');
       }
     );
+  }
+
+  getSupplyStage(id:number){
+    this.http.get(this.constant.routeURL + '/GetSuppliesStage?id='+id).toPromise().then(res => this.listSupplyStage = res as SupplyStage[]);  
   }
 }

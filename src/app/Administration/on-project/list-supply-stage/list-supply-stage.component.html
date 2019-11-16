@@ -1,30 +1,29 @@
 <div class="card">
-
-        <article class="card-body">
-          <!--/ Agents Grid Star /-->
-          <div class="container">
-            <div class="row">
-      
-              <table class="table">
-                <th>Cant</th>
-                <th>Material</th>
-                <th>Precio</th>
-                <th></th>
-                <th></th>
-                <tr *ngFor="let Supply of serviceSupplyStage.list">
-                  <td>{{Supply.quantity}}</td>
-                  <td>{{Supply.name}}</td>
-                  <td>{{Supply.price}}</td>
-                  <td ><input type="image" src="./assets/img/refresh.png" (click)="update(supply)" width="48" height="48">
-                  </td>
-                  <td><input type="image" src="./assets/img/cancel(1).png" (click)="delete(supply)" width="48" height="48">
-                  </td>
-                </tr>
-              </table>
-      
-            </div>
-          </div>
-          <!--/ Stage Grid End /-->
-        </article>
+  <article class="card-body">
+    <!--/ Supply Grid Star /-->
+    <div class="container">
+      <div class="row">
+        <table class="table">
+          <th>Cant</th>
+          <th>Material</th>
+          <th>Precio</th>
+          <th>Total</th>
+          <th></th>
+          <th></th>
+          <tr *ngFor="let Supply of serviceSupply.listSupplyStage">
+            <td>{{Supply.quantity}}</td>
+            <td>{{Supply.supply_name}}</td>
+            <td>{{Supply.price}}</td>
+            <td>{{Supply.total}}</td>
+            <td ><input type="image" src="./assets/img/refresh.png" (click)="update(supply)" width="48" height="48">
+            </td>
+            <td><input type="image" src="./assets/img/cancel(1).png" (click)="delete(supply)" width="48" height="48">
+            </td>
+          </tr>
+        </table>
       </div>
+    </div>
+    <!--/ Stage Grid End /-->
+  </article>
+</div>
       

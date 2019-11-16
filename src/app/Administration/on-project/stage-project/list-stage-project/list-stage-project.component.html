@@ -20,8 +20,8 @@
               </td>
               <td><input type="image" src="./assets/img/cancel(1).png" (click)="delete(supply)" width="48" height="48">
               </td>
-              <td><a href="#" routerLink="/onProject/stage/viewMore" class="text-right"></a>
-                <input type="image" src="./assets/img/viewmore.png" (click)="viewMore(Stage)" width="48" height="48">
+              <td>
+                <input type="image" src="./assets/img/view.png" routerLink="/project-detail/{{this.id}}/view-more/{{Stage.id}}" width="48" height="48">
               </td>
             </tr>
           </table>

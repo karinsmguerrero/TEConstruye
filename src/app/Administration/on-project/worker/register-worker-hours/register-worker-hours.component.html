@@ -5,14 +5,14 @@
             <div class="form-group">
                 <div class="form-row"> 
                     <div class="form-group col">
-                        <label>Material</label>
-                        <select name="EmployeeList"  #Employee="ngModel" [(ngModel)]="Employee.username" [ngModelOptions]="{standalone: true}" class="form-control">
-                        <option *ngFor="let Employee of serviceEmployee.list" >{{Employee.username}}-{{Employee.name}}</option>
+                        <label>Empleado</label>
+                        <select name="employee"  #employee="ngModel" [(ngModel)]="employeehours.username" [ngModelOptions]="{standalone: true}" class="form-control">
+                        <option *ngFor="let Employee of serviceUser.employeeList" (click)="employeeSelected(Employee.username)">{{Employee.id}}-{{Employee.fullname}}</option>
                         </select>
                     </div>
                     <div class="col form-group">
                         <label>Horas</label>
-                        <input type='number' class="form-control" name="Hours" #Name="ngModel" [(ngModel)]="WorkerStage.hours" required/>    
+                        <input type='number' class="form-control" name="hours" #hours="ngModel" [(ngModel)]="employeehours.hours" required/>    
                     </div>
                 </div>            
             </div>

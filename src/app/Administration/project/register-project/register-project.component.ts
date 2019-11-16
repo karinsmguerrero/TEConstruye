@@ -17,9 +17,10 @@ export class RegisterProjectComponent implements OnInit {
     private serviceProject: ProjectManagementService) { }
 
   ngOnInit() {
-    //this.serviceLocation.getProvince();
+    this.serviceLocation.getProvince();
     this.province="";
    this.canton="";
+    this.resetProjectForm()
   }
 
   loadCanton(province : string){
@@ -33,6 +34,10 @@ export class RegisterProjectComponent implements OnInit {
     
   }
 
+  selectDistrict(district : string){
+    this.district= district;
+  }
+
   resetProjectForm(form?: NgForm) {
     if (form != null)
       form.reset();
@@ -42,12 +47,15 @@ export class RegisterProjectComponent implements OnInit {
       builtarea:0,
       rooms:0,
       restrooms:0,
+      province:'',
+      canton:'',
+      district:'',
       floors:1
     }
   }
 
   onSubmit(form: NgForm) {
-    this.serviceProject.insertProject(form);
+    this.serviceProject.insertProject(form,this.province,this.canton,this.district);
     this.resetProjectForm(form);
   }
 

@@ -6,13 +6,13 @@
             <div class="form-row"> 
                 <div class="form-group col">
                     <label>Material</label>
-                    <select name="Supply"  #StageType="ngModel" [(ngModel)]="Supply.name" [ngModelOptions]="{standalone: true}" class="form-control">
-                    <option *ngFor="let Supply of serviceStageType.list" >{{Supply.name}}</option>
+                    <select name="supply"  #supply="ngModel" [(ngModel)]="supply.supplyid" [ngModelOptions]="{standalone: true}" class="form-control">
+                        <option *ngFor="let Supply of serviceSupply.list" (click)="supplyTypeSelected(Supply.id)" >{{Supply.id}}-{{Supply.name}}</option>
                     </select>
                 </div>
                 <div class="col form-group">
                     <label>Cantidad</label>
-                    <input type='number' class="form-control" name="Quantity" #Name="ngModel" [(ngModel)]="StageProject.startdate" required/>    
+                    <input type='number' class="form-control" name="quantity" #quantity="ngModel" [(ngModel)]="supply.quantity" required/>    
                 </div>
             </div>            
         </div>

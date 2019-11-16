@@ -18,8 +18,6 @@ export class StageTypeManagementService {
   }
 
   insertStage(formData:NgForm){
-    console.log("Name "+formData.value.Name);
-    console.log("Description "+formData.value.Description);
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type':  'application/json'
@@ -36,4 +34,6 @@ export class StageTypeManagementService {
     );
     
   }
+
+
 }
