@@ -19,6 +19,8 @@ import { BudgetComponent } from './Reports/budget/budget.component';
 import { InfoProjectComponent } from './Administration/on-project/info-project/info-project.component';
 import { StateComponent } from './Reports/state/state.component';
 import { BudgetPdfComponent } from './Reports/budget-pdf/budget-pdf.component';
+import { SalariesComponent } from './Reports/salaries/salaries.component';
+import { ExpensesComponent } from './Reports/expenses/expenses.component';
 
 
 
@@ -45,7 +47,8 @@ const routes: Routes = [
   { path: 'hours', component: RegisterHoursComponent},
   { path: 'reports/budget', component: BudgetComponent},
   { path: 'reports/state', component: StateComponent},
-  { path: 'pdf', component: BudgetPdfComponent}
+  { path: 'reports/salaries', component: SalariesComponent},
+  { path: 'reports/expenses', component: ExpensesComponent}
 ];
 
 @NgModule({

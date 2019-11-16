@@ -58,6 +58,8 @@ import { BudgetPdfComponent } from "./Reports/budget-pdf/budget-pdf.component";
 import { registerLocaleData } from '@angular/common';
 import localeDeAt from '@angular/common/locales/es-cr';
 import { StatePdfComponent } from './Reports/state-pdf/state-pdf.component';
+import { ExpenesPdfComponent } from './Reports/expenes-pdf/expenes-pdf.component';
+import { SalariesPdfComponent } from './Reports/salaries-pdf/salaries-pdf.component';
 
 registerLocaleData(localeDeAt);
 
@@ -106,7 +108,7 @@ registerLocaleData(localeDeAt);
     ListWorkerStageComponent,
     RegisterWorkerHoursComponent,
     StateComponent, 
-    BudgetPdfComponent, StatePdfComponent
+    BudgetPdfComponent, StatePdfComponent, ExpenesPdfComponent, SalariesPdfComponent
   ],
   imports: [
     BrowserModule,
