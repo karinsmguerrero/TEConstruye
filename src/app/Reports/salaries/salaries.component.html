@@ -14,30 +14,32 @@
       </div>
       <!--/ Agents Grid Star /-->
       <div class="container">
-        <div class="row" *ngFor="let reportLine of service.salaryReport">
-            <h5 style="font-weight:bold;">{{reportLine.week}}</h5>
-          <div class="col-sm-4 align-self-center justify-content-center ">
-            
-            
-            <div *ngFor="let employee of reportLine.employeesToPay">
-              <h5>{{employee.name}}</h5>
-              <!-- 
-              <div class="col-sm-8">
-                <table class="table">
-                  <th class="col-sm-4" style="background-color: #f5f5f5;">Proyecto</th>
-                  <th class="col-sm-4" style="background-color: #f5f5f5;">Total</th>
-                  <tr *ngFor="let line of employee.salaryLines">
-                    <td>{{line.project}}</td>
-                    <td> {{line.total  | currency:"₡"}}</td>
-                  </tr>
-                </table>
-              </div> -->
-            </div> 
+        <div *ngFor="let week of service.salaryReport">
+          <div class="row align-self-center justify-content-center"
+            style="background-color: #2eca6a; font-weight:bold;">
+            <h5 style="font-weight:bold;">Semana {{week.week}} del {{year}}</h5>
           </div>
-
-          <hr>
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="row" *ngFor="let employee of week.employeesToPay">
+                <div class="col-sm-4 align-self-center justify-content-center">
+                  <h5>{{employee.name}}</h5>
+                </div>
+                <div class="col-sm-8">
+                  <table class="table">
+                    <th class="col-sm-4" style="background-color: #f5f5f5;">Proyecto</th>
+                    <th class="col-sm-4" style="background-color: #f5f5f5;">Total</th>
+                    <tr *ngFor="let line of employee.salaryLines">
+                      <td>{{line.project}}</td>
+                      <td> {{line.total  | currency:"₡"}}</td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <hr>
+          </div>
         </div>
-
       </div>
       <!--/ Agents Grid End /-->
     </article>

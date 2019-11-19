@@ -28,10 +28,8 @@ export class ReportsService {
   stateLines: StateLine[] = [];
   totals: StateTotalLine;
   //Reporte de planilla
-  weeks : Week[];
-  employees : EmployeeName[];
-  salaryReport : SalariesReportLine[];
-  line : SalariesReportLine;
+  salaryReport: SalariesReportLine[];
+  //weekLine: SalariesReportLine;
 
   constructor(private http: HttpClient, private constant: ConstantsService) { }
 
@@ -56,46 +54,37 @@ export class ReportsService {
     });
   }
 
-  getSalariesReport(year : number){
+  getSalariesReport(year: number) {
     this.salaryReport = [];
-    this.employees = [];
-    this.weeks = [];
     this.http.get(this.constant.routeURL + '/GetWeeks/' + year).toPromise().then((res: Response) => {
-      this.weeks = res['weeks'] as Week[];
-      this.loadEmployees(year, this.weeks);
-      //alert(this.weeks[0].week);
+      var weeks = res['weeks'] as Week[];
+      this.loadEmployees(year, weeks);
     });
-    //alert(this.weeks[0].week);
-   // alert(this.salaryReport[0].week)
-  
   }
 
-  loadEmployees(year : number, weeks : Week[]){
-    this.employees = [];
+  loadEmployees(year: number, weeks: Week[]) {
     weeks.forEach(week => {
-      //alert("week: " + week.week);
-      this.line = new SalariesReportLine();
-      this.line.week = week.week;
-      this.http.get(this.constant.routeURL + '/GetEmployees/' + year + '/' + week.week).toPromise().then((res: Response) => {
-        this.employees = res['employees'] as EmployeeName[];
-        this.loadSalaryLines(this.employees, year, this.line);
+      console.log("week: " + week.week);
+      var currentWeekLine = new SalariesReportLine();
+      currentWeekLine.week = week.week;
+      this.http.get(this.constant.routeURL + '/GetEmployees/' + year + '/' + currentWeekLine.week).toPromise().then((res: Response) => {
+        var employeesToPay = res['employees'] as EmployeeName[];
+        this.loadSalaryLines(employeesToPay, year, currentWeekLine);
       });
     });
   }
 
-  loadSalaryLines(employees: EmployeeName[], year : number, week : SalariesReportLine) {
-    this.line.employeesToPay = [];
+  loadSalaryLines(employees: EmployeeName[], year: number, mainLine: SalariesReportLine) {
+    mainLine.employeesToPay = [];
     employees.forEach(employee => {
-      //alert("employee: " + employee.name);
-      this.http.get(this.constant.routeURL + '/GetSalaryLines/' + year + '/' + week.week + '/' + employee.name).toPromise().then((res: Response) => {
-        var EmployeeToPay = new EmployeeSalaryLine();
-        EmployeeToPay.name = employee.name;
-        EmployeeToPay.salaryLines = res['lines'] as SalariesLine[];
-        this.line.employeesToPay.push(EmployeeToPay);
-        //alert(EmployeeToPay.name);    
-      }); 
+      var currentEmployeeLine = new EmployeeSalaryLine();
+      currentEmployeeLine.name = employee.name;
+      this.http.get(this.constant.routeURL + '/GetSalaryLines/' + year + '/' + mainLine.week + '/' + employee.name).toPromise().then((res: Response) => {
+        currentEmployeeLine.salaryLines = res['lines'] as SalariesLine[];
+      });
+      mainLine.employeesToPay.push(currentEmployeeLine);
     });
-    this.salaryReport.push(this.line); 
+    this.salaryReport.push(mainLine);
   }
 
   getStateReport() {
@@ -121,7 +110,7 @@ export class ReportsService {
     });
   }
 
-  loadTotals(project: string) : StateTotalLine {
+  loadTotals(project: string): StateTotalLine {
     var totals = new StateTotalLine;
     this.http.get(this.constant.routeURL + '/GetReportTotals/' + project).toPromise().then((res: Response) => {
       //alert(res['result'][0].total_budget);
