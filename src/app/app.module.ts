@@ -58,6 +58,7 @@ import { BudgetPdfComponent } from "./Reports/budget-pdf/budget-pdf.component";
 //Código tomado de: https://stackoverflow.com/questions/34904683/how-to-set-locale-in-datepipe-in-angular-2
 import { registerLocaleData } from '@angular/common';
 import localeDeAt from '@angular/common/locales/es-cr';
+registerLocaleData(localeDeAt);
 import { StatePdfComponent } from './Reports/state-pdf/state-pdf.component';
 import { ExpenesPdfComponent } from './Reports/expenes-pdf/expenes-pdf.component';
 import { SalariesPdfComponent } from './Reports/salaries-pdf/salaries-pdf.component';
