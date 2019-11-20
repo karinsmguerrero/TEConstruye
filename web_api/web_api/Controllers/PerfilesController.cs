@@ -43,7 +43,7 @@ namespace web_api.Controllers
                 new SqlParameter("@descripcion", perfil.Descripcion)
             };
 
-                var status = db.Database.ExecuteSqlCommand("INSERT INTO PERFIL_CLIENTE(Nombre,Descripciom)" +
+                var status = db.Database.ExecuteSqlCommand("INSERT INTO PERFIL_CLIENTE(Nombre,Descripcion)" +
                 "VALUES (@nombre,@descripcion)", parameters);
 
                 return this.Request.CreateResponse(HttpStatusCode.OK, status);

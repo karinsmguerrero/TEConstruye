@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -60,6 +61,40 @@ namespace web_api.Controllers
 
             conn.Close();
             return this.Request.CreateResponse(HttpStatusCode.OK, testDataSet);
+        }
+
+
+        /**
+         * Metodo POST
+         * Inserta un nuevo tipo de inmueble
+         * */
+        [HttpPost]
+        [Route("api/PostTec")]
+        public HttpResponseMessage InsertartInmueble([FromBody] Property p)
+        {
+            using (var db = new TecEntities())
+            {
+                SqlParameter[] parameters = new SqlParameter[]
+                    {
+                        new SqlParameter("@titulo", p.name),new SqlParameter("@cantidadbanos", p.restroom),
+                        new SqlParameter("@idubicacion", p.location), new SqlParameter("@TamanoLote", p.lotarea),
+                        new SqlParameter("@TamanoPropiedad", p.builtarea), new SqlParameter("@Piscina", p.pools),
+                        new SqlParameter("@ParqueoVisitas", p.guestparking), new SqlParameter("@CantidadNiveles", p.floors),
+                        new SqlParameter("@Parqueo", p.parking),new SqlParameter("@CantidadHabitaciones", p.rooms),
+                        new SqlParameter("@Precio", p.price),new SqlParameter("@Propietario", p.client),
+                        new SqlParameter("@Gimnasio", p.gym)
+
+                    };
+
+                var status = db.Database.ExecuteSqlCommand("INSERT INTO PROPIEDAD(Titulo,CantidadBanos,IdUbicacion," +
+                    "TamanoLote,TamanoPropiedad,Piscina,ParqueoVisitas,CantidadNiveles,Parqueo,Precio,CantidadHabitaciones," +
+                    "Propietario,Gimnasio) " +
+                    "VALUES(@titulo,@cantidadbanos,@idubicacion,@TamanoLote,@TamanoPropiedad,@Piscina,@ParqueoVisitas," +
+                    "@CantidadNiveles,@Parqueo,@Precio,@CantidadHabitaciones,@Propietario,@Gimnasio)" +
+                    "", parameters);
+
+                return this.Request.CreateResponse(HttpStatusCode.OK, status);
+            }
         }
     }
 }
