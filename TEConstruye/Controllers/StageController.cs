@@ -18,20 +18,13 @@ namespace TEConstruye.Controllers
         [Route("api/GetStagesType")]
         public HttpResponseMessage GetStagesType()
         {
-
-
             conn.Open();
-            // Retrieve all rows
-
             NpgsqlDataAdapter adapter = new NpgsqlDataAdapter("SELECT id, name, description, def " +
                 " FROM public.stage_type", conn);
             DataSet list = new DataSet();
-            // adapter.Fill(list, "stage_type");
             adapter.Fill(list);
-
             conn.Close();
             return this.Request.CreateResponse(HttpStatusCode.OK, list.Tables[0]);
-
         }
 
 
@@ -41,7 +34,6 @@ namespace TEConstruye.Controllers
         [Route("api/PostStageType")]
         public HttpResponseMessage InsertStageType([FromBody] Stage stage)
         {
-
             conn.Open();
             NpgsqlCommand cmd = new NpgsqlCommand(
                 "INSERT INTO stage_type(name,description,def)" +
@@ -53,7 +45,6 @@ namespace TEConstruye.Controllers
             cmd.ExecuteNonQuery();
             conn.Close();
             return this.Request.CreateResponse(HttpStatusCode.OK, "Inserted");
-
         }
     }
 }

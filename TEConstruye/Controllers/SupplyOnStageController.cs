@@ -14,13 +14,13 @@ namespace TEConstruye.Controllers
     {
         NpgsqlConnection conn = new NpgsqlConnection(BDconnection.conn);
         [HttpGet]
-        [Route("api/GetSupplyStage")]
-        public HttpResponseMessage GetHours(int idstage)
+        [Route("api/GetSuppliesStage")]
+        public HttpResponseMessage GetSupplies(int id)
         {
 
             conn.Open();
             NpgsqlDataAdapter adapter = new NpgsqlDataAdapter("SELECT idsupply,supply_name," +
-                "quantity,price,total FROM vSuppliesByStage  WHERE idstage=" + idstage, conn);
+                "quantity,price,total FROM vSuppliesByStage  WHERE idstage=" + id, conn);
             DataSet list = new DataSet();
             adapter.Fill(list);
 
@@ -31,7 +31,7 @@ namespace TEConstruye.Controllers
 
 
         [HttpPost]
-        [Route("api/PostWorkerProject")]
+        [Route("api/PostSupplyProject")]
         public HttpResponseMessage InsertSupply([FromBody] SupplyProject supply)
         {
 

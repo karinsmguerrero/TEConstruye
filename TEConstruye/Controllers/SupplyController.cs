@@ -37,9 +37,11 @@ namespace TEConstruye.Controllers
 
             conn.Open();
             NpgsqlCommand cmd = new NpgsqlCommand(
-                "INSERT INTO supplies(name,price)" +
-                 "VALUES(:name, :price)", conn);
+                "INSERT INTO supplies(id,name,price)" +
+                 "VALUES(:id,:name, :price)", conn);
+
             System.Diagnostics.Debug.WriteLine("Setted big query");
+            cmd.Parameters.AddWithValue("id", supply.id);
             cmd.Parameters.AddWithValue("name", supply.name);
             cmd.Parameters.AddWithValue("price", supply.price);
             cmd.Prepare();

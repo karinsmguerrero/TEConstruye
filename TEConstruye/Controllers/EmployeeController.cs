@@ -22,7 +22,7 @@ namespace TEConstruye.Controllers
             conn.Close();
             conn.Open();
 
-            NpgsqlDataAdapter adapter = new NpgsqlDataAdapter("select firstname, lastnamea, lastnameb, telephone, id, salary" + 
+            NpgsqlDataAdapter adapter = new NpgsqlDataAdapter("select firstname, lastnamea, lastnameb, telephone, id, salary" +
                 " from users join employee on users.username = employee.username", conn);
             DataSet ds = new DataSet();
             adapter.Fill(ds, "users");
@@ -57,6 +57,23 @@ namespace TEConstruye.Controllers
 
             return this.Request.CreateResponse(HttpStatusCode.OK, "insertado");
 
+        }
+
+        [HttpGet]
+        [Route("api/GetAllEmployees")]
+        public HttpResponseMessage GetAllEmployees()
+        {
+            conn.Close();
+            conn.Open();
+
+            NpgsqlDataAdapter adapter = new NpgsqlDataAdapter("SELECT id,employee.username,salary," +
+                "get_fullname(employee.username) AS fullname FROM employee INNER JOIN users "+
+                "ON employee.username = users.username; ", conn);
+            DataSet ds = new DataSet();
+            adapter.Fill(ds, "users");
+
+            conn.Close();
+            return this.Request.CreateResponse(HttpStatusCode.OK, ds);
         }
     }
 }
