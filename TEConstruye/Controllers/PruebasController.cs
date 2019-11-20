@@ -13,7 +13,7 @@ namespace TEConstruye.Controllers
 {
     public class PruebasController : ApiController
     {
-        /*
+        
         NpgsqlConnection conn = new NpgsqlConnection(BDconnection.conn);
 
         //Código tomado de: https://csharp.hotexamples.com/examples/Npgsql/NpgsqlDataAdapter/Fill/php-npgsqldataadapter-fill-method-examples.html
@@ -66,6 +66,6 @@ namespace TEConstruye.Controllers
             }
             return this.Request.CreateResponse(HttpStatusCode.OK, "TERMINATED. NO RESPONSE.");
         }
-        */
+        
     }
 }

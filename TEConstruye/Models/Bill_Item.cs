@@ -5,7 +5,7 @@ using System.Web;
 
 namespace TEConstruye.Controllers
 {
-    public class Bill_Item
+    public class Bill_Item2
     {
         public int idbill { get; set; }
         public int idsupply { get; set; }

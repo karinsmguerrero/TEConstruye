@@ -199,21 +199,32 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="BDconnection.cs" />
+    <Compile Include="Controllers\Bill_Item.cs" />
+    <Compile Include="Controllers\BudgetController.cs" />
     <Compile Include="Controllers\BudgetReportController.cs" />
     <Compile Include="Controllers\ClientsController.cs" />
     <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Controllers\EngineerController.cs" />
+    <Compile Include="Controllers\ExpensesController.cs" />
+    <Compile Include="Controllers\ExpensesReportController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LocationController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\ProjectController.cs" />
     <Compile Include="Controllers\PruebasController.cs" />
+    <Compile Include="Controllers\SalaryReportController.cs" />
     <Compile Include="Controllers\StageController.cs" />
+    <Compile Include="Controllers\StageProjectController.cs" />
+    <Compile Include="Controllers\StateReportController.cs" />
     <Compile Include="Controllers\SupplyController.cs" />
+    <Compile Include="Controllers\SupplyOnStageController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="Controllers\WorkerOnProjectController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Bill.cs" />
+    <Compile Include="Models\Bill_Item.cs" />
     <Compile Include="Models\BudgetLine.cs" />
     <Compile Include="Models\Client.cs" />
     <Compile Include="Models\Credentials.cs" />
@@ -223,8 +234,11 @@
     <Compile Include="Models\Project.cs" />
     <Compile Include="Models\PropiedadU.cs" />
     <Compile Include="Models\Stage.cs" />
+    <Compile Include="Models\StageProject.cs" />
     <Compile Include="Models\Supply.cs" />
+    <Compile Include="Models\SupplyProject.cs" />
     <Compile Include="Models\User.cs" />
+    <Compile Include="Models\WorkerOnProject.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
