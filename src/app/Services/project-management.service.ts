@@ -4,6 +4,7 @@ import { ConstantsService } from './constants.service';
 import { NgForm } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { Project } from '../Models/project.model';
+import { ProjectTecres } from '../Models/project-tecres.model';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,7 @@ import { Project } from '../Models/project.model';
 export class ProjectManagementService {
   list : Project[];
   onProject: Project;
-  
+  projectTec:ProjectTecres;
   constructor(private http : HttpClient, private constant: ConstantsService,private toastr :ToastrService) { }
   getProjects(){
     this.http.get(this.constant.routeURL + '/GetProjects').toPromise().then(res => this.list = res as Project[]);
@@ -22,6 +23,11 @@ export class ProjectManagementService {
     });
   }
 
+  getProjectTec(id:number){
+    this.http.get(this.constant.routeURL + '/GetProjectTec?id='+id).toPromise().then((res: Response) => {
+      this.projectTec = res['project'][0] as ProjectTecres
+    });
+  }
   insertProject(formData:NgForm, 
                 province:string, canton:string, district:string){
     
@@ -34,7 +40,7 @@ export class ProjectManagementService {
       name: formData.value.name,
       lotarea:  formData.value.lotarea,
       builtarea: formData.value.builtarea,
-      rooms:formData.value.Rooms,
+      rooms:formData.value.rooms,
       restrooms:formData.value.restrooms,
       floors:formData.value.floors,
       client:localStorage.getItem('userName'),

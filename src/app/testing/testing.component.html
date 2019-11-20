@@ -1,20 +1,13 @@
-<label>Provincia</label>
-<select name="Prov" >
-  <option *ngFor="let Province of serviceLocation.provinceList" (click)="loadCanton(Province.province)">{{Province.province}}</option>
-</select>
-
-<label>Cantón</label>
-<select name="Canton"  >
-    <option *ngFor="let Canton of serviceLocation.cantonList" (click)="loadDistrict(Canton.canton)">{{Canton.canton}}</option>
-</select>
-
-
-<label>Distrito</label>
-<select name="District" >
-  <option *ngFor="let District of serviceLocation.districtList">{{District.district}}</option>
-</select>
-
-<label>Material</label>
-<select name="Supply"  >
-  <option *ngFor="let Supply of serviceSupply.list" >{{Supply.id}}-{{Supply.name}}</option>
-</select>
+<div class="intro-single">
+  <!--Titulo-->
+  <div class="container">
+      <div class="row">
+          <div class="col-md-12 col-lg-8">
+            <div class="title-single-box">
+              <h1 class="title-single" >{{this.serviceProject.projectTec.name}}</h1>
+              <span class="color-text-a">{{this.serviceProject.projectTec.lotarea}} m<sup>2</sup></span>
+            </div>
+          </div>   
+      </div>
+  </div>
+</div>

@@ -1,0 +1,46 @@
+<div class="intro-single">
+  <!--Titulo-->
+  <div class="container">
+      <div class="row">
+          <div class="col-md-12 col-lg-8">
+            <div class="title-single-box">
+              <h1 class="title-single" >{{this.serviceProject.projectTec.name}}</h1>
+              <span class="color-text-a">{{this.serviceProject.projectTec.lotarea}} m<sup>2</sup></span>
+            </div>
+          </div>   
+      </div>
+  </div>
+</div>
+
+
+<div class="card">
+
+    <!-- Form de Porpiedades -->
+    <article class="card-body">
+      <form #PropertyForm="ngForm" autocomplete="off" (submit)="onSubmit(PropertyForm)">
+        <div class="form-group">
+          <div class="form-row">
+            <div class="col form-group">
+              <label>Precio</label>
+              <input type="number" name="price" #price="ngModel" [(ngModel)]="property.price" class="form-control" required>
+            </div>
+            <div class="col form-group">
+              <div class="label">Extras</div>
+                <ul class="checkbox">
+                  <li><input type="checkbox" name="gym" #gym="ngModel" [(ngModel)]="property.gym" value="gym" tittle="Gimnasio">Gimnasio</li>
+                  <li><input type="checkbox" name="parking" #parking="ngModel" [(ngModel)]="property.parking" value="parking" tittle="Parqueo">Parqueo</li>
+                  <li><input type="checkbox" name="guestparking" #guestparking="ngModel" [(ngModel)]="property.guestparking" value="guestparking" tittle="Parqeuo Vistias">Parqueo de visitas</li>
+                  <li><input type="checkbox" name="pools" #pools="ngModel" [(ngModel)]="property.pools" value="pools" tittle="Piscina">Piscina</li>
+                </ul> 
+              </div>
+            </div>
+          </div>
+
+        <div class="form-group">
+          <button type="submit" [disabled]="PropertyForm.invalid" class="btn btn-b-n btn-block">Registrar</button>
+        </div>
+  
+      </form>
+    </article>
+  </div> <!-- card.// -->
+  

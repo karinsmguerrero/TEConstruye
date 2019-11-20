@@ -59,6 +59,8 @@ import { BudgetPdfComponent } from "./Reports/budget-pdf/budget-pdf.component";
 import { registerLocaleData } from '@angular/common';
 import localeDeAt from '@angular/common/locales/es-cr';
 import { StatePdfComponent } from './Reports/state-pdf/state-pdf.component';
+import { TecresComponent } from './Administration/tecres/tecres.component';
+import { PropertyComponent } from './Administration/property/property.component';
 
 
 
@@ -108,7 +110,7 @@ import { StatePdfComponent } from './Reports/state-pdf/state-pdf.component';
     TestingComponent,
     StateComponent, 
     BudgetPdfComponent, 
-    StatePdfComponent
+    StatePdfComponent, TecresComponent, PropertyComponent
   ],
   imports: [
     BrowserModule,
