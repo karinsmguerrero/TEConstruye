@@ -5,15 +5,21 @@
     <article class="card-body">
 
       <div class="row">
-        <div class="col-sm-10">
+        <div class="col-sm-2">
+          <select name="yearSelector" #yearSelector="ngModel" [(ngModel)]="year" [ngModelOptions]="{standalone: true}"
+            class="form-control" [value]=2018>
+            <option *ngFor="let yeart of service.salaryYear" (click)="loadReport()">{{yeart.year}}</option>
+          </select>
+        </div>
+        <div class="col-sm-8">
           <h4 class="card-title text-center mb-4 mt-1">Planilla semanal</h4>
         </div>
         <div class="col-sm-2 ">
-          <app-state-pdf></app-state-pdf>
+          <app-salaries-pdf></app-salaries-pdf>
         </div>
       </div>
       <!--/ Agents Grid Star /-->
-      <div class="container">
+      <div *ngIf="year != null" class="container">
         <div *ngFor="let week of service.salaryReport">
           <div class="row align-self-center justify-content-center"
             style="background-color: #2eca6a; font-weight:bold;">

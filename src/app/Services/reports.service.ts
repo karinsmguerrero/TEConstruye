@@ -12,6 +12,9 @@ import { EmployeeSalaryLine } from '../Models/employee-salary-line.model';
 import { SalariesReportLine } from '../Models/salaries-report-line.model';
 import { Week } from '../Models/week.model';
 import { EmployeeName } from '../Models/employee-name.model';
+import { ExpensesReportLine } from '../Models/expenses-report-line.model';
+import { ExpensesLine } from '../Models/expenses-line.model';
+import { Year } from '../Models/year.model';
 
 @Injectable({
   providedIn: 'root'
@@ -29,9 +32,25 @@ export class ReportsService {
   totals: StateTotalLine;
   //Reporte de planilla
   salaryReport: SalariesReportLine[];
-  //weekLine: SalariesReportLine;
+  //Reporte de gastos
+  expensesReport : ExpensesReportLine[];
+  //Años
+  expensesYear : Year[] = [];
+  salaryYear : Year[] = [];
 
   constructor(private http: HttpClient, private constant: ConstantsService) { }
+
+  getExpensesYears(){
+    this.http.get(this.constant.routeURL + '/GetYearsForExpenses').toPromise().then((res: Response) => {
+      this.expensesYear = res['years'] as Year[];
+    });
+  }
+
+  getSalariesYears(){
+    this.http.get(this.constant.routeURL + '/GetYearsForSalaries').toPromise().then((res: Response) => {
+      this.salaryYear = res['years'] as Year[];
+    });
+  }
 
   getBudgetReport() {
     this.projects = [];
@@ -54,6 +73,26 @@ export class ReportsService {
     });
   }
 
+  getExpensesReport(year : number) {
+    this.expensesReport = [];
+    this.http.get(this.constant.routeURL + '/GetWeeksForExpenses/' + year).toPromise().then((res: Response) => {
+      var weeks = res['weeks'] as Week[];
+      this.loadExpenses(weeks, year);
+    });
+  }
+
+  loadExpenses(weeks: Week[], year : number) {
+    weeks.forEach(week => {
+      //alert("week: " + week.week);
+      this.http.get(this.constant.routeURL + '/GetExpersesPerWeek/' + year + '/' + week.week).toPromise().then((res: Response) => {
+        var mainLine = new ExpensesReportLine();
+        mainLine.week = week.week;
+        mainLine.lines =  res['lines'] as ExpensesLine[];
+        this.expensesReport.push(mainLine);
+      });
+    });
+  }
+
   getSalariesReport(year: number) {
     this.salaryReport = [];
     this.http.get(this.constant.routeURL + '/GetWeeks/' + year).toPromise().then((res: Response) => {
@@ -64,7 +103,7 @@ export class ReportsService {
 
   loadEmployees(year: number, weeks: Week[]) {
     weeks.forEach(week => {
-      console.log("week: " + week.week);
+      //console.log("week: " + week.week);
       var currentWeekLine = new SalariesReportLine();
       currentWeekLine.week = week.week;
       this.http.get(this.constant.routeURL + '/GetEmployees/' + year + '/' + currentWeekLine.week).toPromise().then((res: Response) => {

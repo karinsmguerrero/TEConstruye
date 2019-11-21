@@ -62,6 +62,8 @@ registerLocaleData(localeDeAt);
 import { StatePdfComponent } from './Reports/state-pdf/state-pdf.component';
 import { ExpenesPdfComponent } from './Reports/expenes-pdf/expenes-pdf.component';
 import { SalariesPdfComponent } from './Reports/salaries-pdf/salaries-pdf.component';
+import { NavigationEngineerComponent } from './Miscellaneous/navigation-engineer/navigation-engineer.component';
+import { ProjectAllComponent } from './Administration/project/project-all/project-all.component';
 
 
 
@@ -110,7 +112,8 @@ import { SalariesPdfComponent } from './Reports/salaries-pdf/salaries-pdf.compon
     PayrollComponent,
     TestingComponent,
     StateComponent, 
-    BudgetPdfComponent, StatePdfComponent, ExpenesPdfComponent, SalariesPdfComponent
+    BudgetPdfComponent, StatePdfComponent, ExpenesPdfComponent, SalariesPdfComponent, NavigationEngineerComponent,
+    ProjectAllComponent
   ],
   imports: [
     BrowserModule,

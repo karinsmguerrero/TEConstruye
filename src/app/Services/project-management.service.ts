@@ -11,14 +11,22 @@ import { Project } from '../Models/project.model';
 export class ProjectManagementService {
   list : Project[];
   onProject: Project;
+  projects : Project[] = [];
   
   constructor(private http : HttpClient, private constant: ConstantsService,private toastr :ToastrService) { }
+
   getProjects(){
     this.http.get(this.constant.routeURL + '/GetProjects').toPromise().then(res => this.list = res as Project[]);
   }
   getProject(id:number){
     this.http.get(this.constant.routeURL + '/GetProject?id='+id).toPromise().then((res: Response) => {
       this.onProject = res['project'][0] as Project
+    });
+  }
+
+  getUserProjects(username : string){
+    this.http.get(this.constant.routeURL + '/GetUserProject/' + username).toPromise().then((res: Response) => {
+      this.projects = res['project'] as Project[];
     });
   }
 

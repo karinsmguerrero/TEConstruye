@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProjectManagementService } from 'src/app/Services/project-management.service';
 
 @Component({
   selector: 'app-project-all',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProjectAllComponent implements OnInit {
 
-  constructor() { }
+  constructor(private service : ProjectManagementService) { }
 
   ngOnInit() {
+    this.service.getUserProjects(localStorage.getItem('userName'));
   }
 
 }

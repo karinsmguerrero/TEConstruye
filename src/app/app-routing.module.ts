@@ -27,6 +27,7 @@ import { SalariesComponent } from './Reports/salaries/salaries.component';
 import { ExpensesComponent } from './Reports/expenses/expenses.component';
 import { RegisterStageComponent } from './Administration/stages/register-stage/register-stage.component';
 import { RegisterStageProjectComponent } from './Administration/on-project/stage-project/register-stage-project/register-stage-project.component';
+import { ProjectAllComponent } from './Administration/project/project-all/project-all.component';
 
 
 
@@ -43,6 +44,7 @@ const routes: Routes = [
   { path: 'stages', component: StagesComponent},
   { path: 'supplies', component: SuppliesComponent},
   { path: 'project', component: ProjectComponent},
+  { path: 'myprojects', component: ProjectAllComponent},
 
   { path: 'project-detail/:id', component: OnProjectComponent},
   { path: 'project-detail/:id/view-more/:stage', component: ViewMoreComponent},

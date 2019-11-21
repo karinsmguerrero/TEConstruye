@@ -10,11 +10,15 @@ export class SalariesComponent implements OnInit {
 
   constructor(private service : ReportsService) { }
 
-  year : number = 2019;
+  year : number;
 
+  
   ngOnInit() {
+    this.service.getSalariesYears();
+  }
+
+  loadReport(){
     this.service.getSalariesReport(this.year);
-    //alert(this.service.salaryReport[0].week);
   }
 
 }
