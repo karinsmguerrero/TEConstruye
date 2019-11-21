@@ -14,7 +14,7 @@ namespace TEConstruye.Controllers
         NpgsqlConnection conn = new NpgsqlConnection(BDconnection.conn);
 
         [HttpGet]
-        [Route("api/GetProjectsForExpenses/{year}/{week}")]
+        [Route("api/GetExpersesPerWeek/{year}/{week}")]
         public HttpResponseMessage GetProjects(int year, int week)
         {
             conn.Close();
@@ -38,6 +38,19 @@ namespace TEConstruye.Controllers
             NpgsqlDataAdapter adapter = new NpgsqlDataAdapter("select distinct week from vexpensesreport where year = " + year, conn);
             DataSet ds = new DataSet();
             adapter.Fill(ds, "weeks");
+            conn.Close();
+            return this.Request.CreateResponse(HttpStatusCode.OK, ds);
+        }
+
+        [HttpGet]
+        [Route("api/GetYearsForExpenses")]
+        public HttpResponseMessage GetYears()
+        {
+            conn.Close();
+            conn.Open();
+            NpgsqlDataAdapter adapter = new NpgsqlDataAdapter("select distinct year from vexpensesreport", conn);
+            DataSet ds = new DataSet();
+            adapter.Fill(ds, "years");
             conn.Close();
             return this.Request.CreateResponse(HttpStatusCode.OK, ds);
         }

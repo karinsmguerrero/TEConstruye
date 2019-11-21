@@ -57,5 +57,18 @@ namespace TEConstruye.Controllers
             conn.Close();
             return this.Request.CreateResponse(HttpStatusCode.OK, ds);
         }
+
+        [HttpGet]
+        [Route("api/GetYearsForSalaries")]
+        public HttpResponseMessage GetYears()
+        {
+            conn.Close();
+            conn.Open();
+            NpgsqlDataAdapter adapter = new NpgsqlDataAdapter("select distinct year from vsalaryreport", conn);
+            DataSet ds = new DataSet();
+            adapter.Fill(ds, "years");
+            conn.Close();
+            return this.Request.CreateResponse(HttpStatusCode.OK, ds);
+        }
     }
 }

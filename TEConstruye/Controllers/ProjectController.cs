@@ -69,5 +69,21 @@ namespace TEConstruye.Controllers
             return this.Request.CreateResponse(HttpStatusCode.OK, "Inserted");
 
         }
+
+        [HttpGet]
+        [Route("api/GetUserProject/{username}")]
+        public HttpResponseMessage GetUserProject(string username)
+        {
+            conn.Open();
+            NpgsqlDataAdapter adapter = new NpgsqlDataAdapter("SELECT id, name, lotarea,rooms,restrooms," +
+                "floors, builtarea, CONCAT(province, ',', canton, ',', district) AS address " +
+              "FROM public.vProject WHERE client_username='" + username + "'", conn);
+
+            DataSet ds = new DataSet();
+            adapter.Fill(ds, "project");
+            conn.Close();
+            return this.Request.CreateResponse(HttpStatusCode.OK, ds);
+
+        }
     }
 }
