@@ -18,6 +18,7 @@ export class RegisterEngineerComponent implements OnInit {
 
   ngOnInit() {
     this.resetForm();
+    this.service.getSpecialties();
     
   }
 

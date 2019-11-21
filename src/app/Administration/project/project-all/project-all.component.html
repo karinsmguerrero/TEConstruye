@@ -5,11 +5,17 @@
     <div class="container">
       <div class="row">
 
+        <div *ngIf="!haveProjects" class=" container">
+          <div class="text-center display-4 text-muted">
+            No tiene proyectos registrados
+          </div>
+        </div>
         <div class="col-md-4" *ngFor="let project of service.projects">
           <div class="card-box-a card-shadow">
             <div class="img-box-a">
               <!-- <img src="{{property.Photos[0]}}" alt="" class="img-a img-fluid"> -->
-              <img src="./assets/img/project-cover.jpg" alt="" class="img-a img-fluid" style="height: 250px; width: 520px;">
+              <img src="./assets/img/project-cover.jpg" alt="" class="img-a img-fluid"
+                style="height: 250px; width: 520px;">
             </div>
             <div class="card-overlay">
               <div class="card-overlay-a-content">
@@ -51,7 +57,7 @@
               </div>
             </div>
           </div>
-        </div>   
+        </div>
       </div>
     </div>
   </section>

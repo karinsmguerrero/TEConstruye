@@ -10,8 +10,16 @@ export class ProjectAllComponent implements OnInit {
 
   constructor(private service : ProjectManagementService) { }
 
+  haveProjects : boolean = false;
+
   ngOnInit() {
     this.service.getUserProjects(localStorage.getItem('userName'));
+    this.haveProjects = !( this.service.projects[0] != null);
+    //alert(this.service.projects[0])
+  }
+
+  isProjectNull() : boolean{
+    return this.service.projects[0] == null;
   }
 
 }

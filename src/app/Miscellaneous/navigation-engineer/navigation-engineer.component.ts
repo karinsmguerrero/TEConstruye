@@ -8,9 +8,13 @@ import { LoginService } from 'src/app/Services/login.service';
 })
 export class NavigationEngineerComponent implements OnInit {
 
+  user : string;
+  space = "   "
+
   constructor(private loginService: LoginService) { }
 
   ngOnInit() {
+    this.user = localStorage.getItem('userName');
   }
 
 }
