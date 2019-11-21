@@ -8,18 +8,19 @@ import { ProjectManagementService } from 'src/app/Services/project-management.se
 })
 export class ProjectAllComponent implements OnInit {
 
-  constructor(private service : ProjectManagementService) { }
+  constructor(private service: ProjectManagementService) { }
 
-  haveProjects : boolean = false;
+  haveProjects: boolean = true;
 
   ngOnInit() {
-    this.service.getUserProjects(localStorage.getItem('userName'));
-    this.haveProjects = !( this.service.projects[0] != null);
-    //alert(this.service.projects[0])
+    if (localStorage.getItem('userRole') == 'admin') {
+      this.service.getAllProjects();
+    } else {
+      this.service.getUserProjects(localStorage.getItem('userName'));
+    }
+    this.haveProjects = !(this.service.projects[0] != null);
+    //alert(this.service.projects[0] == null)
   }
 
-  isProjectNull() : boolean{
-    return this.service.projects[0] == null;
-  }
 
 }

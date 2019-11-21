@@ -22,17 +22,17 @@
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" routerLink="/employees/register">Registro</a>
-            <a class="dropdown-item" routerLink="/employees/hours">Horas</a>
+
           </div>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
+            aria-haspopup="true" aria-expanded="false" routerLink="/myprojects">
             Proyectos
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" routerLink="/myprojects">Todos los proyectos</a>
             <a class="dropdown-item" routerLink="/supplies">Materiales</a>
-            <a class="dropdown-item" routerLink="/project">Proyectos</a>
             <a class="dropdown-item" routerLink="/stages">Etapas</a>
             <a class="dropdown-item" routerLink="/users/agents">Gastos</a>
             <a class="dropdown-item" routerLink="/careers">Publicación</a>
@@ -52,12 +52,12 @@
         </li>
         <li class="nav-item">
 
-          </li>
-          
-          <li class="nav-item nav-link">
-            <img src="./assets/img/user.png" class="img-a img-fluid"
-              style="height: 24px; width: 24px; margin-right :5px;"> {{user}}
-          </li>
+        </li>
+
+        <li class="nav-item nav-link">
+          <img src="./assets/img/user.png" class="img-a img-fluid"
+            style="height: 24px; width: 24px; margin-right :5px;"> {{user}}
+        </li>
       </ul>
     </div>
     <button type="button" class="btn btn-b-n navbar-toggle-box-collapse d-none d-md-block"

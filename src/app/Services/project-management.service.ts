@@ -30,6 +30,12 @@ export class ProjectManagementService {
     });
   }
 
+  getAllProjects(){
+    this.http.get(this.constant.routeURL + '/GetAllProjects').toPromise().then(res => {
+      this.projects = res as Project[];
+    });
+  }
+
   insertProject(formData:NgForm, 
                 province:string, canton:string, district:string){
     
