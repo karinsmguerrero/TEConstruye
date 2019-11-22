@@ -85,5 +85,20 @@ namespace TEConstruye.Controllers
             return this.Request.CreateResponse(HttpStatusCode.OK, ds);
 
         }
+
+        [HttpGet]
+        [Route("api/GetAllProjects")]
+        public HttpResponseMessage GetAllProjects()
+        {
+            conn.Open();
+            NpgsqlDataAdapter adapter = new NpgsqlDataAdapter("SELECT id, name, lotarea,rooms,restrooms," +
+                "floors, builtarea, CONCAT(province, ',', canton,',',district) AS address " +
+                "FROM public.vProject", conn);
+            DataSet list = new DataSet();
+            adapter.Fill(list);
+            conn.Close();
+            return this.Request.CreateResponse(HttpStatusCode.OK, list.Tables[0]);
+
+        }
     }
 }

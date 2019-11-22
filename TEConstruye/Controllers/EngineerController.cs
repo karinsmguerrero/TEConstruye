@@ -32,6 +32,23 @@ namespace TEConstruye.Controllers
 
         }
 
+        [HttpGet]
+        [Route("api/GetSpecialties")]
+        public HttpResponseMessage GetSpecialties()
+        {
+            conn.Close();
+            conn.Open();
+
+            NpgsqlDataAdapter adapter = new NpgsqlDataAdapter("select name, id from specialty", conn);
+            DataSet ds = new DataSet();
+            adapter.Fill(ds, "specialties");
+
+
+            conn.Close();
+            return this.Request.CreateResponse(HttpStatusCode.OK, ds);
+
+        }
+
         [HttpPost]
         [Route("api/PostEngineer")]
         public HttpResponseMessage InsertClient([FromBody] Engineer newClient)
