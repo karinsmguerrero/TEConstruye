@@ -83,6 +83,7 @@ namespace web_api.Models
         public int price { get; set; }
         public string client { get; set; }
         public Boolean gym { get; set; }
+        
         //public string Descripcion { get; set; }
     }
 }

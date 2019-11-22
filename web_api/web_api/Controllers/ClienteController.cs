@@ -30,6 +30,23 @@ namespace web_api.Controllers
         }
 
         [HttpGet]
+        [Route("api/GetClientTEC")]
+        public HttpResponseMessage GetClientTEC()
+        {
+            using (var db = new TecEntities())
+            {
+
+                var clientList = db.Database.SqlQuery<Client>("SELECT Username AS username,Nombre AS firstname," +
+                    " PrimerApellido AS lastnamea,SegundoApellido AS lastnameb," +
+                    "Cedula AS id, Contrasena AS password, Telefono AS telephone," +
+                    "Statuts as status FROM vCLIENTS").ToList();
+
+                Console.WriteLine(clientList);
+                return this.Request.CreateResponse(HttpStatusCode.OK, clientList);
+            }
+        }
+
+        [HttpGet]
         [Route("api/GetEngineers")]
         public HttpResponseMessage GetEngineers()
         {
