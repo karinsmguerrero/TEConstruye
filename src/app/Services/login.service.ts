@@ -23,7 +23,7 @@ export class LoginService {
       password: password
     }
     this.http.post(this.constant.routeURL + '/CheckCredentials', body).toPromise().then((res: Response) =>{ 
-      if(res['result'][0].checkcredentials != 0){
+      if(res['result'][0].checkcredentials != 'Incorrect credentials'){
         localStorage.setItem('userName', username);
         localStorage.setItem('userRole', res['result'][0].checkcredentials);
         this.router.navigate(['/welcome']);

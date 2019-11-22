@@ -15,8 +15,7 @@
                 <th>Usuario</th>
                 <th>Código</th>
                 <th>Especialidad</th>
-                <th></th>
-                <th></th>
+               
                 <tr *ngFor="let engineer of userService.engineers">
                   <td>{{engineer.id}}</td>
                   <td>{{engineer.firstname}}</td>
@@ -26,10 +25,7 @@
                   <td>{{engineer.username}}</td>
                   <td>{{engineer.code}}</td>
                   <td>{{engineer.major}}</td>
-                  <td><input type="image" src="./assets/img/refresh.png" (click)="update(agent)" width="48" height="48">
-                  </td>
-                  <td><input type="image" src="./assets/img/cancel(1).png" (click)="delete(agent)" width="48" height="48">
-                  </td>
+                  
                 </tr>
               </table>
       

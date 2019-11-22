@@ -13,8 +13,7 @@
           <th>Apellido</th>
           <th>Telefono</th>
           <th>Usuario</th>
-          <th></th>
-          <th></th>
+      
           <tr *ngFor="let client of userService.constructors">
             <td>{{client.id}}</td>
             <td>{{client.firstname}}</td>
@@ -22,10 +21,7 @@
             <td>{{client.lastnameb}}</td>
             <td>{{client.telephone}}</td>
             <td>{{client.username}}</td>
-            <td><input type="image" src="./assets/img/refresh.png" (click)="update(agent)" width="48" height="48">
-            </td>
-            <td><input type="image" src="./assets/img/cancel(1).png" (click)="delete(agent)" width="48" height="48">
-            </td>
+            
           </tr>
         </table>
       </div>
