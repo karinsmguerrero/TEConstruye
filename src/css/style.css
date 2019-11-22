@@ -2023,3 +2023,24 @@ footer .credits {
     font-size: 1.3rem;
   }
 }
+
+
+
+div.label {
+  margin: 0;
+  padding: 0;
+  margin-left: 20px;
+  font-size: 100%;
+  font-weight: bold;
+}
+
+ul.checkbox   {
+  margin: 0;
+  padding: 0;
+  margin-left: 20px;
+  list-style: none;
+}
+
+ul.checkbox li input {
+  margin-right: .25em;
+} 

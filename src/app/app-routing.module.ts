@@ -26,6 +26,7 @@ import { BudgetPdfComponent } from './Reports/budget-pdf/budget-pdf.component';
 import { RegisterStageComponent } from './Administration/stages/register-stage/register-stage.component';
 import { RegisterStageProjectComponent } from './Administration/on-project/stage-project/register-stage-project/register-stage-project.component';
 import { PropertyComponent } from './Administration/property/property.component';
+import { BillProjectComponent } from './Administration/on-project/bill-project/bill-project.component';
 
 
 
@@ -46,6 +47,7 @@ const routes: Routes = [
   { path: 'project-detail/:id/view-more/:stage', component: ViewMoreComponent},
   { path: 'project-detail/:id/tecres', component: PropertyComponent},
   { path: 'bb', component: TestingComponent},
+  { path: 'aa', component: BillProjectComponent},
   { path: 'hours', component: RegisterHoursComponent},
   { path: 'reports/budget', component: BudgetComponent},
   { path: 'reports/state', component: StateComponent},

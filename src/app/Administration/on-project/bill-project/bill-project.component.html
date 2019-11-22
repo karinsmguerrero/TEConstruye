@@ -2,7 +2,7 @@
 <div class="card">
     <!-- Form de Gastos -->
     <article class="card-body">
-        <form #BudgetForm="ngForm" autocomplete="off" (submit)="onSubmit(BudgetForm)">
+        <form #ExpensesForm="ngForm" autocomplete="off" (submit)="onSubmit(ExpensesForm,Image)">
             <div class="form-group">
                 <div class="form-row">
                     <div class="col form-group">
@@ -12,28 +12,47 @@
                     <div class="col form-group">
                         <label>Proveedor</label>
                         <input type="text" name="provider" #provider="ngModel" [(ngModel)]="bill.provider" class="form-control" required>
-                        
                     </div>
                 </div>
-                <div class="form-row">
-                        <div class="col form-group">
-                            <label>Foto de factura</label>
-                            <input type="file" name="billphoto" #billphoto="ngModel" [(ngModel)]="bill.billphoto" class="form-control" required>
-                            
-                        </div>
-                        <div class="col form-group">
-                            
-                            <label>Item</label>
-                            <input class="btn btn-dark" name="add" type="button" value="Agregar">
-                            
-                        </div>
+                <div class="form-row" >
+                    <div class="col form-group">
+                        <!--label>Foto de factura</label-->
+                        <img [src]="imageUrl"  style="width:300px;height:250px">
                         
+                        <!--input type="file" name="billphoto" #billphoto="ngModel" [(ngModel)]="bill.billphoto" class="form-control" required-->
+                        <div class="form-row">
+                            <input type="file" #Image accept="image/*" (change)="handleFileInput($event.target.files)" required>
+                        </div>
                     </div>
+                    <div class="col form-group">
+                        <div class="form-row">
+                            <div class="col form-group">
+                                <select name="supplies" class="form-control">
+                                    <option *ngFor="let Supply of serviceSupply.list" (click)="supplySelected(Supply)" >{{Supply.id}}-{{Supply.name}}</option>
+                                </select>
+                            </div>
+                            <div class="col form-group">
+                                <input type="number" name="quantity" class="form-control" #quantity min="1" value="1">
+                            </div>
+                        </div>
+                        <input class="btn btn-dark" name="add" type="button" value="Agregar" (click)="addItem(quantity.value)" required>
+
+                        <div class="form-row">
+                            <div class="label">Items</div>
+                        </div>
+                        <div class="form-row">
+                            <ul class="checkbox" *ngFor="let Item of itemsAux">
+                                <li>{{Item.quantity}} uds : {{Item.idsupply}} - {{Item.supply_name}}</li>
+                            </ul> 
+                        </div>
+                    </div>
+                    
+                </div>
             
             
             </div>
             <div class="form-group">
-                <button type="submit" [disabled]="BudgetForm.invalid" class="btn btn-b-n btn-block">Registrar</button>
+                <button type="submit" [disabled]="ExpensesForm.invalid" class="btn btn-b-n btn-block">Registrar</button>
             </div>
         </form>
     </article>

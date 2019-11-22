@@ -4,6 +4,7 @@ import { ConstantsService } from './constants.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { ToastrService } from 'ngx-toastr';
 import { NgForm } from '@angular/forms';
+import { BillItem } from '../Models/bill-item.model';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,9 @@ export class StageProjectManagementService {
   
   list : StageProject[];
   
-  constructor(private http : HttpClient, private constant: ConstantsService, private toastr :ToastrService) { }
+  constructor(private http : HttpClient, 
+              private constant: ConstantsService, 
+              private toastr :ToastrService) { }
   getStages(idproject:number){
     this.http.get(this.constant.routeURL + '/GetStages?project='+idproject).toPromise().then(res => this.list = res as StageProject[]);
   }
@@ -76,5 +79,26 @@ export class StageProjectManagementService {
       }
     );
 
+  }
+
+
+  insertExpenses(formData:NgForm, idstage:number,items:BillItem[] ) {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type':  'application/json'
+      })
+    };
+    var body ={
+      idstage : idstage,
+      provider : formData.value.provider,
+      billphoto : formData.value.provider+'_'+formData.value.billnumber+'.png',
+      billnumber :formData.value.billnumber,
+      items: items
+    };
+    this.http.post(this.constant.routeURL + '/PostExpense',body,httpOptions).subscribe(res =>{
+      this.toastr.success('Successfull','Factura agregada a la etapa')}, error=> {
+        this.toastr.error('Error','Error al registrar gasto');
+      }
+    );
   }
 }
