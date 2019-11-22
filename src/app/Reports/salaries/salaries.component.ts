@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ReportsService } from 'src/app/Services/reports.service';
 
 @Component({
   selector: 'app-salaries',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SalariesComponent implements OnInit {
 
-  constructor() { }
+  constructor(private service : ReportsService) { }
 
+  year : number;
+
+  
   ngOnInit() {
+    this.service.getSalariesYears();
+  }
+
+  loadReport(){
+    this.service.getSalariesReport(this.year);
   }
 
 }

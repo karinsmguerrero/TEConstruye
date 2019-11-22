@@ -6,6 +6,7 @@ import { ToastrService } from 'ngx-toastr';
 import { Employee } from '../Models/employee';
 import { Engineer } from '../Models/engineer';
 import { EmployeeAux } from '../Models/employee-aux.model';
+import { Specialty } from '../Models/specialty.model';
 
 @Injectable({
   providedIn: 'root'
@@ -16,6 +17,7 @@ export class UserService {
   constructors: Client[];
   employees: Employee[];
   employeeList: EmployeeAux[];
+  specialties : Specialty[];
 
   constructor(private http: HttpClient, private constants: ConstantsService, private toastr: ToastrService) { }
 
@@ -82,6 +84,12 @@ export class UserService {
   getEmployees() {
     this.http.get(this.constants.routeURL + '/GetAllEmployees').toPromise().then((res: Response) => {
       this.employeeList = res['users'] as EmployeeAux[]
+    });
+  }
+
+  getSpecialties(){
+    this.http.get(this.constants.routeURL + '/GetSpecialties').toPromise().then((res: Response) => {
+      this.specialties = res['specialties'] as Specialty[]
     });
   }
 }

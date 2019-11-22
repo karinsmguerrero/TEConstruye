@@ -9,8 +9,10 @@ import { LoginService } from 'src/app/Services/login.service';
 export class NavigationAdminComponent implements OnInit {
 
   constructor(private loginService: LoginService) { }
+  user: string;
 
   ngOnInit() {
+    this.user = localStorage.getItem('userName');
   }
 
 }

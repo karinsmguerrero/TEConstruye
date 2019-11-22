@@ -73,7 +73,7 @@
           <div class="form-group col">
             <label>Especialidad</label>
             <select name="major" #major="ngModel" [(ngModel)]="engineer.major" class="form-control" required>
-              <option *ngFor="let major of majors">{{major}}</option>
+              <option *ngFor="let major of service.specialties">{{major.name}}</option>
             </select>
             <div class="validation-error" *ngIf="major.invalid && major.touched">
                 Este campo es obligatorio

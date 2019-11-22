@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { UserService } from 'src/app/Services/user.service';
 import { Employee } from 'src/app/Models/employee';
+import * as CryptoJS from 'crypto-js';
 
 @Component({
   selector: 'app-register-employee',
@@ -32,6 +33,7 @@ export class RegisterEmployeeComponent implements OnInit {
   }
 
   onSubmit(form: NgForm) {
+    form.value.password = CryptoJS.enc.Base64.stringify( (CryptoJS.MD5(form.value.password) as unknown) as string);
     this.service.registerEmployee(form.value);
     this.resetForm(form);
     /*

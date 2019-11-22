@@ -13,7 +13,10 @@ export class ProjectManagementService {
   list : Project[];
   onProject: Project;
   projectTec:ProjectTecres;
+  projects : Project[] = [];
+  
   constructor(private http : HttpClient, private constant: ConstantsService,private toastr :ToastrService) { }
+
   getProjects(){
     this.http.get(this.constant.routeURL + '/GetProjects').toPromise().then(res => this.list = res as Project[]);
   }
@@ -28,6 +31,18 @@ export class ProjectManagementService {
       this.projectTec = res['project'][0] as ProjectTecres
     });
   }
+  getUserProjects(username : string){
+    this.http.get(this.constant.routeURL + '/GetUserProject/' + username).toPromise().then((res: Response) => {
+      this.projects = res['project'] as Project[];
+    });
+  }
+
+  getAllProjects(){
+    this.http.get(this.constant.routeURL + '/GetAllProjects').toPromise().then(res => {
+      this.projects = res as Project[];
+    });
+  }
+
   insertProject(formData:NgForm, 
                 province:string, canton:string, district:string){
     

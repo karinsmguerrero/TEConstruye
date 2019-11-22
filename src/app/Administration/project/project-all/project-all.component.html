@@ -5,53 +5,64 @@
     <div class="container">
       <div class="row">
 
-        <div class="col-md-4" *ngFor="let property of propertyService.properties">
+        <div *ngIf="this.service.projects[0] == null" class=" container">
+          <div class="text-center display-4 text-muted ">
+            No tiene proyectos registrados
+          </div>
+          <div class=" text-center">
+              <img src="./assets/img/sketch.png" alt="" class="img-a img-fluid"
+              style="height: 250px; width: 250px; padding-top: 5%;">
+          </div>
+         
+        </div>
+        <div class="col-md-4" *ngFor="let project of service.projects">
           <div class="card-box-a card-shadow">
             <div class="img-box-a">
               <!-- <img src="{{property.Photos[0]}}" alt="" class="img-a img-fluid"> -->
-              <img src="{{property.Cover}}" alt="" class="img-a img-fluid" style="height: 250px; width: 520px;">
+              <img src="./assets/img/project-cover.jpg" alt="" class="img-a img-fluid"
+                style="height: 250px; width: 520px;">
             </div>
             <div class="card-overlay">
               <div class="card-overlay-a-content">
                 <div class="card-header-a">
                   <h2 class="card-title-a">
-                    <a href="#">{{property.Name}}</a>
+                    <a href="#">{{project.name}}</a>
                   </h2>
                 </div>
                 <div class="card-body-a">
                   <div class="price-box d-flex">
-                    <span class="price-a">Precio | {{property.Price}}</span>
+                    <span class="price-a">Lote | {{project.lotarea}} m<sup>2</sup></span>
                   </div>
-                  <a routerLink="/property-detail/{{property.Id}}" class="link-a">Click aquí para ver
+                  <!--<a routerLink="/property-detail/{{property.Id}}" class="link-a">Click aquí para ver
                     <span class="ion-ios-arrow-forward"></span>
-                  </a>
+                  </a>-->
                 </div>
                 <div class="card-footer-a">
                   <ul class="card-info d-flex justify-content-around">
                     <li>
-                      <h4 class="card-info-title">Area</h4>
-                      <span>{{property.BuiltArea}}
+                      <h4 class="card-info-title">Construcción</h4>
+                      <span>{{project.builtarea}} m
                         <sup>2</sup>
                       </span>
                     </li>
                     <li>
                       <h4 class="card-info-title">Cuartos</h4>
-                      <span>{{property.Rooms}}</span>
+                      <span>{{project.rooms}}</span>
                     </li>
                     <li>
                       <h4 class="card-info-title">Baños</h4>
-                      <span>{{property.Bathroom}}</span>
+                      <span>{{project.restrooms}}</span>
                     </li>
                     <li>
-                      <h4 class="card-info-title">Parqueos</h4>
-                      <span>{{property.Parkings}}</span>
+                      <h4 class="card-info-title">Pisos</h4>
+                      <span>{{project.floors}}</span>
                     </li>
                   </ul>
                 </div>
               </div>
             </div>
           </div>
-        </div>   
+        </div>
       </div>
     </div>
   </section>

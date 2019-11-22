@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ReportsService } from 'src/app/Services/reports.service';
 
 @Component({
   selector: 'app-expenses',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ExpensesComponent implements OnInit {
 
-  constructor() { }
+  year : number;
+
+  constructor(private service : ReportsService) { }
 
   ngOnInit() {
+    this.service.getExpensesYears();
   }
 
+  loadReport(){
+    this.service.getExpensesReport(this.year);
+  }
 }

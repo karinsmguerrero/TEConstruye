@@ -1,1 +1,54 @@
-<p>salaries works!</p>
+<app-navigation></app-navigation>
+<div class="container" style="padding-top: 5%;">
+  <div class="card">
+
+    <article class="card-body">
+
+      <div class="row">
+        <div class="col-sm-2">
+          <select name="yearSelector" #yearSelector="ngModel" [(ngModel)]="year" [ngModelOptions]="{standalone: true}"
+            class="form-control" [value]=2018>
+            <option *ngFor="let yeart of service.salaryYear" (click)="loadReport()">{{yeart.year}}</option>
+          </select>
+        </div>
+        <div class="col-sm-8">
+          <h4 class="card-title text-center mb-4 mt-1">Planilla semanal</h4>
+        </div>
+        <div class="col-sm-2 ">
+          <app-salaries-pdf></app-salaries-pdf>
+        </div>
+      </div>
+      <!--/ Agents Grid Star /-->
+      <div *ngIf="year != null" class="container">
+        <div *ngFor="let week of service.salaryReport">
+          <div class="row align-self-center justify-content-center"
+            style="background-color: #2eca6a; font-weight:bold;">
+            <h5 style="font-weight:bold;">Semana {{week.week}} del {{year}}</h5>
+          </div>
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="row" *ngFor="let employee of week.employeesToPay">
+                <div class="col-sm-4 align-self-center justify-content-center">
+                  <h5>{{employee.name}}</h5>
+                </div>
+                <div class="col-sm-8">
+                  <table class="table">
+                    <th class="col-sm-4" style="background-color: #f5f5f5;">Proyecto</th>
+                    <th class="col-sm-4" style="background-color: #f5f5f5;">Total</th>
+                    <tr *ngFor="let line of employee.salaryLines">
+                      <td>{{line.project}}</td>
+                      <td> {{line.total  | currency:"₡"}}</td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <hr>
+          </div>
+        </div>
+      </div>
+      <!--/ Agents Grid End /-->
+    </article>
+  </div>
+
+</div>

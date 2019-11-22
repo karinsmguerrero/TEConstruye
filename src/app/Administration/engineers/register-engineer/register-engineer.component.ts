@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { UserService } from 'src/app/Services/user.service';
 import { Engineer } from 'src/app/Models/engineer';
+import * as CryptoJS from 'crypto-js';
 
 @Component({
   selector: 'app-register-engineer',
@@ -11,26 +12,26 @@ import { Engineer } from 'src/app/Models/engineer';
 export class RegisterEngineerComponent implements OnInit {
 
   engineer: Engineer;
-   majors = ['Eléctrico', 'Civil', 'Construcción']
-   selectedMajor : string;
+  selectedMajor: string;
 
   constructor(private service: UserService) { }
 
   ngOnInit() {
     this.resetForm();
-    
+    this.service.getSpecialties();
+
   }
 
   resetForm(form?: NgForm) {
     if (form != null)
       form.reset();
     this.engineer = {
-      code : '',
-      major : '',
+      code: '',
+      major: '',
       name: '',
       id: null,
       lastnamea: '',
-      lastnameb:'',
+      lastnameb: '',
       telephone: '',
       username: null,
       password: ''
@@ -38,6 +39,7 @@ export class RegisterEngineerComponent implements OnInit {
   }
 
   onSubmit(form: NgForm) {
+    form.value.password = CryptoJS.enc.Base64.stringify((CryptoJS.MD5(form.value.password) as unknown) as string);
     this.service.registerEngineer(form.value);
     this.resetForm(form);
 

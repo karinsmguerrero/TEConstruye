@@ -14,13 +14,13 @@ export class NavigationComponent implements OnInit {
   logged: boolean = false;
   showclient: boolean = false;
   showadmin: boolean = false;
-  showcustomer: boolean = false;
+  showengineer: boolean = false;
 
   ngOnInit() {
     this.logged = this.loggedIn();
     this.showadmin = this.isAdmin();
     this.showclient = this.isClient();
-    this.showcustomer = this.isCustomer();
+    this.showengineer = this.isEngineer();
   }
 
   loggedIn() {
@@ -37,15 +37,15 @@ export class NavigationComponent implements OnInit {
       return false;
   }
 
-  isCustomer() {
-    if (localStorage.getItem('userRole') == 'Costructor')
+  isEngineer() {
+    if (localStorage.getItem('userRole') == 'engineer')
       return true;
     else
       return false;
   }
 
   isAdmin() {
-    if (localStorage.getItem('userRole') == 'Admin')
+    if (localStorage.getItem('userRole') == 'admin')
       return true;
     else
       return false;

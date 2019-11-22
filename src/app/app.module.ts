@@ -58,9 +58,14 @@ import { BudgetPdfComponent } from "./Reports/budget-pdf/budget-pdf.component";
 //Código tomado de: https://stackoverflow.com/questions/34904683/how-to-set-locale-in-datepipe-in-angular-2
 import { registerLocaleData } from '@angular/common';
 import localeDeAt from '@angular/common/locales/es-cr';
+registerLocaleData(localeDeAt);
 import { StatePdfComponent } from './Reports/state-pdf/state-pdf.component';
 import { TecresComponent } from './Administration/tecres/tecres.component';
 import { PropertyComponent } from './Administration/property/property.component';
+import { ExpenesPdfComponent } from './Reports/expenes-pdf/expenes-pdf.component';
+import { SalariesPdfComponent } from './Reports/salaries-pdf/salaries-pdf.component';
+import { NavigationEngineerComponent } from './Miscellaneous/navigation-engineer/navigation-engineer.component';
+import { ProjectAllComponent } from './Administration/project/project-all/project-all.component';
 
 
 
@@ -110,7 +115,9 @@ import { PropertyComponent } from './Administration/property/property.component'
     TestingComponent,
     StateComponent, 
     BudgetPdfComponent, 
-    StatePdfComponent, TecresComponent, PropertyComponent
+    StatePdfComponent, TecresComponent, PropertyComponent,
+    BudgetPdfComponent, StatePdfComponent, ExpenesPdfComponent, SalariesPdfComponent, NavigationEngineerComponent,
+    ProjectAllComponent
   ],
   imports: [
     BrowserModule,
